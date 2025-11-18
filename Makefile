@@ -32,4 +32,10 @@ clean:
 	@echo "Cleaning up..."
 	rm -f $(OBJ) $(TARGET)
 
+
+tests: $(OBJ)
+	$(CXX) $(CXXFLAGS) -o test_two_body tests/test_two_body.cpp $(OBJ)
+	$(CXX) $(CXXFLAGS) -o test_freefall tests/test_freefall.cpp $(OBJ)
+
+
 .PHONY: all run clean

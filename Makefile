@@ -4,6 +4,14 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -O2 -Iinclude
 
+# Add a target for the two-body test
+TEST_DIR = tests
+TEST_EXEC = $(TEST_DIR)/test_two_body
+
+# Ensure tests/ directory exists before building the test executable
+$(TEST_DIR):
+	mkdir -p $(TEST_DIR)
+
 # Source and target
 SRC = $(wildcard src/*.cpp)
 OBJ = $(SRC:.cpp=.o)
@@ -33,21 +41,17 @@ clean:
 	rm -f $(OBJ) $(TARGET)
 
 
-# Add a target for the two-body test
 test_two_body: tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/simulation.o src/utils.o
-	$(CXX) $(CXXFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) $^
 
 # Run the test
 run_test_two_body: test_two_body
-	./test_two_body
+	./$(TEST_EXEC)
 
-
-# tests: $(OBJ)
-# 	$(CXX) $(CXXFLAGS) -o test_two_body tests/test_two_body.cpp $(OBJ)
-# 	$(CXX) $(CXXFLAGS) -o test_freefall tests/test_freefall.cpp $(OBJ)
-
+# Make a convenience target to build and run all tests
+tests: test_two_body run_test_two_body
 
 .PHONY: all run clean tests
 
-tests: test_two_body run_test_two_body
+.PHONY: all run clean tests
 

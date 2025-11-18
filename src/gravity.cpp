@@ -1,3 +1,8 @@
+#include "../include/particles.hpp"
+#include <vector>
+#include <cstddef>
+#include <cmath>
+
 void compute_gravity(const Particles& P,
                      std::vector<float>& ax,
                      std::vector<float>& ay,

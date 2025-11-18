@@ -1,3 +1,7 @@
+#include "../include/particles.hpp"
+#include <vector>
+
+
 void velocity_verlet(Particles& P,
                      const std::vector<float>& ax,
                      const std::vector<float>& ay,

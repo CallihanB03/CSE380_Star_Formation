@@ -33,9 +33,21 @@ clean:
 	rm -f $(OBJ) $(TARGET)
 
 
-tests: $(OBJ)
-	$(CXX) $(CXXFLAGS) -o test_two_body tests/test_two_body.cpp $(OBJ)
-	$(CXX) $(CXXFLAGS) -o test_freefall tests/test_freefall.cpp $(OBJ)
+# Add a target for the two-body test
+test_two_body: tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/simulation.o src/utils.o
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+# Run the test
+run_test_two_body: test_two_body
+	./test_two_body
 
 
-.PHONY: all run clean
+# tests: $(OBJ)
+# 	$(CXX) $(CXXFLAGS) -o test_two_body tests/test_two_body.cpp $(OBJ)
+# 	$(CXX) $(CXXFLAGS) -o test_freefall tests/test_freefall.cpp $(OBJ)
+
+
+.PHONY: all run clean tests
+
+tests: test_two_body run_test_two_body
+

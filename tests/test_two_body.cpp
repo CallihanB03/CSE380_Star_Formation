@@ -1,45 +1,44 @@
-#include <iostream>
-#include <cmath>
-#include "../include/vec3.hpp"
-#include "../include/particle.hpp"
+#include "../include/particles.hpp"
 #include "../include/gravity.hpp"
 #include "../include/integrator.hpp"
+#include <vector>
+#include <iostream>
 
 int main() {
+    // Constants
+    const float G = 1.0f;
+    const float dt = 0.01f;
+    const int steps = 100;
 
-    float G = 1.0f;      // normalized gravity
-    float dt = 0.001f;   // small timestep
-    int steps = 20000;
+    // Create 2 particles
+    Particles P(2);
+    P.mass[0] = 1.0f;
+    P.mass[1] = 1.0f;
 
-    // --- Two-body circular orbit test ---
+    P.x[0] = -1.0f; P.y[0] = 0.0f; P.z[0] = 0.0f;
+    P.x[1] = 1.0f;  P.y[1] = 0.0f; P.z[1] = 0.0f;
 
-    Particle p1, p2;
+    P.vx[0] = 0.0f; P.vy[0] = 0.5f; P.vz[0] = 0.0f;
+    P.vx[1] = 0.0f; P.vy[1] = -0.5f; P.vz[1] = 0.0f;
 
-    p1.mass = 1.0f;
-    p2.mass = 1.0f;
+    std::vector<float> ax(2, 0.0f);
+    std::vector<float> ay(2, 0.0f);
+    std::vector<float> az(2, 0.0f);
 
-    p1.pos = Vec3(-1.0f, 0.0f, 0.0f);
-    p2.pos = Vec3( 1.0f, 0.0f, 0.0f);
+    // Time loop
+    for (int step = 0; step < steps; ++step) {
+        // Compute gravitational accelerations
+        compute_gravity(P, ax, ay, az);
 
-    p1.vel = Vec3(0.0f, 0.5f, 0.0f);
-    p2.vel = Vec3(0.0f,-0.5f, 0.0f);
+        // Update positions and velocities
+        velocity_verlet(P, ax, ay, az, dt);
 
-    for (int step = 0; step < steps; step++) {
-
-        // compute forces
-        Vec3 F12 = gravitational_force(p1, p2, G);
-        Vec3 F21 = gravitational_force(p2, p1, G);
-
-        // velocity-verlet update
-        velocity_verlet_step(p1, F12, dt);
-        velocity_verlet_step(p2, F21, dt);
-
-        // --- print the distance occasionally ---
-        if (step % 100 == 0) {
-            float dist = (p1.pos - p2.pos).norm();
-            std::cout << step*dt << " " << dist << "\n";
-        }
+        // Print positions for debugging
+        std::cout << "Step " << step 
+                  << ": P1=(" << P.x[0] << "," << P.y[0] << "," << P.z[0] << ") "
+                  << "P2=(" << P.x[1] << "," << P.y[1] << "," << P.z[1] << ")\n";
     }
 
     return 0;
 }
+

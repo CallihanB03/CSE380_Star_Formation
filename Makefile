@@ -1,70 +1,72 @@
 # === Star Formation Simulation Makefile ===
 
-# Compiler and flags
 CXX = g++
 CXXFLAGS = -std=c++17 -O2 -Iinclude
 
-CXXFLAGS += -pg
-LDFLAGS  += -pg
+SRC_DIR = src
+SRC = $(wildcard $(SRC_DIR)/*.cpp)
 
-# Add a target for the two-body test
+OBJ_DIR = bin
+OBJ = $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC))
+
+BIN_DIR = bin
+# TARGET = $(BIN_DIR)/simulation
+TARGET = $(OBJ_DIR)/simulation
+
 TEST_DIR = tests
 TEST_EXEC = $(TEST_DIR)/test_two_body
-TEST_EXEC2 = $(TEST_DIR)/test_freefall
+TEST_FREEFALL = $(TEST_DIR)/test_freefall
 
 
-# Ensure tests/ directory exists before building the test executable
+# Default rule
+all: $(OBJ_DIR) $(TARGET)
+
+# Ensure directories exist
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+
+$(TARGET): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+$(BIN_DIR):
+	mkdir -p $(BIN_DIR)
+
 $(TEST_DIR):
 	mkdir -p $(TEST_DIR)
 
-# Source and target
-SRC = $(wildcard src/*.cpp)
-OBJ = $(SRC:.cpp=.o)
-TARGET = star_formation_sim
 
-# Default rule
-all: $(TARGET)
-
-# Link object files to create the executable
+# Build main simulation
 $(TARGET): $(OBJ)
-	@echo "Linking..."
+	@echo "Linking simulation..."
 	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Compile each source file into an object file
-%.o: %.cpp
+# Compile source files into bin/
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@echo "Compiling $< ..."
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-# Run the program
+# Run simulation
 run: $(TARGET)
-	@echo "Running simulation..."
 	./$(TARGET)
 
-# Clean up build files
-clean:
-	@echo "Cleaning up..."
-	rm -f $(OBJ) $(TARGET)
+# ===== Tests =====
 
+test_two_body: $(TEST_DIR) tests/test_two_body.cpp $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp $(OBJ)
 
-test_two_body: tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/simulation.o src/utils.o
-	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) $^
-
-
-test_freefall: $(TEST_DIR) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/simulation.o src/utils.o
-	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC2) $^
-
-# Run the test
 run_test_two_body: test_two_body
 	./$(TEST_EXEC)
 
+test_freefall: $(TEST_DIR) tests/test_freefall.cpp $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(TEST_FREEFALL) tests/test_freefall.cpp $(OBJ)
 
 run_test_freefall: test_freefall
-	./$(TEST_EXEC2)
+	./$(TEST_FREEFALL)
 
-# Make a convenience target to build and run all tests
 tests: run_test_two_body run_test_freefall
 
-.PHONY: all run clean tests
+# Cleanup
+clean:
+	rm -f $(OBJ) $(TARGET) $(TEST_EXEC) $(TEST_FREEFALL)
 
-.PHONY: all run clean tests
-
+.PHONY: all run clean tests test_two_body test_freefall

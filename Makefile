@@ -4,6 +4,9 @@
 CXX = g++
 CXXFLAGS = -std=c++17 -O2 -Iinclude
 
+CXXFLAGS += -pg
+LDFLAGS  += -pg
+
 # Add a target for the two-body test
 TEST_DIR = tests
 TEST_EXEC = $(TEST_DIR)/test_two_body

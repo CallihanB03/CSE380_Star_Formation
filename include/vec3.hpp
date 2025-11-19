@@ -34,6 +34,11 @@ struct Vec3 {
         return *this;
     }
 
+        // Multiply Vec3 by scalar
+    Vec3 operator*(float s) const {
+        return Vec3{x * s, y * s, z * s};
+    }
+
     // Add this operator
     Vec3 operator/(float s) const {
         return Vec3(x/s, y/s, z/s);

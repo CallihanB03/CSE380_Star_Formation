@@ -1,5 +1,6 @@
 #include "../include/particles.hpp"
 #include "../include/vec3.hpp"
+#include "../include/gravity.hpp"
 #include <vector>
 #include <cstddef>
 #include <cmath>
@@ -40,17 +41,18 @@ void compute_gravity(const Particles& P,
 }
 
 
-void compute_gravity_cached(const Particles& P,
-                            std::vector<Vec3>& force_cache)
+
+// Cached version
+void compute_gravity_cached(const Particles& P, std::vector<Vec3>& force_cache)
 {
+    size_t N = P.N;
+    force_cache.assign(N, Vec3{0,0,0});
+
     const float G = 1.0f;
     const float eps2 = 0.01f;
 
-    size_t N = P.N;
-    force_cache.assign(N, Vec3{0,0,0}); // reset cache
-
-    for (size_t i = 0; i < N; i++) {
-        for (size_t j = i+1; j < N; j++) {
+    for (size_t i = 0; i < N; ++i) {
+        for (size_t j = i+1; j < N; ++j) {
             float dx = P.x[j] - P.x[i];
             float dy = P.y[j] - P.y[i];
             float dz = P.z[j] - P.z[i];
@@ -58,12 +60,11 @@ void compute_gravity_cached(const Particles& P,
             float r2 = dx*dx + dy*dy + dz*dz + eps2;
             float inv_r3 = 1.0f / (sqrt(r2) * r2);
 
-            float f = G * P.mass[i] * P.mass[j] * inv_r3;
-
-            Vec3 fij{f*dx, f*dy, f*dz};
+            Vec3 fij = Vec3{dx, dy, dz} * (G * P.mass[i] * P.mass[j] * inv_r3);
 
             force_cache[i] += fij / P.mass[i];
             force_cache[j] -= fij / P.mass[j];
         }
     }
 }
+

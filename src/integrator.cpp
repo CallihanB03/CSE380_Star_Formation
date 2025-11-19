@@ -22,13 +22,13 @@ void velocity_verlet(Particles& P,
 }
 
 
-void velocity_verlet_cached(Particles& P,
-                     float dt)
+
+void velocity_verlet_cached(Particles& P, float dt)
 {
     size_t N = P.N;
+    std::vector<Vec3> force_cache(N);
 
     // Step 1: compute initial accelerations
-    std::vector<Vec3> force_cache(N);
     compute_gravity_cached(P, force_cache);
 
     // Step 2: half-step velocity update

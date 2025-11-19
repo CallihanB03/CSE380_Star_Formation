@@ -51,19 +51,45 @@ run: $(TARGET)
 
 # ===== Tests =====
 
-test_two_body: $(TEST_DIR) tests/test_two_body.cpp $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp $(OBJ)
+# test_two_body: $(TEST_DIR) tests/test_two_body.cpp $(OBJ)
+# 	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp $(OBJ)
+
+# test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+# 	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) $^
+
+
+# run_test_two_body: test_two_body
+# 	./$(TEST_EXEC)
+
+# test_freefall: $(TEST_DIR) tests/test_freefall.cpp $(OBJ)
+# 	$(CXX) $(CXXFLAGS) -o $(TEST_FREEFALL) tests/test_freefall.cpp $(OBJ)
+
+# run_test_freefall: test_freefall
+# 	./$(TEST_FREEFALL)
+
+# tests: run_test_two_body run_test_freefall
+
+
+
+
+# ===== Tests =====
+
+# Build test_two_body without linking main.cpp
+test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
 
 run_test_two_body: test_two_body
 	./$(TEST_EXEC)
 
-test_freefall: $(TEST_DIR) tests/test_freefall.cpp $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(TEST_FREEFALL) tests/test_freefall.cpp $(OBJ)
+# Build test_freefall without linking main.cpp
+test_freefall: $(TEST_DIR) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+	$(CXX) $(CXXFLAGS) -o $(TEST_FREEFALL) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
 
 run_test_freefall: test_freefall
 	./$(TEST_FREEFALL)
 
 tests: run_test_two_body run_test_freefall
+
 
 # Cleanup
 clean:

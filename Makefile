@@ -16,6 +16,7 @@ TARGET = $(OBJ_DIR)/simulation
 TEST_DIR = tests
 TEST_EXEC = $(TEST_DIR)/test_two_body
 TEST_FREEFALL = $(TEST_DIR)/test_freefall
+TEST_MOMENTUM_EXEC = $(TEST_DIR)/test_momentum
 
 
 # Default rule
@@ -49,28 +50,6 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 run: $(TARGET)
 	./$(TARGET)
 
-# ===== Tests =====
-
-# test_two_body: $(TEST_DIR) tests/test_two_body.cpp $(OBJ)
-# 	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp $(OBJ)
-
-# test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-# 	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) $^
-
-
-# run_test_two_body: test_two_body
-# 	./$(TEST_EXEC)
-
-# test_freefall: $(TEST_DIR) tests/test_freefall.cpp $(OBJ)
-# 	$(CXX) $(CXXFLAGS) -o $(TEST_FREEFALL) tests/test_freefall.cpp $(OBJ)
-
-# run_test_freefall: test_freefall
-# 	./$(TEST_FREEFALL)
-
-# tests: run_test_two_body run_test_freefall
-
-
-
 
 # ===== Tests =====
 
@@ -88,7 +67,13 @@ test_freefall: $(TEST_DIR) tests/test_freefall.cpp src/gravity.o src/init.o src/
 run_test_freefall: test_freefall
 	./$(TEST_FREEFALL)
 
-tests: run_test_two_body run_test_freefall
+test_momentum: $(TEST_DIR) tests/test_momentum.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+	$(CXX) $(CXXFLAGS) -o $(TEST_MOMENTUM_EXEC) tests/test_momentum.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+
+run_test_momentum: test_momentum
+	./$(TEST_MOMENTUM_EXEC)
+
+tests: run_test_two_body run_test_freefall run_test_momentum
 
 
 # Cleanup

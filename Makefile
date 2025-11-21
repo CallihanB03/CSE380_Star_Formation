@@ -1,8 +1,9 @@
 # === Star Formation Simulation Makefile ===
 
 CXX = g++
-CXXFLAGS = -std=c++17 -O2 -Iinclude
-LDFLAGS = -pg
+CXXFLAGS += -std=c++17 -O2 -pg -Iinclude
+LDFLAGS  += -pg
+
 
 SRC_DIR = src
 SRC = $(wildcard $(SRC_DIR)/*.cpp)

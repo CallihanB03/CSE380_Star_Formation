@@ -46,7 +46,7 @@ notice and this notice are preserved.
 granularity: each sample hit covers 4 byte(s) no time propagated
 
 index % time    self  children    called     name
-                0.00    0.00     101/101         _GLOBAL__sub_I_main [9]
+                0.00    0.00     101/101         main [4]
 [6]      0.0    0.00    0.00     101         compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) [6]
 -----------------------------------------------
 

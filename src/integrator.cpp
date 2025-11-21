@@ -22,7 +22,6 @@ void velocity_verlet(Particles& P,
 }
 
 
-
 void velocity_verlet_cached(Particles& P, float dt)
 {
     size_t N = P.N;
@@ -55,3 +54,4 @@ void velocity_verlet_cached(Particles& P, float dt)
         P.vz[i] += 0.5f * force_cache[i].z * dt;
     }
 }
+

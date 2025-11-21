@@ -2,6 +2,7 @@
 
 CXX = g++
 CXXFLAGS = -std=c++17 -O2 -Iinclude
+LDFLAGS = -pg
 
 SRC_DIR = src
 SRC = $(wildcard $(SRC_DIR)/*.cpp)

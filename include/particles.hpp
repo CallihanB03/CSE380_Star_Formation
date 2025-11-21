@@ -1,10 +1,3 @@
-// #pragma once
-
-// #include <vector>
-// #include <cstddef> // for size_t
-// #include "vec3.hpp"  // so we can store Vec3 in the cache
-
-
 #pragma once
 
 #include <vector>
@@ -74,5 +67,28 @@ struct Particles {
         }
         file.close();
     }
+
+    // Simple thermodynamic update for all particles
+    void update_thermodynamics() {
+        // Step 1: compute density
+        for (size_t i = 0; i < N; i++) {
+            // Very basic: assume uniform density proportional to mass
+            // Later you could do SPH summation over neighbors
+            density[i] = mass[i];  // placeholder
+        }
+
+        // Step 2: compute pressure using ideal gas law
+        for (size_t i = 0; i < N; i++) {
+            pressure[i] = density[i] * temperature[i];
+        }
+
+        // Step 3: update temperature (optional)
+        // Here we keep it constant, or apply a simple adiabatic-like decay
+        for (size_t i = 0; i < N; i++) {
+            // Example: temperature slowly decreases over time
+            temperature[i] *= 0.999f; 
+        }
+    }
+
 };
 

@@ -2,12 +2,12 @@ Flat profile:
 
 Each sample counts as 0.01 seconds.
   %   cumulative   self              self     total           
- time   seconds   seconds    calls  ms/call  ms/call  name    
-100.00      1.88     1.88      100    18.80    18.80  compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&)
-  0.00      1.88     0.00      100     0.00     0.00  velocity_verlet(Particles&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, float)
-  0.00      1.88     0.00        1     0.00     0.00  Particles::~Particles()
-  0.00      1.88     0.00        1     0.00     0.00  Particles::write_csv(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
-  0.00      1.88     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
+ time   seconds   seconds    calls  us/call  us/call  name    
+100.00      0.01     0.01      100   100.00   100.00  compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&)
+  0.00      0.01     0.00      100     0.00     0.00  velocity_verlet(Particles&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, float)
+  0.00      0.01     0.00        1     0.00     0.00  Particles::~Particles()
+  0.00      0.01     0.00        1     0.00     0.00  Particles::write_csv(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const
+  0.00      0.01     0.00        1     0.00     0.00  std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&)
 
  %         the percentage of the total running time of the
 time       program used by this function.
@@ -45,19 +45,19 @@ notice and this notice are preserved.
 		     Call graph (explanation follows)
 
 
-granularity: each sample hit covers 4 byte(s) for 0.53% of 1.88 seconds
+granularity: each sample hit covers 4 byte(s) for 100.00% of 0.01 seconds
 
 index % time    self  children    called     name
                                                  <spontaneous>
-[1]    100.0    0.00    1.88                 main [1]
-                1.88    0.00     100/100         compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) [2]
+[1]    100.0    0.00    0.01                 main [1]
+                0.01    0.00     100/100         compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) [2]
                 0.00    0.00     100/100         velocity_verlet(Particles&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, float) [9]
                 0.00    0.00       1/1           std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string<std::allocator<char> >(char const*, std::allocator<char> const&) [12]
                 0.00    0.00       1/1           Particles::write_csv(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) const [11]
                 0.00    0.00       1/1           Particles::~Particles() [10]
 -----------------------------------------------
-                1.88    0.00     100/100         main [1]
-[2]    100.0    1.88    0.00     100         compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) [2]
+                0.01    0.00     100/100         main [1]
+[2]    100.0    0.01    0.00     100         compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) [2]
 -----------------------------------------------
                 0.00    0.00     100/100         main [1]
 [9]      0.0    0.00    0.00     100         velocity_verlet(Particles&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, std::vector<float, std::allocator<float> > const&, float) [9]

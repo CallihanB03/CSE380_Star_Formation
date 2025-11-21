@@ -52,7 +52,7 @@
 #include <string>
 
 int main(int argc, char** argv) {
-    size_t N = 10000;    // safe particle count for now
+    size_t N = 100;    // safe particle count for now
     size_t num_steps = 100;
     float dt = 0.01f;
 

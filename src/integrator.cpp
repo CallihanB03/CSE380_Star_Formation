@@ -19,6 +19,8 @@ void velocity_verlet(Particles& P,
         P.y[i] += P.vy[i] * dt;
         P.z[i] += P.vz[i] * dt;
     }
+
+    P.update_thermodynamics();
 }
 
 
@@ -43,6 +45,9 @@ void velocity_verlet_cached(Particles& P, float dt)
         P.y[i] += P.vy[i] * dt;
         P.z[i] += P.vz[i] * dt;
     }
+
+    // Step 3.5: update thermodynamics
+    P.update_thermodynamics();
 
     // Step 4: compute new accelerations
     compute_gravity_cached(P, force_cache);

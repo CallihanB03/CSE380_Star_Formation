@@ -1,8 +1,21 @@
+// #pragma once
+
+// #include <vector>
+// #include <cstddef> // for size_t
+// #include "vec3.hpp"  // so we can store Vec3 in the cache
+
+
 #pragma once
 
 #include <vector>
-#include <cstddef> // for size_t
-#include "vec3.hpp"  // so we can store Vec3 in the cache
+#include <cstddef>  // for size_t
+#include <string>   // for std::string
+#include <fstream>  // for std::ofstream
+#include <iomanip>  // for std::fixed, std::setprecision
+#include <iostream>
+
+#include "vec3.hpp"
+
 
 struct Particles {
     size_t N = 0;                    // number of particles
@@ -46,5 +59,20 @@ struct Particles {
           r2_cache(n * n, 0.0f),
           cache_valid(false)
     {}
+
+
+    // Output particle data to CSV
+    void write_csv(const std::string& filename) const {
+        std::ofstream file(filename);
+        file << "x,y,z,vx,vy,vz,temperature,density,pressure\n";
+        file << std::fixed << std::setprecision(5);
+
+        for (size_t i = 0; i < N; i++) {
+            file << x[i] << "," << y[i] << "," << z[i] << ","
+                 << vx[i] << "," << vy[i] << "," << vz[i] << ","
+                 << temperature[i] << "," << density[i] << "," << pressure[i] << "\n";
+        }
+        file.close();
+    }
 };
 

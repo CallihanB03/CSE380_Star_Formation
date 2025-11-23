@@ -1,48 +1,3 @@
-// #include "../include/particles.hpp"
-// #include "../include/integrator.hpp"
-// #include "../include/gravity.hpp"
-// #include <iostream>
-// #include <string>
-// #include <vector>
-
-// int main(int argc, char** argv) {
-
-//     // ======================
-//     // 1. Initialize system
-//     // ======================
-//     size_t N = 1000;      // <-- change for your system
-//     float dt = 0.01f;
-
-//     Particles P(N);       // <-- FIXED (must pass N)
-
-//     // NON-CACHED acceleration arrays
-//     std::vector<float> ax(N, 0.0f);
-//     std::vector<float> ay(N, 0.0f);
-//     std::vector<float> az(N, 0.0f);
-
-//     // ======================
-//     // 2. Parse flag
-//     // ======================
-//     bool use_cached = false;
-//     if (argc > 1 && std::string(argv[1]) == "--cached") {
-//         use_cached = true;
-//     }
-
-//     // ======================
-//     // 3. Run integrator
-//     // ======================
-//     if (use_cached) {
-//         std::cout << "Running cached integrator\n";
-//         velocity_verlet_cached(P, dt);
-//     } else {
-//         std::cout << "Running normal integrator\n";
-//         velocity_verlet(P, ax, ay, az, dt);
-//     }
-
-//     return 0;
-// }
-
-
 #include "particles.hpp"
 #include "integrator.hpp"
 #include "gravity.hpp"
@@ -50,6 +5,8 @@
 #include <iostream>
 #include <chrono>
 #include <string>
+#include <filesystem>
+
 
 int main(int argc, char** argv) {
     size_t N = 100;    // safe particle count for now
@@ -77,14 +34,21 @@ int main(int argc, char** argv) {
             std::vector<float> ax(P.N, 0.0f);
             std::vector<float> ay(P.N, 0.0f);
             std::vector<float> az(P.N, 0.0f);
-            compute_gravity(P, ax, ay, az);
 
+            compute_gravity(P, ax, ay, az);
             velocity_verlet(P, ax, ay, az, dt);
         }
+        
+        // Update densities as part of physics
+        compute_density_kNN(P, 32);
 
         // Update thermodynamics / physics
         update_physics(P, dt);
-    }
+
+        // Output frame
+        std::string fname = "frames/frame_" + std::to_string(t) + ".csv";
+        P.write_csv(fname);
+        }
 
     auto end = std::chrono::high_resolution_clock::now();
     std::cout << (use_cached ? "Cached" : "Normal") << " runtime: "

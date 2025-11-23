@@ -1,4 +1,5 @@
 #include "particles.hpp"
+#include "physics.hpp"
 #include "integrator.hpp"
 #include "gravity.hpp"
 #include "physics.hpp"
@@ -6,6 +7,7 @@
 #include <chrono>
 #include <string>
 #include <filesystem>
+#include <algorithm> 
 
 
 int main(int argc, char** argv) {
@@ -22,6 +24,13 @@ int main(int argc, char** argv) {
         P.x[i] = float(i) * 0.001f;
         P.y[i] = float(i) * 0.002f;
         P.z[i] = float(i) * 0.003f;
+    }
+
+    
+
+    std::ofstream star_log("stars_per_timestep.txt");
+    if (!star_log.is_open()) {
+        std::cerr << "Error opening star log file!\n";
     }
 
     auto start = std::chrono::high_resolution_clock::now();
@@ -45,12 +54,21 @@ int main(int argc, char** argv) {
         // Update thermodynamics / physics
         update_physics(P, dt);
 
+        // Check for Star Formation
+        P.check_star_formation(10.0f);
+        size_t n_stars = std::count(P.is_star.begin(), P.is_star.end(), true);
+        star_log << t << " " << n_stars << "\n";
+
+
+
         // Output frame
         std::string fname = "frames/frame_" + std::to_string(t) + ".csv";
         P.write_csv(fname);
         }
 
     auto end = std::chrono::high_resolution_clock::now();
+    star_log.close();
+
     std::cout << (use_cached ? "Cached" : "Normal") << " runtime: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(end-start).count()
               << " ms\n";

@@ -18,6 +18,8 @@ struct Particles {
     std::vector<float> x, y, z;      // positions
     std::vector<float> vx, vy, vz;   // velocities
     std::vector<float> temperature;  // simple thermodynamics
+    std::vector<bool> is_star;  // true if particle forms a star
+
 
     // Optional thermodynamic properties
     std::vector<float> density;      // mass density
@@ -50,7 +52,7 @@ struct Particles {
           pressure(n, 0.0f),
           acc_cache(n, Vec3{0.0f, 0.0f, 0.0f}),
           r2_cache(n * n, 0.0f),
-          cache_valid(false)
+          cache_valid(false), is_star(n, false)
     {}
 
 
@@ -89,6 +91,16 @@ struct Particles {
             temperature[i] *= 0.999f; 
         }
     }
+
+    inline void check_star_formation(float rho_threshold) {
+        for (size_t i = 0; i < N; i++) {
+            if (density[i] > rho_threshold) {
+                is_star[i] = true;
+            }
+        }
+    }
+
+
 
 };
 

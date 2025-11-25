@@ -10,6 +10,15 @@ void velocity_verlet(Particles& P,
                      const std::vector<float>& az,
                      float dt)
 {
+    // std::cout << "N=" << P.N 
+    //       << " | x.size()=" << P.x.size()
+    //       << " | y.size()=" << P.y.size()
+    //       << " | z.size()=" << P.z.size()
+    //       << " | vx.size()=" << P.vx.size()
+    //       << " | vy.size()=" << P.vy.size()
+    //       << " | vz.size()=" << P.vz.size()
+    //       << std::endl;
+
     for (size_t i = 0; i < P.N; i++) {
         P.vx[i] += 0.5f * ax[i] * dt;
         P.vy[i] += 0.5f * ay[i] * dt;
@@ -26,6 +35,15 @@ void velocity_verlet(Particles& P,
 
 void velocity_verlet_cached(Particles& P, float dt)
 {
+    // std::cout << "N=" << P.N 
+    //       << " | x.size()=" << P.x.size()
+    //       << " | y.size()=" << P.y.size()
+    //       << " | z.size()=" << P.z.size()
+    //       << " | vx.size()=" << P.vx.size()
+    //       << " | vy.size()=" << P.vy.size()
+    //       << " | vz.size()=" << P.vz.size()
+    //       << std::endl;
+
     size_t N = P.N;
     std::vector<Vec3> force_cache(N);
 

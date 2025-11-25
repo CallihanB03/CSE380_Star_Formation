@@ -1,8 +1,11 @@
 # === Star Formation Simulation Makefile ===
 
 CXX = g++
-CXXFLAGS += -std=c++17 -O2 -pg -Iinclude
-LDFLAGS  += -pg
+CXXFLAGS += -std=c++17 -O0 -g -Iinclude
+LDFLAGS  +=
+
+# CXXFLAGS += -std=c++17 -O2 -g -pg -Iinclude
+# LDFLAGS  += -pg
 
 
 SRC_DIR = src
@@ -57,7 +60,11 @@ run: $(TARGET)
 
 # Build test_two_body without linking main.cpp
 test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+	$(CXX) $(CXXFLAGS) -g -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+# test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+# 	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+
+
 
 run_test_two_body: test_two_body
 	./$(TEST_EXEC)
@@ -80,6 +87,10 @@ tests: run_test_two_body run_test_freefall run_test_momentum
 
 # Cleanup
 clean:
-	rm -f $(OBJ) $(TARGET) $(TEST_EXEC) $(TEST_FREEFALL)
+	rm -f $(OBJ) $(TARGET) $(TEST_EXEC) $(TEST_FREEFALL) $(TEST_MOMENTUM_EXEC)
+
 
 .PHONY: all run clean tests test_two_body test_freefall
+
+
+# rm -f $(OBJ) $(TARGET) $(TEST_EXEC) $(TEST_FREEFALL)

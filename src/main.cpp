@@ -136,11 +136,12 @@ int main(int argc, char** argv) {
     // ----------------------------------------------------
     // Simulation loop
     // ----------------------------------------------------
+    float h = 0.03f; // smoothing length (based on your spacing)
     for (size_t t = 0; t < num_steps; ++t) {
 
         if (use_cached) {
             // Cached gravity-only integrator
-            velocity_verlet_cached(P, dt);
+            velocity_verlet_cached(P, dt, h);
 
         } else {
             // ------------------------------------------------
@@ -155,7 +156,7 @@ int main(int argc, char** argv) {
             // ------------------------------------------------
             // 2. Compute densities (SPH)
             // ------------------------------------------------
-            float h = 0.03f; // smoothing length (based on your spacing)
+            
             compute_density_sph(P, h);
 
             // ------------------------------------------------
@@ -182,6 +183,11 @@ int main(int argc, char** argv) {
 
         size_t n_stars = std::count(P.is_star.begin(), P.is_star.end(), true);
         star_log << t << " " << n_stars << "\n";
+
+        if (t % 10 == 0) {
+            std::cout << "Step " << t << ": rho[0] = " << P.density[0] << "\n";
+        }
+
 
         // ----------------------------------------------------
         // 7. Output snapshot

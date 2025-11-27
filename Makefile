@@ -57,27 +57,37 @@ run: $(TARGET)
 
 
 # ===== Tests =====
+OBJS = src/gravity.o src/init.o src/integrator.o src/utils.o src/density.o src/hydro.o
+
+test_two_body: $(TEST_DIR) tests/test_two_body.cpp $(OBJS)
+	$(CXX) $(CXXFLAGS) -g -o $(TEST_EXEC) tests/test_two_body.cpp $(OBJS)
+
+test_freefall: $(TEST_DIR) tests/test_freefall.cpp $(OBJS)
+	$(CXX) $(CXXFLAGS) -g -o $(TEST_FREEFALL) tests/test_freefall.cpp $(OBJS)
+
+test_momentum: $(TEST_DIR) tests/test_momentum.cpp $(OBJS)
+	$(CXX) $(CXXFLAGS) -g -o $(TEST_MOMENTUM_EXEC) tests/test_momentum.cpp $(OBJS)
+
+
 
 # Build test_two_body without linking main.cpp
-test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-	$(CXX) $(CXXFLAGS) -g -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-# test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-# 	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-
-
+# test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o src/density.o src/hydro.o
+# 	$(CXX) $(CXXFLAGS) -g -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+# # test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+# # 	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
 
 run_test_two_body: test_two_body
 	./$(TEST_EXEC)
 
 # Build test_freefall without linking main.cpp
-test_freefall: $(TEST_DIR) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-	$(CXX) $(CXXFLAGS) -o $(TEST_FREEFALL) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+# test_freefall: $(TEST_DIR) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/utils.o src/density.o src/hydro.o
+# 	$(CXX) $(CXXFLAGS) -o $(TEST_FREEFALL) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
 
 run_test_freefall: test_freefall
 	./$(TEST_FREEFALL)
 
-test_momentum: $(TEST_DIR) tests/test_momentum.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-	$(CXX) $(CXXFLAGS) -o $(TEST_MOMENTUM_EXEC) tests/test_momentum.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
+# test_momentum: $(TEST_DIR) tests/test_momentum.cpp src/gravity.o src/init.o src/integrator.o src/utils.o src/density.o src/hydro.o
+# 	$(CXX) $(CXXFLAGS) -o $(TEST_MOMENTUM_EXEC) tests/test_momentum.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
 
 run_test_momentum: test_momentum
 	./$(TEST_MOMENTUM_EXEC)

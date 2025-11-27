@@ -12,4 +12,4 @@ void velocity_verlet(Particles& P,
                      const std::vector<float>& az,
                      float dt);
 
-void velocity_verlet_cached(Particles& P, float dt);
+void velocity_verlet_cached(Particles& P, float dt, float h);

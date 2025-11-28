@@ -1,25 +1,105 @@
-#include "particles.hpp"
+// #include "particles.hpp"
+// #include <random>
+
+// void init_spherical_cloud(Particles& P, float radius) {
+//     std::mt19937 rng(42);
+//     std::uniform_real_distribution<float> dist(-radius, radius);
+
+//     for (size_t i = 0; i < P.N; i++) {
+//         float x, y, z;
+//         // reject points outside sphere
+//         do {
+//             x = dist(rng);
+//             y = dist(rng);
+//             z = dist(rng);
+//         } while (x*x + y*y + z*z > radius*radius);
+
+//         P.x[i] = x;
+//         P.y[i] = y;
+//         P.z[i] = z;
+
+//         P.vx[i] = P.vy[i] = P.vz[i] = 0.0f;
+//         P.temperature[i] = 1.0f;
+//         P.mass[i] = 1.0f;
+//     }
+// }
+
+
+// init.cpp
+#include "init.hpp"
 #include <random>
+#include <cmath>
+#include <iostream>
 
-void init_spherical_cloud(Particles& P, float radius) {
-    std::mt19937 rng(42);
-    std::uniform_real_distribution<float> dist(-radius, radius);
+static std::mt19937 gen(123);
 
-    for (size_t i = 0; i < P.N; i++) {
-        float x, y, z;
-        // reject points outside sphere
-        do {
-            x = dist(rng);
-            y = dist(rng);
-            z = dist(rng);
-        } while (x*x + y*y + z*z > radius*radius);
+void init_uniform(Particles& P) {
+    size_t N = P.N;
+    float spacing = 1.0f / std::cbrt(N);
 
-        P.x[i] = x;
-        P.y[i] = y;
-        P.z[i] = z;
-
+    for (size_t i = 0; i < N; ++i) {
+        float t = i * spacing;
+        P.x[i] = t;
+        P.y[i] = t;
+        P.z[i] = t;
         P.vx[i] = P.vy[i] = P.vz[i] = 0.0f;
-        P.temperature[i] = 1.0f;
-        P.mass[i] = 1.0f;
+    }
+}
+
+void init_clustered(Particles& P) {
+    std::normal_distribution<float> dist(0.0f, 0.05f);
+    std::vector<Vec3> centers = {
+        {0.3f,0.3f,0.3f},
+        {0.6f,0.5f,0.4f},
+        {0.8f,0.2f,0.7f}
+    };
+
+    for (size_t i = 0; i < P.N; ++i) {
+        Vec3 c = centers[i % centers.size()];
+        P.x[i] = c.x + dist(gen);
+        P.y[i] = c.y + dist(gen);
+        P.z[i] = c.z + dist(gen);
+        P.vx[i] = P.vy[i] = P.vz[i] = 0.0f;
+    }
+}
+
+void init_spherical(Particles& P) {
+    std::uniform_real_distribution<float> r_dist(0.0f, 0.3f);
+    std::uniform_real_distribution<float> th_dist(0.0f, 2*M_PI);
+    std::uniform_real_distribution<float> ph_dist(0.0f, M_PI);
+
+    for (size_t i = 0; i < P.N; ++i) {
+        float r = r_dist(gen);
+        float th = th_dist(gen);
+        float ph = ph_dist(gen);
+        P.x[i] = r * std::sin(ph) * std::cos(th) + 0.5;
+        P.y[i] = r * std::sin(ph) * std::sin(th) + 0.5;
+        P.z[i] = r * std::cos(ph) + 0.5;
+        P.vx[i] = P.vy[i] = P.vz[i] = 0.0f;
+    }
+}
+
+
+void init_particles(Particles& P, int version_type) {
+    switch (version_type) {
+        case 1:
+            std::cout << "Using uniform initialization\n";
+            init_uniform(P);
+            break;
+
+        case 2:
+            std::cout << "Using clustered initialization\n";
+            init_clustered(P);
+            break;
+
+        case 3:
+            std::cout << "Using spherical cloud initialization\n";
+            init_spherical(P);
+            break;
+
+        default:
+            std::cout << "Unknown version, defaulting to uniform\n";
+            init_uniform(P);
+            break;
     }
 }

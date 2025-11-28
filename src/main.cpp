@@ -96,6 +96,8 @@
 #include "../include/gravity.hpp"
 #include "../include/density.hpp"
 #include "../include/hydro.hpp"
+#include "../include/init.hpp"
+
 
 #include <iostream>
 #include <chrono>
@@ -105,7 +107,7 @@
 #include <fstream>
 
 int main(int argc, char** argv) {
-    size_t N = 100;           // number of particles
+    size_t N = 1000;           // number of particles
     size_t num_steps = 100;   // simulation steps
     float dt = 0.01f;         // timestep
 
@@ -114,13 +116,10 @@ int main(int argc, char** argv) {
     Particles P(N);
 
     // ----------------------------------------------------
-    // Initialize particle positions (example setup)
+    // Initialize particle positions
     // ----------------------------------------------------
-    for (size_t i = 0; i < N; i++) {
-        P.x[i] = float(i) * 0.001f;
-        P.y[i] = float(i) * 0.002f;
-        P.z[i] = float(i) * 0.003f;
-    }
+    int version_type = 2; // or passed via CLI
+    init_particles(P, version_type);
 
     // ----------------------------------------------------
     // Open star formation log
@@ -184,9 +183,9 @@ int main(int argc, char** argv) {
         size_t n_stars = std::count(P.is_star.begin(), P.is_star.end(), true);
         star_log << t << " " << n_stars << "\n";
 
-        if (t % 10 == 0) {
-            std::cout << "Step " << t << ": rho[0] = " << P.density[0] << "\n";
-        }
+        // if (t % 10 == 0) {
+        //     std::cout << "Step " << t << ": rho[0] = " << P.density[0] << "\n";
+        // }
 
 
         // ----------------------------------------------------

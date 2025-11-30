@@ -1,40 +1,60 @@
 // #pragma once
-// #include "particles.hpp"
 // #include <vector>
-
-// // find clusters among candidate particles (indices). linking_length in same units as positions
-// std::vector<std::vector<size_t>> find_star_clusters(const Particles& P,
-//                                                     const std::vector<size_t>& candidates,
-//                                                     float linking_length);
-
-// // form sinks or mark cluster membership
-// void form_sinks_from_clusters(Particles& P, const std::vector<std::vector<size_t>>& clusters);
-
-// include/starformation.hpp
-// #pragma once
+// #include <cmath>
 // #include "particles.hpp"
+// #include "vec3.hpp"
+// #include "stars.hpp"
 
-// #include <vector>
+// class StarFormation {
+// public:
+//     float neighbor_radius;
+//     size_t min_neighbors;
+//     float min_density;
 
-// void check_and_create_sinks(Particles& P, float rho_threshold, float r_merge);
+//     StarFormation(float R = 0.5f, size_t k = 8, float rho = 5.0f)
+//         : neighbor_radius(R), min_neighbors(k), min_density(rho) {}
+
+//     std::vector<int> detect_star_candidates(const Particles& P) const;
+
+// private:
+//     int count_neighbors(const Particles& P, int idx) const;
+//     float compute_local_density(const Particles& P, int idx) const;
+
+// public:
+//     void form_stars(
+//         Particles& P,
+//         std::vector<int>& to_convert,
+//         float current_time
+//     );
+// };
 
 #pragma once
-#include "particles.hpp"
 #include <vector>
+#include <cmath>
+#include "particles.hpp"
+#include "vec3.hpp"
+#include "stars.hpp"
 
-struct FormedStar {
-    float x, y, z;
-    float mass;
+class StarFormation {
+public:
+    float neighbor_radius;
+    size_t min_neighbors;
+    float min_density;
+
+    StarFormation(float R = 0.5f, size_t k = 8, float rho = 5.0f)
+        : neighbor_radius(R), min_neighbors(k), min_density(rho) {}
+
+    std::vector<int> detect_star_candidates(const Particles& P) const;
+
+private:
+    int count_neighbors(const Particles& P, int idx) const;
+    float compute_local_density(const Particles& P, int idx) const;
+
+public:
+    // convert gas particles to stars (keeps them in the array)
+    void form_stars(
+        Particles& P,
+        const std::vector<int>& to_convert,
+        float current_time
+    );
 };
-
-// Finds clusters of gas particles
-std::vector<std::vector<int>>
-find_clusters(const Particles& P, float cluster_radius);
-
-// Forms stars (sinks) out of clusters exceeding mass threshold
-// std::vector<FormedStar>
-std::vector<size_t>
-form_stars_from_clusters(Particles& P,
-                         float cluster_radius,
-                         float mass_threshold,
-                         float time);

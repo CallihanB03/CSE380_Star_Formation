@@ -17,18 +17,22 @@
 #include <fstream>
 
 int main(int argc, char** argv) {
-    size_t N = 1000;           // number of particles
-    size_t num_steps = 100;   // simulation steps
-    float dt = 0.01f;         // timestep
+    size_t N = 1000;                // number of particles
+    size_t num_steps = 100;         // simulation steps
+    float dt = 0.001f;               // timestep
+    float neighbor_radius = 0.2f;  // same as your "cluster_radius"
+    int min_neighbors = 5;          // choose something reasonable
+    float density_threshold =  2.0; // tune this later
+    int version_type = 1;           // or passed via CLI
 
     bool use_cached = (argc > 1 && std::string(argv[1]) == "--cached");
 
     Particles P(N);
+    std::vector<Star> stars;  // store formed stars
 
     // ----------------------------------------------------
     // Initialize particle positions
     // ----------------------------------------------------
-    int version_type = 2; // or passed via CLI
     init_particles(P, version_type);
 
     // ----------------------------------------------------
@@ -40,8 +44,9 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    float cluster_radius = 0.5f;
-    float mass_threshold = 2.0f;
+
+    StarFormation SF(neighbor_radius, min_neighbors, density_threshold);
+
 
     auto start = std::chrono::high_resolution_clock::now();
 
@@ -96,11 +101,20 @@ int main(int argc, char** argv) {
         // ----------------------------------------------------
         // P.check_star_formation(10.0f);
         // auto stars = form_stars_from_clusters(P, cluster_radius, mass_threshold);
-        auto new_stars = form_stars_from_clusters(P, cluster_radius, mass_threshold, t * dt);
+        // auto new_stars = form_stars_from_clusters(P, cluster_radius, mass_threshold, t * dt);
+
+        // size_t n_stars = std::count(P.is_star.begin(), P.is_star.end(), true);
+        // star_log << t << " " << n_stars << "\n";
+
+        // --- STAR FORMATION STEP ---
+        auto candidates = SF.detect_star_candidates(P);
+
+        SF.form_stars(P, candidates, t * dt);
+
+        // log number of stars formed so far
+        star_log << t << " " << stars.size() << "\n";
 
 
-        size_t n_stars = std::count(P.is_star.begin(), P.is_star.end(), true);
-        star_log << t << " " << n_stars << "\n";
 
         // if (t % 10 == 0) {
         //     std::cout << "Step " << t << ": rho[0] = " << P.density[0] << "\n";
@@ -108,7 +122,7 @@ int main(int argc, char** argv) {
 
 
         // ----------------------------------------------------
-        // 7. Output snapshot
+        // 8. Output snapshot
         // ----------------------------------------------------
         std::string fname = "frames/frame_" + std::to_string(t) + ".csv";
         P.write_csv(fname);
@@ -123,7 +137,20 @@ int main(int argc, char** argv) {
 
     // Final snapshot
     P.write_csv(use_cached ? "particles_cached.csv" : "particles_normal.csv");
-    P.write_stars_csv("stars.csv");
+    // P.write_stars_csv("stars.csv");
+
+    // Write a CSV for stars
+    std::ofstream star_csv("stars.csv");
+    star_csv << "x,y,z,mass,time_formed\n";
+    for (const auto& s : stars) {
+        star_csv << s.position.x << ","
+                << s.position.y << ","
+                << s.position.z << ","
+                << s.mass       << ","
+                << s.formation_time << "\n";
+    }
+    star_csv.close();
+
 
     return 0;
 }

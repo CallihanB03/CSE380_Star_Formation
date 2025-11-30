@@ -30,6 +30,10 @@ struct Vec3 {
 
     Vec3 operator-(const Vec3& v) const {
     return Vec3(x - v.x, y - v.y, z - v.z);
-}
+    }
+
+        float length2() const {
+        return x*x + y*y + z*z;
+    }
 
 };

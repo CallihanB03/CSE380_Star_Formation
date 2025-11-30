@@ -34,54 +34,116 @@ void compute_pressure(Particles& P, float K, float gamma) {
     }
 }
 
-// a_ij contribution = - m_j * (P_i / rho_i^2 + P_j / rho_j^2) * grad W_ij
-void compute_pressure_forces(Particles& P, float h,
-                             std::vector<float>& ax,
-                             std::vector<float>& ay,
-                             std::vector<float>& az) {
+// // a_ij contribution = - m_j * (P_i / rho_i^2 + P_j / rho_j^2) * grad W_ij
+// void compute_pressure_forces(Particles& P, float h,
+//                              std::vector<float>& ax,
+//                              std::vector<float>& ay,
+//                              std::vector<float>& az) {
+//     size_t N = P.N;
+//     if (ax.size() != N) ax.assign(N, 0.0f);
+//     if (ay.size() != N) ay.assign(N, 0.0f);
+//     if (az.size() != N) az.assign(N, 0.0f);
+
+//     // pairwise loop
+//     for (size_t i = 0; i < N; ++i) {
+//         for (size_t j = i + 1; j < N; ++j) {
+//             float dx = P.x[i] - P.x[j];
+//             float dy = P.y[i] - P.y[j];
+//             float dz = P.z[i] - P.z[j];
+//             float r2 = dx*dx + dy*dy + dz*dz;
+//             float r = std::sqrt(r2);
+//             if (r > 2.0f * h) continue;
+
+//             float dWdr = cubic_spline_dWdr(r, h); // dW/dr
+//             if (dWdr == 0.0f) continue;
+
+//             float invr = (r > 1e-12f) ? 1.0f / r : 0.0f;
+//             float gradWx = dWdr * (dx * invr);
+//             float gradWy = dWdr * (dy * invr);
+//             float gradWz = dWdr * (dz * invr);
+
+//             float rho_i = std::max(P.density[i], 1e-12f);
+//             float rho_j = std::max(P.density[j], 1e-12f);
+
+//             float term = - (P.mass[j]) * (P.pressure[i] / (rho_i * rho_i) + P.pressure[j] / (rho_j * rho_j));
+
+//             // symmetric update
+//             float ax_con = term * gradWx;
+//             float ay_con = term * gradWy;
+//             float az_con = term * gradWz;
+
+//             ax[i] += ax_con;
+//             ay[i] += ay_con;
+//             az[i] += az_con;
+
+//             // opposite sign for j (Newton's 3rd law)
+//             ax[j] -= ax_con * (P.mass[i] / P.mass[j]); // note: term included m_j; compensate for symmetry
+//             ay[j] -= ay_con * (P.mass[i] / P.mass[j]);
+//             az[j] -= az_con * (P.mass[i] / P.mass[j]);
+//             // The above mass compensation keeps momentum consistent if masses differ.
+//             // If all masses equal, simpler: ax[j] -= ax_con; etc.
+//         }
+//     }
+// }
+
+// Computes SPH pressure forces: a_i = sum_j -m_j (P_i/rho_i^2 + P_j/rho_j^2) grad W_ij
+void compute_pressure_forces(
+    Particles& P,
+    float h,
+    std::vector<float>& ax,
+    std::vector<float>& ay,
+    std::vector<float>& az
+) {
     size_t N = P.N;
+
+    // resize acceleration vectors if needed
     if (ax.size() != N) ax.assign(N, 0.0f);
     if (ay.size() != N) ay.assign(N, 0.0f);
     if (az.size() != N) az.assign(N, 0.0f);
 
+    // small epsilon to avoid division by zero
+    const float eps = 1e-12f;
+
     // pairwise loop
     for (size_t i = 0; i < N; ++i) {
-        for (size_t j = i + 1; j < N; ++j) {
-            float dx = P.x[i] - P.x[j];
-            float dy = P.y[i] - P.y[j];
-            float dz = P.z[i] - P.z[j];
-            float r2 = dx*dx + dy*dy + dz*dz;
-            float r = std::sqrt(r2);
-            if (r > 2.0f * h) continue;
+        if (!P.alive[i]) continue;
 
-            float dWdr = cubic_spline_dWdr(r, h); // dW/dr
+        float rho_i = std::max(P.density[i], eps);
+        float rho_i2_inv = 1.0f / (rho_i * rho_i);
+        float P_i_rho2 = P.pressure[i] * rho_i2_inv;
+
+        Vec3 xi(P.x[i], P.y[i], P.z[i]);
+
+        for (size_t j = i + 1; j < N; ++j) {
+            if (!P.alive[j]) continue;
+
+            Vec3 xj(P.x[j], P.y[j], P.z[j]);
+            Vec3 dx = xj - xi;
+            float r2 = dx.length2();
+            float r = std::sqrt(r2);
+
+            if (r > 2.0f * h || r < eps) continue;
+
+            float dWdr = cubic_spline_dWdr(r, h);
             if (dWdr == 0.0f) continue;
 
-            float invr = (r > 1e-12f) ? 1.0f / r : 0.0f;
-            float gradWx = dWdr * (dx * invr);
-            float gradWy = dWdr * (dy * invr);
-            float gradWz = dWdr * (dz * invr);
+            float rho_j = std::max(P.density[j], eps);
+            float rho_j2_inv = 1.0f / (rho_j * rho_j);
+            float P_j_rho2 = P.pressure[j] * rho_j2_inv;
 
-            float rho_i = std::max(P.density[i], 1e-12f);
-            float rho_j = std::max(P.density[j], 1e-12f);
+            float term = -P.mass[j] * (P_i_rho2 + P_j_rho2);
 
-            float term = - (P.mass[j]) * (P.pressure[i] / (rho_i * rho_i) + P.pressure[j] / (rho_j * rho_j));
+            Vec3 gradW = dx * (dWdr / r); // grad W_ij
+            Vec3 a = gradW * term;
 
-            // symmetric update
-            float ax_con = term * gradWx;
-            float ay_con = term * gradWy;
-            float az_con = term * gradWz;
+            // symmetric update (momentum conserved)
+            ax[i] += a.x;
+            ay[i] += a.y;
+            az[i] += a.z;
 
-            ax[i] += ax_con;
-            ay[i] += ay_con;
-            az[i] += az_con;
-
-            // opposite sign for j (Newton's 3rd law)
-            ax[j] -= ax_con * (P.mass[i] / P.mass[j]); // note: term included m_j; compensate for symmetry
-            ay[j] -= ay_con * (P.mass[i] / P.mass[j]);
-            az[j] -= az_con * (P.mass[i] / P.mass[j]);
-            // The above mass compensation keeps momentum consistent if masses differ.
-            // If all masses equal, simpler: ax[j] -= ax_con; etc.
+            ax[j] -= a.x;
+            ay[j] -= a.y;
+            az[j] -= a.z;
         }
     }
 }

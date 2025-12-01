@@ -24,8 +24,11 @@ struct Particles {
     std::vector<float> pressure;
 
     // sink/star bookkeeping
-    std::vector<bool> is_star;   // true if particle is a star / sink
-    std::vector<bool> alive;     // false -> particle logically removed (merged into a sink)
+    // std::vector<bool> is_star;   // true if particle is a star / sink
+    // std::vector<bool> alive;
+
+    std::vector<uint8_t> is_star;   // true if particle is a star / sink
+    std::vector<uint8_t> alive;
 
     // caching
     std::vector<Vec3> acc_cache;
@@ -79,9 +82,40 @@ struct Particles {
 
 
     // helper: count alive non-star gas particles
-    size_t count_alive() const {
-        size_t c = 0;
-        for (size_t i=0;i<N;++i) if (alive[i]) ++c;
-        return c;
+    // size_t count_alive() const {
+    //     size_t c = 0;
+    //     for (size_t i=0;i<N;++i) if (alive[i]) ++c;
+    //     return c;
+    // }
+
+     // --- NEW METHODS ---
+    size_t count_particles_in_stars() const {
+        size_t count = 0;
+        for (size_t i = 0; i < N; i++) {
+            if (is_star[i]) count++;
+        }
+        return count;
     }
+
+    void print_star_particles() const {
+        std::cout << "Particles that became stars: ";
+        bool any = false;
+        for (size_t i = 0; i < N; i++) {
+            if (is_star[i]) {
+                std::cout << i << " ";
+                any = true;
+            }
+        }
+        if (!any) std::cout << "None";
+        std::cout << "\n";
+    }
+
+    size_t count_star_particles() const {
+        size_t count = 0;
+        for (size_t i = 0; i < N; i++) {
+            if (is_star[i]) count++;
+        }
+        return count;
+    }
+
 };

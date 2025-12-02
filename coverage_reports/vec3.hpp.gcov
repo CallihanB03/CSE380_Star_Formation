@@ -1,0 +1,58 @@
+        -:    0:Source:include/vec3.hpp
+        -:    1:#include <cmath> 
+        -:    2:
+        -:    3:#pragma once
+        -:    4:
+        -:    5:struct Vec3 {
+        -:    6:    float x, y, z;
+        -:    7:
+        -:    8:    Vec3() : x(0), y(0), z(0) {}
+    #####:    9:    Vec3(float x_, float y_, float z_) : x(x_), y(y_), z(z_) {}
+------------------
+_ZN4Vec3C2Efff:
+    #####:    9:    Vec3(float x_, float y_, float z_) : x(x_), y(y_), z(z_) {}
+------------------
+_ZN4Vec3C2Efff:
+    #####:    9:    Vec3(float x_, float y_, float z_) : x(x_), y(y_), z(z_) {}
+------------------
+        -:   10:
+    #####:   11:    Vec3& operator+=(const Vec3& other) {
+    #####:   12:        x += other.x; y += other.y; z += other.z;
+    #####:   13:        return *this;
+        -:   14:    }
+        -:   15:
+        -:   16:    Vec3& operator-=(const Vec3& other) {
+        -:   17:        x -= other.x; y -= other.y; z -= other.z;
+        -:   18:        return *this;
+        -:   19:    }
+        -:   20:
+        -:   21:        // Multiply Vec3 by scalar
+    #####:   22:    Vec3 operator*(float s) const {
+    #####:   23:        return Vec3{x * s, y * s, z * s};
+        -:   24:    }
+        -:   25:
+        -:   26:    // Add this operator
+        -:   27:    Vec3 operator/(float s) const {
+        -:   28:        return Vec3(x/s, y/s, z/s);
+        -:   29:    }
+        -:   30:
+    #####:   31:    Vec3 operator-(const Vec3& v) const {
+    #####:   32:    return Vec3(x - v.x, y - v.y, z - v.z);
+        -:   33:    }
+        -:   34:
+        -:   35:    // inline Vec3 operator-(const Vec3& a, const Vec3& b) {
+        -:   36:    //     return Vec3(a.x-b.x, a.y-b.y, a.z-b.z);
+        -:   37:    // }
+        -:   38:
+        -:   39:
+    #####:   40:    float length2() const {
+    #####:   41:        return x*x + y*y + z*z;
+        -:   42:    }
+        -:   43:
+        -:   44:    // inline float length2(const Vec3& a, const Vec3& b) {
+        -:   45:    //     float dx = a.x - b.x;
+        -:   46:    //     float dy = a.y - b.y;
+        -:   47:    //     float dz = a.z - b.z;
+        -:   48:    //     return dx*dx + dy*dy + dz*dz;
+        -:   49:    // }
+        -:   50:};

@@ -1,11 +1,15 @@
 # === Star Formation Simulation Makefile ===
 
 CXX = g++
-CXXFLAGS += -std=c++17 -O0 -g -pg -Iinclude
-LDFLAGS  += -pg
+# CXXFLAGS += -std=c++17 -O0 -g -pg -Iinclude
+# LDFLAGS  += -pg
 
 # CXXFLAGS += -std=c++17 -O2 -g -pg -Iinclude
 # LDFLAGS  += -pg
+
+CXXFLAGS = -std=c++17 -O0 -g --coverage
+LDFLAGS  = --coverage
+
 
 
 SRC_DIR = src
@@ -68,26 +72,13 @@ test_freefall: $(TEST_DIR) tests/test_freefall.cpp $(OBJS)
 test_momentum: $(TEST_DIR) tests/test_momentum.cpp $(OBJS)
 	$(CXX) $(CXXFLAGS) -g -o $(TEST_MOMENTUM_EXEC) tests/test_momentum.cpp $(OBJS)
 
-
-
-# Build test_two_body without linking main.cpp
-# test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o src/density.o src/hydro.o
-# 	$(CXX) $(CXXFLAGS) -g -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-# # test_two_body: $(TEST_DIR) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-# # 	$(CXX) $(CXXFLAGS) -o $(TEST_EXEC) tests/test_two_body.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
-
 run_test_two_body: test_two_body
 	./$(TEST_EXEC)
 
-# Build test_freefall without linking main.cpp
-# test_freefall: $(TEST_DIR) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/utils.o src/density.o src/hydro.o
-# 	$(CXX) $(CXXFLAGS) -o $(TEST_FREEFALL) tests/test_freefall.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
 
 run_test_freefall: test_freefall
 	./$(TEST_FREEFALL)
 
-# test_momentum: $(TEST_DIR) tests/test_momentum.cpp src/gravity.o src/init.o src/integrator.o src/utils.o src/density.o src/hydro.o
-# 	$(CXX) $(CXXFLAGS) -o $(TEST_MOMENTUM_EXEC) tests/test_momentum.cpp src/gravity.o src/init.o src/integrator.o src/utils.o
 
 run_test_momentum: test_momentum
 	./$(TEST_MOMENTUM_EXEC)
@@ -99,8 +90,13 @@ tests: run_test_two_body run_test_freefall run_test_momentum
 clean:
 	rm -f $(OBJ) $(TARGET) $(TEST_EXEC) $(TEST_FREEFALL) $(TEST_MOMENTUM_EXEC)
 
+coverage:
+	rm -f src/*.gcda
+	$(MAKE) clean
+	$(MAKE)
+	.bin//star_formation
+	gcov -abcfu src/*.cpp
+	mv *.gcov coverage_reports/
+
 
 .PHONY: all run clean tests test_two_body test_freefall
-
-
-# rm -f $(OBJ) $(TARGET) $(TEST_EXEC) $(TEST_FREEFALL)

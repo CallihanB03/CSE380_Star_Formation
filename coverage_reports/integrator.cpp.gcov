@@ -1,0 +1,63 @@
+        -:    0:Source:src/integrator.cpp
+        -:    1:#include "../include/particles.hpp"
+        -:    2:#include "../include/gravity.hpp"
+        -:    3:#include "../include/vec3.hpp"
+        -:    4:#include "../include/density.hpp"
+        -:    5:#include "../include/hydro.hpp"
+        -:    6:#include <vector>
+        -:    7:
+        -:    8:
+      101:    9:void velocity_verlet(Particles& P,
+        -:   10:                     const std::vector<float>& ax,
+        -:   11:                     const std::vector<float>& ay,
+        -:   12:                     const std::vector<float>& az,
+        -:   13:                     float dt)
+        -:   14:{
+        -:   15:
+      303:   16:    for (size_t i = 0; i < P.N; i++) {
+     202*:   17:        if (!P.alive[i]) continue;
+      202:   18:        P.vx[i] += 0.5f * ax[i] * dt;
+      202:   19:        P.vy[i] += 0.5f * ay[i] * dt;
+      202:   20:        P.vz[i] += 0.5f * az[i] * dt;
+        -:   21:
+      202:   22:        P.x[i] += P.vx[i] * dt;
+      202:   23:        P.y[i] += P.vy[i] * dt;
+      202:   24:        P.z[i] += P.vz[i] * dt;
+        -:   25:    }
+      101:   26:}
+        -:   27:
+        -:   28:
+    #####:   29:void velocity_verlet_cached(Particles& P, float dt, float h) {
+    #####:   30:    size_t N = P.N;
+    #####:   31:    std::vector<float> ax(N, 0.0f), ay(N, 0.0f), az(N, 0.0f);
+        -:   32:
+        -:   33:    // 1. Compute forces at t
+    #####:   34:    compute_gravity(P, ax, ay, az);
+    #####:   35:    compute_density_sph(P, h);
+    #####:   36:    compute_pressure_forces(P, h, ax, ay, az);
+        -:   37:
+        -:   38:    // 2. Half-step velocity & full-step position
+    #####:   39:    for (size_t i = 0; i < N; ++i) {
+    #####:   40:        if (!P.alive[i]) continue;
+    #####:   41:        P.vx[i] += 0.5f * ax[i] * dt;
+    #####:   42:        P.vy[i] += 0.5f * ay[i] * dt;
+    #####:   43:        P.vz[i] += 0.5f * az[i] * dt;
+        -:   44:
+    #####:   45:        P.x[i] += P.vx[i] * dt;
+    #####:   46:        P.y[i] += P.vy[i] * dt;
+    #####:   47:        P.z[i] += P.vz[i] * dt;
+        -:   48:    }
+        -:   49:
+        -:   50:    // 3. Recompute densities and forces at t+dt
+    #####:   51:    compute_density_sph(P, h);          // <-- MUST recompute
+    #####:   52:    compute_gravity(P, ax, ay, az);
+    #####:   53:    compute_pressure_forces(P, h, ax, ay, az);
+        -:   54:
+        -:   55:    // 4. Complete velocity half-step
+    #####:   56:    for (size_t i = 0; i < N; ++i) {
+    #####:   57:        if (!P.alive[i]) continue;
+    #####:   58:        P.vx[i] += 0.5f * ax[i] * dt;
+    #####:   59:        P.vy[i] += 0.5f * ay[i] * dt;
+    #####:   60:        P.vz[i] += 0.5f * az[i] * dt;
+        -:   61:    }
+    #####:   62:}

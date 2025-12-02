@@ -80,14 +80,6 @@ struct Particles {
         }
     }
 
-
-    // helper: count alive non-star gas particles
-    // size_t count_alive() const {
-    //     size_t c = 0;
-    //     for (size_t i=0;i<N;++i) if (alive[i]) ++c;
-    //     return c;
-    // }
-
      // --- NEW METHODS ---
     size_t count_particles_in_stars() const {
         size_t count = 0;

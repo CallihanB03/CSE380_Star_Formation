@@ -34,58 +34,6 @@ void compute_pressure(Particles& P, float K, float gamma) {
     }
 }
 
-// // a_ij contribution = - m_j * (P_i / rho_i^2 + P_j / rho_j^2) * grad W_ij
-// void compute_pressure_forces(Particles& P, float h,
-//                              std::vector<float>& ax,
-//                              std::vector<float>& ay,
-//                              std::vector<float>& az) {
-//     size_t N = P.N;
-//     if (ax.size() != N) ax.assign(N, 0.0f);
-//     if (ay.size() != N) ay.assign(N, 0.0f);
-//     if (az.size() != N) az.assign(N, 0.0f);
-
-//     // pairwise loop
-//     for (size_t i = 0; i < N; ++i) {
-//         for (size_t j = i + 1; j < N; ++j) {
-//             float dx = P.x[i] - P.x[j];
-//             float dy = P.y[i] - P.y[j];
-//             float dz = P.z[i] - P.z[j];
-//             float r2 = dx*dx + dy*dy + dz*dz;
-//             float r = std::sqrt(r2);
-//             if (r > 2.0f * h) continue;
-
-//             float dWdr = cubic_spline_dWdr(r, h); // dW/dr
-//             if (dWdr == 0.0f) continue;
-
-//             float invr = (r > 1e-12f) ? 1.0f / r : 0.0f;
-//             float gradWx = dWdr * (dx * invr);
-//             float gradWy = dWdr * (dy * invr);
-//             float gradWz = dWdr * (dz * invr);
-
-//             float rho_i = std::max(P.density[i], 1e-12f);
-//             float rho_j = std::max(P.density[j], 1e-12f);
-
-//             float term = - (P.mass[j]) * (P.pressure[i] / (rho_i * rho_i) + P.pressure[j] / (rho_j * rho_j));
-
-//             // symmetric update
-//             float ax_con = term * gradWx;
-//             float ay_con = term * gradWy;
-//             float az_con = term * gradWz;
-
-//             ax[i] += ax_con;
-//             ay[i] += ay_con;
-//             az[i] += az_con;
-
-//             // opposite sign for j (Newton's 3rd law)
-//             ax[j] -= ax_con * (P.mass[i] / P.mass[j]); // note: term included m_j; compensate for symmetry
-//             ay[j] -= ay_con * (P.mass[i] / P.mass[j]);
-//             az[j] -= az_con * (P.mass[i] / P.mass[j]);
-//             // The above mass compensation keeps momentum consistent if masses differ.
-//             // If all masses equal, simpler: ax[j] -= ax_con; etc.
-//         }
-//     }
-// }
-
 // Computes SPH pressure forces: a_i = sum_j -m_j (P_i/rho_i^2 + P_j/rho_j^2) grad W_ij
 void compute_pressure_forces(
     Particles& P,

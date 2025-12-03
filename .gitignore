@@ -1,1 +1,3 @@
 *.o
+*.gcno
+**/__pycache__/

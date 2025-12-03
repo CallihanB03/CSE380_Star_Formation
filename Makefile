@@ -4,8 +4,12 @@ CXX = g++
 CXXFLAGS += -std=c++17 -O3 -g -pg -Iinclude
 LDFLAGS  += -pg
 
+# CXXFLAGS += -std=c++17 -O0 -g -pg -Iinclude
+# LDFLAGS  += -pg
+
 # CXXFLAGS = -std=c++17 -O0 -g --coverage
 # LDFLAGS  = --coverage
+
 
 
 

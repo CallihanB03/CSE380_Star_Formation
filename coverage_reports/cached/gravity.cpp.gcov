@@ -1,0 +1,242 @@
+        -:    0:Source:src/gravity.cpp
+        -:    0:Source is newer than graph
+        -:    1:#include "../include/particles.hpp"
+        -:    2:#include <vector>
+        -:    3:#include <cstddef>
+        -:    4:#include <cmath>
+        -:    5:
+        -:    6:void compute_gravity(const Particles& P,
+        -:    7:                     std::vector<float>& ax,
+function _Z15compute_gravityRK9ParticlesRSt6vectorIfSaIfEES5_S5_ff called 0 returned 0% blocks executed 0%
+    #####:    8:                     std::vector<float>& ay,
+        -:    9:                     std::vector<float>& az,
+        -:   10:                     float G,
+        -:   11:                     float softening)
+        -:   12:{
+        -:   13:    size_t N = P.N;
+        -:   14:    std::fill(ax.begin(), ax.end(), 0.0f);
+    #####:   15:    std::fill(ay.begin(), ay.end(), 0.0f);
+    #####:   16:    std::fill(az.begin(), az.end(), 0.0f);
+    %%%%%:   16-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   16-block  1
+call    5 never executed
+    #####:   17:
+    %%%%%:   17-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   17-block  1
+call    5 never executed
+    #####:   18:    for (size_t i = 0; i < N; ++i) {
+    %%%%%:   18-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+        -:   19:        if (!P.alive[i]) continue;
+    #####:   20:        for (size_t j = i+1; j < N; ++j) {
+    %%%%%:   20-block  0
+unconditional  0 never executed
+    %%%%%:   20-block  1
+unconditional  1 never executed
+    %%%%%:   20-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   21:            if (!P.alive[j]) continue;
+    %%%%%:   21-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   21-block  1
+unconditional  3 never executed
+    #####:   22:            float dx = P.x[j] - P.x[i];
+    %%%%%:   22-block  0
+unconditional  0 never executed
+    %%%%%:   22-block  1
+unconditional  1 never executed
+    %%%%%:   22-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   23:            float dy = P.y[j] - P.y[i];
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   23-block  1
+unconditional  3 never executed
+    #####:   24:            float dz = P.z[j] - P.z[i];
+    %%%%%:   24-block  0
+call    0 never executed
+call    1 never executed
+    #####:   25:            float r2 = dx*dx + dy*dy + dz*dz;
+call    0 never executed
+call    1 never executed
+    #####:   26:            float denom = std::sqrt(r2 + softening*softening);
+call    0 never executed
+call    1 never executed
+    #####:   27:            float inv_r3 = 1.0f / (denom * denom * denom + 1e-20f);
+    #####:   28:            float f = G * P.mass[i] * P.mass[j] * inv_r3;
+call    0 never executed
+    #####:   29:            // acceleration contributions
+    #####:   30:            float aix = f * dx / P.mass[i]; // f/m_i = G m_j / r^3 * dx
+call    0 never executed
+call    1 never executed
+        -:   31:            float ajx = -f * dx / P.mass[j];
+    #####:   32:            ax[i] += aix; ax[j] += ajx;
+call    0 never executed
+    #####:   33:            float aiy = f * dy / P.mass[i];
+call    0 never executed
+    #####:   34:            float ajy = -f * dy / P.mass[j];
+call    0 never executed
+call    1 never executed
+    #####:   35:            ay[i] += aiy; ay[j] += ajy;
+call    0 never executed
+    #####:   36:            float aiz = f * dz / P.mass[i];
+call    0 never executed
+    #####:   37:            float ajz = -f * dz / P.mass[j];
+call    0 never executed
+call    1 never executed
+    #####:   38:            az[i] += aiz; az[j] += ajz;
+call    0 never executed
+    #####:   39:        }
+call    0 never executed
+    #####:   40:    }
+call    0 never executed
+call    1 never executed
+unconditional  2 never executed
+        -:   41:}
+        -:   42:
+    #####:   43:
+    %%%%%:   43-block  0
+unconditional  0 never executed
+        -:   44:// Optimized O(N²) gravity computation
+        -:   45:void compute_gravity_cached_optimized(Particles& P,
+function _Z22compute_gravity_cachedR9ParticlesRSt6vectorI4Vec3SaIS2_EEff called 0 returned 0% blocks executed 0%
+    #####:   46:                                      float G,
+        -:   47:                                      float softening)
+        -:   48:{
+        -:   49:    const size_t N = P.N;
+        -:   50:    const float soft2 = softening * softening;
+    #####:   51:
+    #####:   52:    // zero accelerations
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   52-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   52-block  2
+unconditional  7 never executed
+    $$$$$:   52-block  3
+call    8 never executed
+    #####:   53:    float* ax = P.ax.data();
+    %%%%%:   53-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+        -:   54:    float* ay = P.ay.data();
+    #####:   55:    float* az = P.az.data();
+    %%%%%:   55-block  0
+unconditional  0 never executed
+    %%%%%:   55-block  1
+unconditional  1 never executed
+    %%%%%:   55-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   56:    for (size_t i = 0; i < N; ++i) {
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   56-block  1
+unconditional  3 never executed
+    #####:   57:        ax[i] = 0.0f;
+    %%%%%:   57-block  0
+unconditional  0 never executed
+    %%%%%:   57-block  1
+unconditional  1 never executed
+    %%%%%:   57-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   58:        ay[i] = 0.0f;
+    %%%%%:   58-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   58-block  1
+unconditional  3 never executed
+    #####:   59:        az[i] = 0.0f;
+    %%%%%:   59-block  0
+call    0 never executed
+call    1 never executed
+    #####:   60:    }
+call    0 never executed
+call    1 never executed
+    #####:   61:
+call    0 never executed
+call    1 never executed
+    #####:   62:    // main O(N²) loop
+    #####:   63:    for (size_t i = 0; i < N; ++i) {
+call    0 never executed
+    #####:   64:        if (!P.alive[i]) continue;
+    #####:   65:        const float xi = P.x[i];
+        -:   66:        const float yi = P.y[i];
+    #####:   67:        const float zi = P.z[i];
+call    0 never executed
+    #####:   68:        const float mi = P.mass[i];
+    #####:   69:
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   70:        for (size_t j = i + 1; j < N; ++j) {
+call    0 never executed
+call    1 never executed
+        -:   71:            if (!P.alive[j]) continue;
+    #####:   72:            const float dx = P.x[j] - xi;
+call    0 never executed
+    #####:   73:            const float dy = P.y[j] - yi;
+    #####:   74:            const float dz = P.z[j] - zi;
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   75:
+call    0 never executed
+call    1 never executed
+        -:   76:            const float r2 = dx*dx + dy*dy + dz*dz + soft2;
+        -:   77:            const float inv_r = 1.0f / std::sqrt(r2);
+        -:   78:            const float inv_r3 = inv_r * inv_r * inv_r;
+    #####:   79:
+    #####:   80:            const float mj = P.mass[j];
+    %%%%%:   80-block  0
+unconditional  0 never executed
+        -:   81:            const float f = G * inv_r3;
+        -:   82:
+        -:   83:            // apply accelerations
+        -:   84:            const float aix = f * mj * dx;
+        -:   85:            const float aiy = f * mj * dy;
+        -:   86:            const float aiz = f * mj * dz;
+        -:   87:
+        -:   88:            ax[i] += aix;
+        -:   89:            ay[i] += aiy;
+        -:   90:            az[i] += aiz;
+        -:   91:
+        -:   92:            ax[j] -= f * mi * dx;
+        -:   93:            ay[j] -= f * mi * dy;
+        -:   94:            az[j] -= f * mi * dz;
+        -:   95:        }
+        -:   96:    }
+        -:   97:}

@@ -1,0 +1,61 @@
+        -:    0:Source:include/vec3.hpp
+        -:    0:Source is newer than graph
+        -:    1:#include <cmath> 
+        -:    2:
+        -:    3:#pragma once
+        -:    4:
+        -:    5:struct Vec3 {
+        -:    6:    float x, y, z;
+        -:    7:
+        -:    8:    Vec3() : x(0), y(0), z(0) {}
+    #####:    9:    Vec3(float x_, float y_, float z_) : x(x_), y(y_), z(z_) {}
+------------------
+_ZN4Vec3C2Efff:
+function _ZN4Vec3C2Efff called 0 returned 0% blocks executed 0%
+    #####:    9:    Vec3(float x_, float y_, float z_) : x(x_), y(y_), z(z_) {}
+------------------
+_ZN4Vec3C2Efff:
+function _ZN4Vec3C2Efff called 0 returned 0% blocks executed 0%
+    #####:    9:    Vec3(float x_, float y_, float z_) : x(x_), y(y_), z(z_) {}
+------------------
+        -:   10:
+function _ZN4Vec3pLERKS_ called 0 returned 0% blocks executed 0%
+    #####:   11:    Vec3& operator+=(const Vec3& other) {
+    #####:   12:        x += other.x; y += other.y; z += other.z;
+    #####:   13:        return *this;
+    %%%%%:   13-block  0
+unconditional  0 never executed
+        -:   14:    }
+        -:   15:
+        -:   16:    Vec3& operator-=(const Vec3& other) {
+        -:   17:        x -= other.x; y -= other.y; z -= other.z;
+        -:   18:        return *this;
+        -:   19:    }
+        -:   20:
+        -:   21:        // Multiply Vec3 by scalar
+function _ZNK4Vec3mlEf called 0 returned 0% blocks executed 0%
+    #####:   22:    Vec3 operator*(float s) const {
+    #####:   23:        return Vec3{x * s, y * s, z * s};
+    %%%%%:   23-block  0
+call    0 never executed
+unconditional  1 never executed
+        -:   24:    }
+        -:   25:
+        -:   26:    // Add this operator
+        -:   27:    Vec3 operator/(float s) const {
+        -:   28:        return Vec3(x/s, y/s, z/s);
+        -:   29:    }
+        -:   30:
+function _ZNK4Vec3miERKS_ called 0 returned 0% blocks executed 0%
+    #####:   31:    Vec3 operator-(const Vec3& v) const {
+    #####:   32:    return Vec3(x - v.x, y - v.y, z - v.z);
+    %%%%%:   32-block  0
+call    0 never executed
+unconditional  1 never executed
+        -:   33:    }
+        -:   34:
+        -:   35:
+        -:   36:    float length2() const {
+        -:   37:        return x*x + y*y + z*z;
+        -:   38:    }
+        -:   39:};

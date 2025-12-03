@@ -1,0 +1,222 @@
+        -:    0:Source:src/integrator.cpp
+        -:    0:Source is newer than graph
+        -:    1:#include "../include/particles.hpp"
+        -:    2:#include "../include/gravity.hpp"
+        -:    3:#include "../include/vec3.hpp"
+        -:    4:#include "../include/density.hpp"
+        -:    5:#include "../include/hydro.hpp"
+        -:    6:#include <vector>
+        -:    7:
+        -:    8:
+function _Z15velocity_verletR9ParticlesRKSt6vectorIfSaIfEES5_S5_f called 0 returned 0% blocks executed 0%
+    #####:    9:void velocity_verlet(Particles& P,
+        -:   10:                     const std::vector<float>& ax,
+        -:   11:                     const std::vector<float>& ay,
+        -:   12:                     const std::vector<float>& az,
+        -:   13:                     float dt)
+        -:   14:{
+        -:   15:
+    #####:   16:    for (size_t i = 0; i < P.N; i++) {
+    %%%%%:   16-block  0
+unconditional  0 never executed
+    %%%%%:   16-block  1
+unconditional  1 never executed
+    %%%%%:   16-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   17:        if (!P.alive[i]) continue;
+    %%%%%:   17-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   17-block  1
+unconditional  3 never executed
+    #####:   18:        P.vx[i] += 0.5f * ax[i] * dt;
+    %%%%%:   18-block  0
+call    0 never executed
+call    1 never executed
+    #####:   19:        P.vy[i] += 0.5f * ay[i] * dt;
+call    0 never executed
+call    1 never executed
+    #####:   20:        P.vz[i] += 0.5f * az[i] * dt;
+call    0 never executed
+call    1 never executed
+        -:   21:
+    #####:   22:        P.x[i] += P.vx[i] * dt;
+call    0 never executed
+call    1 never executed
+    #####:   23:        P.y[i] += P.vy[i] * dt;
+call    0 never executed
+call    1 never executed
+    #####:   24:        P.z[i] += P.vz[i] * dt;
+call    0 never executed
+call    1 never executed
+unconditional  2 never executed
+        -:   25:    }
+    #####:   26:}
+        -:   27:
+        -:   28:// void velocity_verlet_cached(Particles& P, float dt)
+function _Z22velocity_verlet_cachedR9Particlesff called 0 returned 0% blocks executed 0%
+    #####:   29:// {
+    #####:   30:
+    #####:   31://     for (size_t i = 0; i < P.N; i++) {
+    %%%%%:   31-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   31-block  1
+call    4 never executed
+call    5 never executed
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   31-block  2
+call    9 never executed
+call   10 never executed
+call   11 never executed
+branch 12 never executed
+branch 13 never executed
+    %%%%%:   31-block  3
+call   14 never executed
+    $$$$$:   31-block  4
+unconditional 15 never executed
+    $$$$$:   31-block  5
+unconditional 16 never executed
+    $$$$$:   31-block  6
+unconditional 17 never executed
+    $$$$$:   31-block  7
+unconditional 18 never executed
+    $$$$$:   31-block  8
+unconditional 19 never executed
+    $$$$$:   31-block  9
+unconditional 20 never executed
+        -:   32://         if (!P.alive[i]) continue;
+        -:   33:
+    #####:   34://         P.vx[i] += 0.5f * P.ax[i] * dt;
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   35://         P.vy[i] += 0.5f * P.ay[i] * dt;
+    %%%%%:   35-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   36://         P.vz[i] += 0.5f * P.az[i] * dt;
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   37:
+        -:   38://         P.x[i] += P.vx[i] * dt;
+    #####:   39://         P.y[i] += P.vy[i] * dt;
+    %%%%%:   39-block  0
+unconditional  0 never executed
+    %%%%%:   39-block  1
+unconditional  1 never executed
+    %%%%%:   39-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   40://         P.z[i] += P.vz[i] * dt;
+    %%%%%:   40-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   40-block  1
+unconditional  3 never executed
+    #####:   41://     }
+    %%%%%:   41-block  0
+call    0 never executed
+call    1 never executed
+    #####:   42:// }
+call    0 never executed
+call    1 never executed
+    #####:   43:
+call    0 never executed
+call    1 never executed
+        -:   44:
+    #####:   45:void velocity_verlet_cached(Particles& P, float dt)
+call    0 never executed
+call    1 never executed
+    #####:   46:{
+call    0 never executed
+call    1 never executed
+    #####:   47:    const size_t N = P.N;
+call    0 never executed
+call    1 never executed
+unconditional  2 never executed
+        -:   48:
+        -:   49:    // Cache pointers for speed
+        -:   50:    float* x  = P.x.data();
+    #####:   51:    float* y  = P.y.data();
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   52:    float* z  = P.z.data();
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   53:
+    %%%%%:   53-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   54:    float* vx = P.vx.data();
+        -:   55:    float* vy = P.vy.data();
+    #####:   56:    float* vz = P.vz.data();
+    %%%%%:   56-block  0
+unconditional  0 never executed
+    %%%%%:   56-block  1
+unconditional  1 never executed
+    %%%%%:   56-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   57:
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   57-block  1
+unconditional  3 never executed
+    #####:   58:    float* ax = P.ax.data();
+    %%%%%:   58-block  0
+call    0 never executed
+call    1 never executed
+    #####:   59:    float* ay = P.ay.data();
+call    0 never executed
+call    1 never executed
+    #####:   60:    float* az = P.az.data();
+call    0 never executed
+call    1 never executed
+unconditional  2 never executed
+        -:   61:
+    #####:   62:    const uint8_t* alive = P.alive.data();
+    %%%%%:   62-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+unconditional  3 never executed
+    $$$$$:   62-block  1
+call    4 never executed
+    $$$$$:   62-block  2
+call    5 never executed
+    $$$$$:   62-block  3
+call    6 never executed
+        -:   63:
+        -:   64:    for (size_t i = 0; i < N; ++i) {
+        -:   65:        if (!alive[i]) continue;
+        -:   66:
+        -:   67:        // Half-step velocity update
+        -:   68:        vx[i] += 0.5f * ax[i] * dt;
+        -:   69:        vy[i] += 0.5f * ay[i] * dt;
+        -:   70:        vz[i] += 0.5f * az[i] * dt;
+        -:   71:
+        -:   72:        // Full-step position update
+        -:   73:        x[i] += vx[i] * dt;
+        -:   74:        y[i] += vy[i] * dt;
+        -:   75:        z[i] += vz[i] * dt;
+        -:   76:    }
+        -:   77:}
+        -:   78:

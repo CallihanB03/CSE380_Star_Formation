@@ -1,14 +1,14 @@
 # === Star Formation Simulation Makefile ===
 
 CXX = g++
-CXXFLAGS += -std=c++17 -O3 -g -pg -Iinclude
-LDFLAGS  += -pg
+# CXXFLAGS += -std=c++17 -O3 -g -pg -Iinclude
+# LDFLAGS  += -pg
 
 # CXXFLAGS += -std=c++17 -O0 -g -pg -Iinclude
 # LDFLAGS  += -pg
 
-# CXXFLAGS = -std=c++17 -O0 -g --coverage
-# LDFLAGS  = --coverage
+CXXFLAGS = -std=c++17 -O0 -g --coverage
+LDFLAGS  = --coverage
 
 
 
@@ -97,7 +97,14 @@ coverage:
 	$(MAKE)
 	bin/simulation
 	gcov -abcfu src/*.cpp
-	mv *.gcov coverage_reports/
+	mv *.gcov coverage_reports/normal/
+
+	rm -f src/*.gcda
+	$(MAKE) clean
+	$(MAKE)
+	bin/simulation --use_cached
+	gcov -abcfu src/*.cpp
+	mv *.gcov coverage_reports/cached/
 
 
 .PHONY: all run clean tests test_two_body test_freefall

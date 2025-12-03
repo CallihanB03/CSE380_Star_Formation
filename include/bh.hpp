@@ -22,8 +22,8 @@
 #include <cassert>
 #include <cstddef>
 #include <iostream>
-#include <particles.hpp>
-#include <vec3.hpp>
+#include "particles.hpp"
+#include "vec3.hpp"
 
 // Barnes-Hut solver
 class BarnesHutSolver {

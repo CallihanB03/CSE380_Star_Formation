@@ -1,4 +1,5 @@
         -:    0:Source:src/integrator.cpp
+        -:    0:Source is newer than graph
         -:    1:#include "../include/particles.hpp"
         -:    2:#include "../include/gravity.hpp"
         -:    3:#include "../include/vec3.hpp"
@@ -54,11 +55,11 @@ unconditional  2 never executed
         -:   25:    }
     #####:   26:}
         -:   27:
-        -:   28:
+        -:   28:// void velocity_verlet_cached(Particles& P, float dt)
 function _Z22velocity_verlet_cachedR9Particlesff called 0 returned 0% blocks executed 0%
-    #####:   29:void velocity_verlet_cached(Particles& P, float dt, float h) {
-    #####:   30:    size_t N = P.N;
-    #####:   31:    std::vector<float> ax(N, 0.0f), ay(N, 0.0f), az(N, 0.0f);
+    #####:   29:// {
+    #####:   30:
+    #####:   31://     for (size_t i = 0; i < P.N; i++) {
     %%%%%:   31-block  0
 call    0 never executed
 call    1 never executed
@@ -90,25 +91,25 @@ unconditional 18 never executed
 unconditional 19 never executed
     $$$$$:   31-block  9
 unconditional 20 never executed
-        -:   32:
-        -:   33:    // 1. Compute forces at t
-    #####:   34:    compute_gravity(P, ax, ay, az);
+        -:   32://         if (!P.alive[i]) continue;
+        -:   33:
+    #####:   34://         P.vx[i] += 0.5f * P.ax[i] * dt;
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   35:    compute_density_sph(P, h);
+    #####:   35://         P.vy[i] += 0.5f * P.ay[i] * dt;
     %%%%%:   35-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   36:    compute_pressure_forces(P, h, ax, ay, az);
+    #####:   36://         P.vz[i] += 0.5f * P.az[i] * dt;
     %%%%%:   36-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
         -:   37:
-        -:   38:    // 2. Half-step velocity & full-step position
-    #####:   39:    for (size_t i = 0; i < N; ++i) {
+        -:   38://         P.x[i] += P.vx[i] * dt;
+    #####:   39://         P.y[i] += P.vy[i] * dt;
     %%%%%:   39-block  0
 unconditional  0 never executed
     %%%%%:   39-block  1
@@ -116,55 +117,55 @@ unconditional  1 never executed
     %%%%%:   39-block  2
 branch  2 never executed
 branch  3 never executed
-    #####:   40:        if (!P.alive[i]) continue;
+    #####:   40://         P.z[i] += P.vz[i] * dt;
     %%%%%:   40-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
     %%%%%:   40-block  1
 unconditional  3 never executed
-    #####:   41:        P.vx[i] += 0.5f * ax[i] * dt;
+    #####:   41://     }
     %%%%%:   41-block  0
 call    0 never executed
 call    1 never executed
-    #####:   42:        P.vy[i] += 0.5f * ay[i] * dt;
+    #####:   42:// }
 call    0 never executed
 call    1 never executed
-    #####:   43:        P.vz[i] += 0.5f * az[i] * dt;
+    #####:   43:
 call    0 never executed
 call    1 never executed
         -:   44:
-    #####:   45:        P.x[i] += P.vx[i] * dt;
+    #####:   45:void velocity_verlet_cached(Particles& P, float dt)
 call    0 never executed
 call    1 never executed
-    #####:   46:        P.y[i] += P.vy[i] * dt;
+    #####:   46:{
 call    0 never executed
 call    1 never executed
-    #####:   47:        P.z[i] += P.vz[i] * dt;
+    #####:   47:    const size_t N = P.N;
 call    0 never executed
 call    1 never executed
 unconditional  2 never executed
-        -:   48:    }
-        -:   49:
-        -:   50:    // 3. Recompute densities and forces at t+dt
-    #####:   51:    compute_density_sph(P, h);          // <-- MUST recompute
+        -:   48:
+        -:   49:    // Cache pointers for speed
+        -:   50:    float* x  = P.x.data();
+    #####:   51:    float* y  = P.y.data();
     %%%%%:   51-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   52:    compute_gravity(P, ax, ay, az);
+    #####:   52:    float* z  = P.z.data();
     %%%%%:   52-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   53:    compute_pressure_forces(P, h, ax, ay, az);
+    #####:   53:
     %%%%%:   53-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   54:
-        -:   55:    // 4. Complete velocity half-step
-    #####:   56:    for (size_t i = 0; i < N; ++i) {
+        -:   54:    float* vx = P.vx.data();
+        -:   55:    float* vy = P.vy.data();
+    #####:   56:    float* vz = P.vz.data();
     %%%%%:   56-block  0
 unconditional  0 never executed
     %%%%%:   56-block  1
@@ -172,26 +173,26 @@ unconditional  1 never executed
     %%%%%:   56-block  2
 branch  2 never executed
 branch  3 never executed
-    #####:   57:        if (!P.alive[i]) continue;
+    #####:   57:
     %%%%%:   57-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
     %%%%%:   57-block  1
 unconditional  3 never executed
-    #####:   58:        P.vx[i] += 0.5f * ax[i] * dt;
+    #####:   58:    float* ax = P.ax.data();
     %%%%%:   58-block  0
 call    0 never executed
 call    1 never executed
-    #####:   59:        P.vy[i] += 0.5f * ay[i] * dt;
+    #####:   59:    float* ay = P.ay.data();
 call    0 never executed
 call    1 never executed
-    #####:   60:        P.vz[i] += 0.5f * az[i] * dt;
+    #####:   60:    float* az = P.az.data();
 call    0 never executed
 call    1 never executed
 unconditional  2 never executed
-        -:   61:    }
-    #####:   62:}
+        -:   61:
+    #####:   62:    const uint8_t* alive = P.alive.data();
     %%%%%:   62-block  0
 call    0 never executed
 call    1 never executed
@@ -203,3 +204,19 @@ call    4 never executed
 call    5 never executed
     $$$$$:   62-block  3
 call    6 never executed
+        -:   63:
+        -:   64:    for (size_t i = 0; i < N; ++i) {
+        -:   65:        if (!alive[i]) continue;
+        -:   66:
+        -:   67:        // Half-step velocity update
+        -:   68:        vx[i] += 0.5f * ax[i] * dt;
+        -:   69:        vy[i] += 0.5f * ay[i] * dt;
+        -:   70:        vz[i] += 0.5f * az[i] * dt;
+        -:   71:
+        -:   72:        // Full-step position update
+        -:   73:        x[i] += vx[i] * dt;
+        -:   74:        y[i] += vy[i] * dt;
+        -:   75:        z[i] += vz[i] * dt;
+        -:   76:    }
+        -:   77:}
+        -:   78:

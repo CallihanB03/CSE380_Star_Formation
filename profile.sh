@@ -1,14 +1,13 @@
 #!/bin/bash
-rm -f gmon.out
 
 echo "Running non-cached..."
 ./bin/simulation
-mv gmon.out gmon_normal.out
-gprof ./bin/simulation gmon_normal.out > report_normal.txt
+mv gmon.out gmon_grav_acc.out
+gprof ./bin/simulation gmon_grav_acc.out > report_grav_acc.txt
 
 echo "Running cached..."
-./bin/simulation --cached
-mv gmon.out gmon_cached.out
-gprof ./bin/simulation gmon_cached.out > report_cached.txt
+./bin/simulation --use_bh
+mv gmon.out gmon_bh.out
+gprof ./bin/simulation gmon_bh.out > report_bh.txt
 
-echo "Done! Reports: report_normal.txt and report_cached.txt"
+echo "Done! Reports: report_grav_acc.txt and report_bh.txt"

@@ -53,6 +53,24 @@ void init_spherical(Particles& P) {
 }
 
 
+void identity_for_debugging(Particles& P){
+    P.x[0] = 1.0;
+    P.y[0] = 0.0;
+    P.z[0] = 0.0;
+    P.vx[0] = P.vy[0] = P.vz[0] = 0.0f;
+
+    P.x[1] = 0.0;
+    P.y[1] = 1.0;
+    P.z[1] = 0.0;
+    P.vx[1] = P.vy[1] = P.vz[1] = 0.0f;
+
+    P.x[2] = 0.0;
+    P.y[2] = 0.0;
+    P.z[2] = 1.0;
+    P.vx[2] = P.vy[2] = P.vz[2] = 0.0f;
+}
+
+
 void init_particles(Particles& P, int version_type) {
     switch (version_type) {
         case 1:
@@ -68,6 +86,11 @@ void init_particles(Particles& P, int version_type) {
         case 3:
             std::cout << "Using spherical cloud initialization\n";
             init_spherical(P);
+            break;
+
+        case 4:
+            std::cout << "Using identity initialization for debugging\n";
+            identity_for_debugging(P);
             break;
 
         default:

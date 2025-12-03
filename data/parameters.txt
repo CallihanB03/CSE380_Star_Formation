@@ -1,8 +1,0 @@
-# Simulation parameters
-timestep = 0.001
-num_steps = 1000
-grid_points = 200
-initial_density = 1e-18
-initial_temperature = 10
-gravitational_constant = 6.67430e-11
-output_interval = 50

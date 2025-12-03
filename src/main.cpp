@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <fstream>
 #include <array>
+#include <iostream>
 
 
 int main(int argc, char** argv) {
@@ -30,8 +31,16 @@ int main(int argc, char** argv) {
     float density_threshold =  100.0; 
     int version_type = 2;      
 
-    bool use_bh = (argc > 1 && std::string(argv[1]) == "--use_bh");
-             
+    bool use_bh = (argc > 1 && (std::string(argv[1]) == "--use_bh") || (std::string(argv[2]) == "--use_bh"));
+    bool debugging = (argc > 1 && (std::string(argv[1]) == "--debugging") || (std::string(argv[2]) == "--debugging"));
+
+    std::cout << "debugging: " << debugging << std::endl;
+
+    if (debugging){
+        N = 3;
+        version_type = 4;
+    }
+
 
     Particles P(N);
     // ----------------------------------------------------

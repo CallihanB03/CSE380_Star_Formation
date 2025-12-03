@@ -9,6 +9,7 @@
 
 #include "vec3.hpp"
 #include "stars.hpp"
+#include <cstdint>
 
 struct Particles {
     size_t N = 0;

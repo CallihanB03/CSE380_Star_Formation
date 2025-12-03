@@ -1,0 +1,54 @@
+Makefile:39: warning: overriding recipe for target 'bin'
+Makefile:33: warning: ignoring old recipe for target 'bin'
+Makefile:47: warning: overriding recipe for target 'bin/simulation'
+Makefile:36: warning: ignoring old recipe for target 'bin/simulation'
+Makefile:39: warning: overriding recipe for target 'bin'
+Makefile:33: warning: ignoring old recipe for target 'bin'
+Makefile:47: warning: overriding recipe for target 'bin/simulation'
+Makefile:36: warning: ignoring old recipe for target 'bin/simulation'
+In file included from src/../include/density.hpp:2,
+                 from src/density.cpp:1:
+src/../include/particles.hpp:33:17: error: ‘uint8_t’ was not declared in this scope
+   33 |     std::vector<uint8_t> is_star;   // true if particle is a star / sink
+      |                 ^~~~~~~
+src/../include/particles.hpp:12:1: note: ‘uint8_t’ is defined in header ‘<cstdint>’; did you forget to ‘#include <cstdint>’?
+   11 | #include "stars.hpp"
+  +++ |+#include <cstdint>
+   12 | 
+src/../include/particles.hpp:33:24: error: template argument 1 is invalid
+   33 |     std::vector<uint8_t> is_star;   // true if particle is a star / sink
+      |                        ^
+src/../include/particles.hpp:33:24: error: template argument 2 is invalid
+src/../include/particles.hpp:34:17: error: ‘uint8_t’ was not declared in this scope
+   34 |     std::vector<uint8_t> alive;
+      |                 ^~~~~~~
+src/../include/particles.hpp:34:17: note: ‘uint8_t’ is defined in header ‘<cstdint>’; did you forget to ‘#include <cstdint>’?
+src/../include/particles.hpp:34:24: error: template argument 1 is invalid
+   34 |     std::vector<uint8_t> alive;
+      |                        ^
+src/../include/particles.hpp:34:24: error: template argument 2 is invalid
+src/../include/particles.hpp: In constructor ‘Particles::Particles(size_t)’:
+src/../include/particles.hpp:46:11: error: expression list treated as compound expression in mem-initializer [-fpermissive]
+   46 |           is_star(n, false),
+      |           ^~~~~~~~~~~~~~~~~
+src/../include/particles.hpp:47:11: error: expression list treated as compound expression in mem-initializer [-fpermissive]
+   47 |           alive(n, true)
+      |           ^~~~~~~~~~~~~~
+src/../include/particles.hpp: In member function ‘void Particles::write_csv(const std::string&) const’:
+src/../include/particles.hpp:57:23: error: invalid types ‘const int[size_t {aka long unsigned int}]’ for array subscript
+   57 |             if (!alive[i]) continue;
+      |                       ^
+src/../include/particles.hpp:61:29: error: invalid types ‘const int[size_t {aka long unsigned int}]’ for array subscript
+   61 |                  << (is_star[i] ? 1 : 0) << "\n";
+      |                             ^
+src/../include/particles.hpp: In member function ‘size_t Particles::count_particles_in_stars() const’:
+src/../include/particles.hpp:69:24: error: invalid types ‘const int[size_t {aka long unsigned int}]’ for array subscript
+   69 |             if (is_star[i]) count++;
+      |                        ^
+make: *** [Makefile:53: bin/density.o] Error 1
+/var/spool/slurmd/job2608847/slurm_script: line 20: ./bin/simulation: No such file or directory
+mv: cannot stat 'gmon.out': No such file or directory
+./bin/simulation: No such file or directory
+/var/spool/slurmd/job2608847/slurm_script: line 27: ./bin/simulation: No such file or directory
+mv: cannot stat 'gmon.out': No such file or directory
+./bin/simulation: No such file or directory

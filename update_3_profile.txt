@@ -1,0 +1,1273 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 16.02      1.81     1.81 1301650836     0.00     0.00  bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&)
+ 14.51      3.45     1.64 1157637707     0.00     0.00  compute_density_sph(Particles&, float)
+ 14.07      5.04     1.59 100002486     0.00     0.00  main
+ 13.81      6.60     1.56 150469835     0.00     0.00  compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float)
+  9.82      7.71     1.11      100    11.10    22.30  compute_density_kNN(Particles&, int)
+  7.17      8.52     0.81                             _init
+  5.31      9.12     0.60                             void std::__insertion_sort<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter)
+  4.16      9.59     0.47 250453009     0.00     0.00  void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&)
+  3.72     10.01     0.42   200000     0.00     0.01  update_thermodynamics(Particles&, float)
+  2.48     10.29     0.28 300941956     0.00     0.00  __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const
+  2.30     10.55     0.26 199907788     0.00     0.00  cubic_spline_W(float, float)
+  1.33     10.70     0.15                             void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&)
+  1.06     10.82     0.12 149850000     0.00     0.00  float* std::__copy_move_backward<true, true, std::random_access_iterator_tag>::__copy_move_b<float>(float const*, float const*, float*)
+  0.88     10.92     0.10                             bool __gnu_cxx::operator<=<float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&)
+  0.62     10.99     0.07                             std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data const&)
+  0.53     11.05     0.06                             float* std::uninitialized_fill_n<float*, unsigned long, float>(float*, unsigned long, float const&)
+  0.53     11.11     0.06                             __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter)
+  0.44     11.16     0.05                             __gnu_cxx::__enable_if<std::__is_scalar<float>::__value, void>::__type std::__fill_a1<float*, float>(float*, float*, float const&)
+  0.31     11.20     0.04                             __gnu_cxx::new_allocator<float>::new_allocator(__gnu_cxx::new_allocator<float> const&)
+  0.27     11.22     0.03 50253297     0.00     0.00  void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&)
+  0.18     11.24     0.02                             __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float*>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float*)
+  0.13     11.26     0.01                             std::allocator_traits<std::allocator<float> >::max_size(std::allocator<float> const&)
+  0.09     11.27     0.01  1039666     0.00     0.00  float* std::__copy_move_backward_a2<true, float*, float*>(float*, float*, float*)
+  0.09     11.28     0.01   521941     0.00     0.00  void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter)
+  0.09     11.29     0.01                             void std::_Destroy_aux<true>::__destroy<float*>(float*, float*)
+  0.09     11.30     0.01                             std::remove_reference<__gnu_cxx::__ops::_Iter_less_iter&>::type&& std::move<__gnu_cxx::__ops::_Iter_less_iter&>(__gnu_cxx::__ops::_Iter_less_iter&)
+  0.00     11.30     0.00     9800     0.00     0.00  Vec3::operator+=(Vec3 const&)
+  0.00     11.30     0.00     8848     0.00     0.00  std::vector<Vec3, std::allocator<Vec3> >::vector(unsigned long, Vec3 const&, std::allocator<Vec3> const&)
+  0.00     11.30     0.00     4941     0.00     0.00  Particles::Particles(unsigned long)
+  0.00     11.30     0.00     3800     0.00     0.00  std::vector<Vec3, std::allocator<Vec3> >::assign(unsigned long, Vec3 const&)
+  0.00     11.30     0.00     3004     0.00     0.00  compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float)
+  0.00     11.30     0.00     3000     0.00     0.00  std::allocator<Vec3>::~allocator()
+  0.00     11.30     0.00     2531     0.00     0.00  std::__cxx11::to_string(unsigned long)
+  0.00     11.30     0.00     2298     0.00     0.00  std::char_traits<char>::length(char const*)
+  0.00     11.30     0.00     2286     0.00     0.00  std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags)
+  0.00     11.30     0.00     1644     0.00     0.00  std::vector<float, std::allocator<float> >::_M_fill_assign(unsigned long, float const&)
+  0.00     11.30     0.00     1644     0.00     0.00  std::__lg(long)
+  0.00     11.30     0.00     1233     0.00     0.00  std::vector<float, std::allocator<float> >::reserve(unsigned long)
+  0.00     11.30     0.00     1233     0.00     0.00  void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >)
+  0.00     11.30     0.00     1143     0.00     0.00  std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags)
+  0.00     11.30     0.00     1143     0.00     0.00  _sub_I_00100_0
+  0.00     11.30     0.00     1122     0.00     0.00  std::vector<float, std::allocator<float> >::_M_erase_at_end(float*)
+  0.00     11.30     0.00      822     0.00     0.00  std::vector<float, std::allocator<float> >::max_size() const
+  0.00     11.30     0.00      822     0.00     0.00  std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long)
+  0.00     11.30     0.00      822     0.00     0.00  std::_Vector_base<float, std::allocator<float> >::_Vector_base()
+  0.00     11.30     0.00      822     0.00     0.00  std::vector<float, std::allocator<float> >::vector(unsigned long, float const&, std::allocator<float> const&)
+  0.00     11.30     0.00      711     0.00     0.00  void std::vector<float, std::allocator<float> >::_M_realloc_insert<float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&&)
+  0.00     11.30     0.00      624     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     11.30     0.00      623     0.00     0.00  _GLOBAL__sub_I__Z15compute_gravityRK9ParticlesRSt6vectorIfSaIfEES5_S5_ff
+  0.00     11.30     0.00      600     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     11.30     0.00      600     0.00     0.00  std::_Vector_base<float, std::allocator<float> >::~_Vector_base()
+  0.00     11.30     0.00      600     0.00     0.00  std::vector<float, std::allocator<float> >::_M_fill_initialize(unsigned long, float const&)
+  0.00     11.30     0.00      411     0.00     0.00  std::vector<float, std::allocator<float> >::capacity() const
+  0.00     11.30     0.00      411     0.00     0.00  std::_Vector_base<float, std::allocator<float> >::_Vector_impl::~_Vector_impl()
+  0.00     11.30     0.00      411     0.00     0.00  std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_Vector_impl_data()
+  0.00     11.30     0.00      411     0.00     0.00  std::vector<float, std::allocator<float> >::begin()
+  0.00     11.30     0.00      411     0.00     0.00  std::vector<float, std::allocator<float> >::push_back(float&&)
+  0.00     11.30     0.00      411     0.00     0.00  std::vector<float, std::allocator<float> >::vector()
+  0.00     11.30     0.00      411     0.00     0.00  std::vector<float, std::allocator<float> >::operator[](unsigned long)
+  0.00     11.30     0.00      411     0.00     0.00  unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+  0.00     11.30     0.00      411     0.00     0.00  unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+  0.00     11.30     0.00      411     0.00     0.00  float* std::fill_n<float*, unsigned long, float>(float*, unsigned long, float const&)
+  0.00     11.30     0.00      411     0.00     0.00  operator new(unsigned long, void*)
+  0.00     11.30     0.00      400     0.00     0.00  std::__size_to_integer(unsigned long)
+  0.00     11.30     0.00      328     0.00     0.00  init_spherical(Particles&)
+  0.00     11.30     0.00      317     0.00     0.00  init_clustered(Particles&)
+  0.00     11.30     0.00      300     0.00     0.00  _GLOBAL__sub_I__Z12init_uniformR9Particles
+  0.00     11.30     0.00      300     0.00     0.00  __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator+(long) const
+  0.00     11.30     0.00      300     0.00     0.00  std::_Vector_base<float, std::allocator<float> >::_M_deallocate(float*, unsigned long)
+  0.00     11.30     0.00      300     0.00     0.00  float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&)
+  0.00     11.30     0.00      202     0.00     0.00  std::normal_distribution<float>::param_type::param_type(float, float)
+  0.00     11.30     0.00      200     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+  0.00     11.30     0.00      106     0.00     0.00  std::iterator_traits<Vec3 const*>::difference_type std::distance<Vec3 const*>(Vec3 const*, Vec3 const*)
+  0.00     11.30     0.00      105     0.00     0.00  compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&)
+  0.00     11.30     0.00      102     0.00     0.00  std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(std::allocator<Vec3> const&)
+  0.00     11.30     0.00      101     0.00     0.00  compute_pressure(Particles&, float, float)
+  0.00     11.30     0.00      101     0.00     0.00  std::uniform_real_distribution<float>::uniform_real_distribution(float, float)
+  0.00     11.30     0.00      100     0.00     0.00  std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl::~_Vector_impl()
+  0.00     11.30     0.00      100     0.00     0.00  std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data&)
+  0.00     11.30     0.00      100     0.00     0.00  float const& std::max<float>(float const&, float const&)
+  0.00     11.30     0.00      100     0.00     0.00  void std::iter_swap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >)
+  0.00     11.30     0.00      100     0.00     0.00  std::operator~(std::_Ios_Fmtflags)
+  0.00     11.30     0.00       45     0.00     0.00  init_particles(Particles&, int)
+  0.00     11.30     0.00       36     0.00     0.00  unsigned int std::__detail::__to_chars_len<unsigned long>(unsigned long, int)
+  0.00     11.30     0.00       23     0.00     0.00  std::vector<Vec3, std::allocator<Vec3> >::vector(std::initializer_list<Vec3>, std::allocator<Vec3> const&)
+  0.00     11.30     0.00       20     0.00     0.00  std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long)
+  0.00     11.30     0.00       15     0.00     0.00  void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter)
+  0.00     11.30     0.00       13     0.00     0.00  void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter)
+  0.00     11.30     0.00        8     0.00     0.00  __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter)
+  0.00     11.30     0.00        7     0.00     0.00  std::vector<Vec3, std::allocator<Vec3> >::end()
+  0.00     11.30     0.00        6     0.00     0.19  init_uniform(Particles&)
+  0.00     11.30     0.00        6     0.00     0.00  float std::uniform_real_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&)
+  0.00     11.30     0.00        4     0.00     0.00  std::initializer_list<Vec3>::end() const
+  0.00     11.30     0.00        4     0.00     0.00  std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::mersenne_twister_engine(unsigned long)
+  0.00     11.30     0.00        4     0.00     0.00  std::enable_if<std::__is_bitwise_relocatable<float, void>::value, float*>::type std::__relocate_a_1<float, float>(float*, float*, float*, std::allocator<float>&)
+  0.00     11.30     0.00        4     0.00     0.00  __gnu_cxx::__enable_if<std::__is_integer<unsigned long>::__value, double>::__type std::cbrt<unsigned long>(unsigned long)
+  0.00     11.30     0.00        4     0.00     0.00  void std::__fill_a1<float*, std::vector<float, std::allocator<float> >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&)
+  0.00     11.30     0.00        3     0.00     0.00  Vec3::Vec3(float, float, float)
+  0.00     11.30     0.00        3     0.00     0.00  std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<float> >, std::is_move_constructible<float>, std::is_move_assignable<float> >::value, void>::type std::swap<float>(float&, float&)
+  0.00     11.30     0.00        2     0.00     0.00  __gnu_cxx::new_allocator<Vec3>::new_allocator()
+  0.00     11.30     0.00        2     0.00     0.00  std::initializer_list<Vec3>::begin() const
+  0.00     11.30     0.00        2     0.00     0.00  std::allocator<Vec3>::allocator()
+  0.00     11.30     0.00        2     0.00     0.00  std::normal_distribution<float>::normal_distribution(float, float)
+  0.00     11.30     0.00        2     0.00     0.00  void std::vector<Vec3, std::allocator<Vec3> >::_M_range_initialize<Vec3 const*>(Vec3 const*, Vec3 const*, std::forward_iterator_tag)
+  0.00     11.30     0.00        2     0.00     0.00  void std::__fill_a<float*, float>(float*, float*, float const&)
+  0.00     11.30     0.00        1     0.00     0.00  Vec3::length2() const
+  0.00     11.30     0.00        1     0.00     0.00  bool __gnu_cxx::__ops::_Iter_less_val::operator()<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&) const
+  0.00     11.30     0.00        1     0.00     0.00  std::vector<Vec3, std::allocator<Vec3> >::size() const
+  0.00     11.30     0.00        1     0.00     0.00  std::__detail::_Adaptor<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, float>::_Adaptor(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&)
+  0.00     11.30     0.00        1     0.00     0.00  float* std::__niter_base<float*>(float*)
+  0.00     11.30     0.00        1     0.00     0.19  std::cos(float)
+  0.00     11.30     0.00        1     0.00     0.38  std::sin(float)
+  0.00     11.30     0.00        1     0.00     0.00  _sub_I_00100_0
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.09% of 11.30 seconds
+
+index % time    self  children    called     name
+[1]     39.7    2.01    2.47    1343+100202286 <cycle 7 as a whole> [1]
+                1.59    1.10 100002486+20613       main <cycle 7> [3]
+                0.42    1.38  200000             update_thermodynamics(Particles&, float) <cycle 7> [8]
+                0.00    0.00    1143             std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) <cycle 7> [73]
+-----------------------------------------------
+                                                 <spontaneous>
+[2]     33.7    0.00    3.81                 _sub_D_00100_1 [2]
+                1.71    2.10    1143/1343        main <cycle 7> [3]
+-----------------------------------------------
+                               20613             main <cycle 7> [3]
+                                1143             std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) <cycle 7> [73]
+                             100000000             update_thermodynamics(Particles&, float) <cycle 7> [8]
+                0.30    0.37     200/1343        Vec3* std::__uninitialized_fill_n<false>::__uninit_fill_n<Vec3*, unsigned long, Vec3>(Vec3*, unsigned long, Vec3 const&) [15]
+                1.71    2.10    1143/1343        _sub_D_00100_1 [2]
+[3]     23.8    1.59    1.10 100002486+20613   main <cycle 7> [3]
+                0.84    0.00 601040836/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+                0.17    0.00 100100000/300706292     void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.09    0.00 100002286/300941956     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const [19]
+                0.00    0.00    2286/300706292     void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00    2298/2298        std::char_traits<char>::length(char const*) [66]
+                0.00    0.00    1143/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00     284/3094        std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+                0.00    0.00     100/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00      24/3094        unsigned int std::__detail::__to_chars_len<unsigned long>(unsigned long, int) <cycle 8> [99]
+                0.00    0.00      36/45          init_particles(Particles&, int) [108]
+                0.00    0.00    1143/1143        _sub_I_00100_0 [128]
+                0.00    0.00    1143/2286        std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [123]
+                0.00    0.00     100/300         _GLOBAL__sub_I__Z12init_uniformR9Particles [150]
+                0.00    0.00     100/300         float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [152]
+                0.00    0.00     100/100         std::operator~(std::_Ios_Fmtflags) [162]
+                              200000             update_thermodynamics(Particles&, float) <cycle 7> [8]
+                                1143             std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) <cycle 7> [73]
+                               20613             main <cycle 7> [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[4]     19.7    0.00    2.23                 std::allocator_traits<std::allocator<Vec3> >::allocate(std::allocator<Vec3>&, unsigned long) [4]
+                1.11    1.12     100/100         compute_density_kNN(Particles&, int) [5]
+                0.00    0.00     100/519943      void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+                0.00    0.00     100/100         void std::iter_swap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [161]
+-----------------------------------------------
+                             100000000             compute_density_kNN(Particles&, int) [5]
+                1.11    1.12     100/100         std::allocator_traits<std::allocator<Vec3> >::allocate(std::allocator<Vec3>&, unsigned long) [4]
+[5]     19.7    1.11    1.12     100+100000000 compute_density_kNN(Particles&, int) [5]
+                0.98    0.00 700100000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.14    0.00 100000000/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00     100/400         std::__size_to_integer(unsigned long) [149]
+                             100000000             compute_density_kNN(Particles&, int) [5]
+-----------------------------------------------
+[6]     16.8    1.90    0.00 1357445795+109453  <cycle 1 as a whole> [6]
+                1.64    0.00 1157637707+1233        compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.26    0.00 199907788+1           cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00    1644             std::vector<float, std::allocator<float> >::_M_fill_assign(unsigned long, float const&) <cycle 1> [124]
+                0.00    0.00    1233+411         std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+                0.00    0.00    1233             void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+                0.00    0.00    1122             std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+                0.00    0.00     822             std::_Vector_base<float, std::allocator<float> >::_Vector_base() <cycle 1> [132]
+                0.00    0.00     411             std::vector<float, std::allocator<float> >::vector() <cycle 1> [143]
+                0.00    0.00     411             std::vector<float, std::allocator<float> >::begin() <cycle 1> [141]
+                0.00    0.00     411             std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_Vector_impl_data() <cycle 1> [140]
+                0.00    0.00     411             std::vector<float, std::allocator<float> >::push_back(float&&) <cycle 1> [142]
+                0.00    0.00     411             std::_Vector_base<float, std::allocator<float> >::_Vector_impl::~_Vector_impl() <cycle 1> [139]
+                0.00    0.00     411             unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [146]
+                0.00    0.00     411             std::vector<float, std::allocator<float> >::operator[](unsigned long) <cycle 1> [144]
+                0.00    0.00     411             unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [145]
+                0.00    0.00     411             operator new(unsigned long, void*) <cycle 1> [148]
+-----------------------------------------------
+                0.00    0.00    1000/1301650836     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.00    0.00  100000/1301650836     std::_Vector_base<Vec3, std::allocator<Vec3> >::~_Vector_base() [42]
+                0.00    0.00  100000/1301650836     update_thermodynamics(Particles&, float) <cycle 7> [8]
+                0.00    0.00  101000/1301650836     _GLOBAL__sub_I__Z16compute_pressureR9Particlesff [60]
+                0.00    0.00  101000/1301650836     std::pow(float, float) [61]
+                0.00    0.00  101000/1301650836     Vec3::operator-(Vec3 const&) const [51]
+                0.00    0.00  200000/1301650836     std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(unsigned long, std::allocator<Vec3> const&) [40]
+                0.00    0.00  303000/1301650836     __static_initialization_and_destruction_0(int, int) [44]
+                0.00    0.00  303000/1301650836     Vec3::operator*(float) const [45]
+                0.07    0.00 49950000/1301650836     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [21]
+                0.07    0.00 49950000/1301650836     __gnu_cxx::new_allocator<float>::new_allocator(__gnu_cxx::new_allocator<float> const&) [27]
+                0.07    0.00 49950000/1301650836     float* std::uninitialized_fill_n<float*, unsigned long, float>(float*, unsigned long, float const&) [25]
+                0.21    0.00 149850000/1301650836     bool __gnu_cxx::operator<=<float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [18]
+                0.56    0.00 399600000/1301650836     void std::__insertion_sort<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [12]
+                0.84    0.00 601040836/1301650836     main <cycle 7> [3]
+[7]     16.0    1.81    0.00 1301650836         bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                              200000             main <cycle 7> [3]
+[8]     15.9    0.42    1.38  200000         update_thermodynamics(Particles&, float) <cycle 7> [8]
+                1.04    0.09 99900000/150469835     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.17    0.00 100100000/300706292     void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.08    0.00 99900000/149850000     float* std::__copy_move_backward<true, true, std::random_access_iterator_tag>::__copy_move_b<float>(float const*, float const*, float*) [26]
+                0.00    0.00  100000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+                             100000000             main <cycle 7> [3]
+-----------------------------------------------
+[9]     15.0    1.56    0.14 150469835+3004    <cycle 5 as a whole> [9]
+                1.56    0.14 150469835             compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.00    0.00    3004+4512        compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+-----------------------------------------------
+                                   1             compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                0.00    0.00       1/150469835     std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data const&) [67]
+                0.00    0.00  100000/150469835     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__copy_move_backward_a<true, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [35]
+                0.52    0.05 50469833/150469835     void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [13]
+                1.04    0.09 99900000/150469835     update_thermodynamics(Particles&, float) <cycle 7> [8]
+[10]    15.0    1.56    0.14 150469835         compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.14    0.00 149850003/300941956     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const [19]
+                0.00    0.00    6000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00    1000/300706292     void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00    1000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+                0.00    0.00       2/300706292     void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                                3003             compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+-----------------------------------------------
+                                1233             compute_density_sph(Particles&, float) <cycle 1> [11]
+                              100000             cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00      11/1357445795     init_clustered(Particles&) <cycle 6> [98]
+                0.00    0.00      12/1357445795     unsigned int std::__detail::__to_chars_len<unsigned long>(unsigned long, int) <cycle 8> [99]
+                0.00    0.00      33/1357445795     compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                0.00    0.00     100/1357445795     std::_Vector_base<Vec3, std::allocator<Vec3> >::_M_allocate(unsigned long) [84]
+                0.00    0.00     100/1357445795     __gnu_cxx::__normal_iterator<Vec3*, std::vector<Vec3, std::allocator<Vec3> > >::base() const [83]
+                0.00    0.00     200/1357445795     __gnu_cxx::new_allocator<Vec3>::max_size() const [82]
+                0.00    0.00     300/1357445795     Vec3* std::__fill_n_a<Vec3*, unsigned long, Vec3>(Vec3*, unsigned long, Vec3 const&, std::random_access_iterator_tag) [79]
+                0.00    0.00     300/1357445795     __gnu_cxx::__enable_if<!std::__is_scalar<Vec3>::__value, void>::__type std::__fill_a1<Vec3*, Vec3>(Vec3*, Vec3*, Vec3 const&) [80]
+                0.00    0.00     300/1357445795     __gnu_cxx::new_allocator<Vec3>::deallocate(Vec3*, unsigned long) [77]
+                0.00    0.00     411/1357445795     std::sqrt(float) [74]
+                0.00    0.00    1143/1357445795     main <cycle 7> [3]
+                0.00    0.00    6000/1357445795     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.00    0.00  100000/1357445795     std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(unsigned long, std::allocator<Vec3> const&) [40]
+                0.00    0.00  100000/1357445795     std::_Vector_base<Vec3, std::allocator<Vec3> >::_M_get_Tp_allocator() [62]
+                0.00    0.00  100000/1357445795     void std::_Destroy<Vec3*, Vec3>(Vec3*, Vec3*, std::allocator<Vec3>&) [64]
+                0.00    0.00  100000/1357445795     std::allocator_traits<std::allocator<Vec3> >::max_size(std::allocator<Vec3> const&) [63]
+                0.00    0.00  200000/1357445795     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__copy_move_backward_a<true, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [35]
+                0.00    0.00  200000/1357445795     Vec3* std::fill_n<Vec3*, unsigned long, Vec3>(Vec3*, unsigned long, Vec3 const&) [54]
+                0.00    0.00  200000/1357445795     std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_Vector_impl_data() [53]
+                0.00    0.00  300000/1357445795     bool __gnu_cxx::__ops::_Val_less_iter::operator()<float, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(float&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) const [47]
+                0.00    0.00  300000/1357445795     std::_Vector_base<Vec3, std::allocator<Vec3> >::~_Vector_base() [42]
+                0.00    0.00  300000/1357445795     std::vector<Vec3, std::allocator<Vec3> >::_M_fill_initialize(unsigned long, Vec3 const&) [48]
+                0.00    0.00  300000/1357445795     void std::__fill_a1<Vec3*, std::vector<Vec3, std::allocator<Vec3> >, Vec3>(__gnu_cxx::__normal_iterator<Vec3*, std::vector<Vec3, std::allocator<Vec3> > >, __gnu_cxx::__normal_iterator<Vec3*, std::vector<Vec3, std::allocator<Vec3> > >, Vec3 const&) [49]
+                0.00    0.00  300300/1357445795     std::vector<Vec3, std::allocator<Vec3> >::_M_erase_at_end(Vec3*) [46]
+                0.00    0.00  519833/1357445795     float* std::__niter_base<float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [39]
+                0.00    0.00  700000/1357445795     init_uniform(Particles&) [37]
+                0.00    0.00 1039666/1357445795     float* std::__copy_move_backward_a1<true, float*, float*>(float*, float*, float*) [36]
+                0.00    0.00 1039666/1357445795     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float*>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float*) [30]
+                0.07    0.00 49950000/1357445795     std::remove_reference<__gnu_cxx::__ops::_Iter_less_iter&>::type&& std::move<__gnu_cxx::__ops::_Iter_less_iter&>(__gnu_cxx::__ops::_Iter_less_iter&) [28]
+                0.14    0.00 99900000/1357445795     void std::__insertion_sort<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [12]
+                0.14    0.00 99900000/1357445795     std::allocator_traits<std::allocator<float> >::max_size(std::allocator<float> const&) [23]
+                0.14    0.00 99900000/1357445795     std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data const&) [22]
+                0.14    0.00 101979332/1357445795     void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [13]
+                0.98    0.00 700100000/1357445795     compute_density_kNN(Particles&, int) [5]
+[11]    14.5    1.64    0.00 1157637707+1233    compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00    1644/1644        std::__lg(long) [125]
+                0.00    0.00     411/822         std::vector<float, std::allocator<float> >::vector(unsigned long, float const&, std::allocator<float> const&) [133]
+                                 411             operator new(unsigned long, void*) <cycle 1> [148]
+                                 411             unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [146]
+                                 411             std::_Vector_base<float, std::allocator<float> >::_Vector_impl::~_Vector_impl() <cycle 1> [139]
+                                 411             std::_Vector_base<float, std::allocator<float> >::_Vector_base() <cycle 1> [132]
+                                 411             std::vector<float, std::allocator<float> >::vector() <cycle 1> [143]
+                                1233             compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]    12.1    0.60    0.77                 void std::__insertion_sort<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [12]
+                0.56    0.00 399600000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+                0.14    0.00 99900000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.07    0.00 49950000/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+-----------------------------------------------
+                                                 <spontaneous>
+[13]     9.2    0.15    0.89                 void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [13]
+                0.52    0.05 50469833/150469835     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.14    0.00 101979332/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.07    0.00 49950000/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                0.05    0.00 49950000/300941956     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const [19]
+                0.04    0.00 49950000/149850000     float* std::__copy_move_backward<true, true, std::random_access_iterator_tag>::__copy_move_b<float>(float const*, float const*, float*) [26]
+                0.01    0.00 1039666/1039666     float* std::__copy_move_backward_a2<true, float*, float*>(float*, float*, float*) [33]
+                0.01    0.00  519833/519943      void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+-----------------------------------------------
+                                                 <spontaneous>
+[14]     7.2    0.81    0.00                 _init [14]
+-----------------------------------------------
+                                                 <spontaneous>
+[15]     5.9    0.00    0.67                 Vec3* std::__uninitialized_fill_n<false>::__uninit_fill_n<Vec3*, unsigned long, Vec3>(Vec3*, unsigned long, Vec3 const&) [15]
+                0.30    0.37     200/1343        main <cycle 7> [3]
+                0.00    0.00     100/100         float const& std::max<float>(float const&, float const&) [72]
+                0.00    0.00     100/100         std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data&) [160]
+-----------------------------------------------
+[16]     4.4    0.50    0.00 300706292+17      <cycle 2 as a whole> [16]
+                0.47    0.00 250453009             void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.03    0.00 50253297             void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00       3             std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<float> >, std::is_move_constructible<float>, std::is_move_assignable<float> >::value, void>::type std::swap<float>(float&, float&) <cycle 2> [97]
+-----------------------------------------------
+                                   4             void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00       1/300706292     init_clustered(Particles&) <cycle 6> [98]
+                0.00    0.00       2/300706292     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.00    0.00    1000/300706292     float const& std::max<float>(float const&, float const&) [72]
+                0.00    0.00  101000/300706292     Vec3::operator-(Vec3 const&) const [51]
+                0.00    0.00  101002/300706292     compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                0.08    0.00 50050000/300706292     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [21]
+                0.17    0.00 100100000/300706292     update_thermodynamics(Particles&, float) <cycle 7> [8]
+                0.17    0.00 100100000/300706292     main <cycle 7> [3]
+[17]     4.2    0.47    0.00 250453009         void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.00    0.00       4/17          void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+                                   8             void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                                   3             std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<float> >, std::is_move_constructible<float>, std::is_move_assignable<float> >::value, void>::type std::swap<float>(float&, float&) <cycle 2> [97]
+-----------------------------------------------
+                                                 <spontaneous>
+[18]     2.7    0.10    0.21                 bool __gnu_cxx::operator<=<float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [18]
+                0.21    0.00 149850000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                0.00    0.00       1/300941956     compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                0.00    0.00  100000/300941956     __gnu_cxx::__enable_if<std::__is_scalar<float>::__value, void>::__type std::__fill_a1<float*, float>(float*, float*, float const&) [24]
+                0.00    0.00 1039666/300941956     float* std::__copy_move_backward<true, true, std::random_access_iterator_tag>::__copy_move_b<float>(float const*, float const*, float*) [26]
+                0.05    0.00 49950000/300941956     void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [13]
+                0.09    0.00 100002286/300941956     main <cycle 7> [3]
+                0.14    0.00 149850003/300941956     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+[19]     2.5    0.28    0.00 300941956         __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const [19]
+-----------------------------------------------
+                                   1             cubic_spline_W(float, float) <cycle 1> [20]
+                                 411             std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+                                 411             void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+                0.00    0.00       2/1357445795     std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::mersenne_twister_engine(unsigned long) [104]
+                0.00    0.00       2/1357445795     void std::vector<Vec3, std::allocator<Vec3> >::_M_range_initialize<Vec3 const*>(Vec3 const*, Vec3 const*, std::forward_iterator_tag) [105]
+                0.00    0.00       2/1357445795     void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+                0.00    0.00     100/1357445795     main <cycle 7> [3]
+                0.00    0.00    1003/1357445795     void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+                0.00    0.00    1143/1357445795     std::char_traits<char>::length(char const*) [66]
+                0.00    0.00    1143/1357445795     std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) <cycle 7> [73]
+                0.00    0.00    1500/1357445795     compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                0.00    0.00    2071/1357445795     Particles::Particles(unsigned long) <cycle 8> [70]
+                0.07    0.00 49950000/1357445795     void std::__insertion_sort<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [12]
+                0.07    0.00 49950000/1357445795     void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [13]
+                0.14    0.00 100000000/1357445795     compute_density_kNN(Particles&, int) [5]
+[20]     2.3    0.26    0.00 199907788+1       cubic_spline_W(float, float) <cycle 1> [20]
+                              100000             compute_density_sph(Particles&, float) <cycle 1> [11]
+                                   1             cubic_spline_W(float, float) <cycle 1> [20]
+-----------------------------------------------
+                                                 <spontaneous>
+[21]     1.9    0.06    0.15                 __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [21]
+                0.08    0.00 50050000/300706292     void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.07    0.00 49950000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+                0.00    0.00     500/600         __static_initialization_and_destruction_0(int, int) [135]
+                0.00    0.00     300/300         __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator+(long) const [151]
+-----------------------------------------------
+                                                 <spontaneous>
+[22]     1.9    0.07    0.14                 std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data const&) [22]
+                0.14    0.00 99900000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[23]     1.4    0.01    0.14                 std::allocator_traits<std::allocator<float> >::max_size(std::allocator<float> const&) [23]
+                0.14    0.00 99900000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[24]     1.2    0.05    0.08                 __gnu_cxx::__enable_if<std::__is_scalar<float>::__value, void>::__type std::__fill_a1<float*, float>(float*, float*, float const&) [24]
+                0.08    0.00 49950000/300706292     void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00  100000/300941956     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[25]     1.1    0.06    0.07                 float* std::uninitialized_fill_n<float*, unsigned long, float>(float*, unsigned long, float const&) [25]
+                0.07    0.00 49950000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                0.04    0.00 49950000/149850000     void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [13]
+                0.08    0.00 99900000/149850000     update_thermodynamics(Particles&, float) <cycle 7> [8]
+[26]     1.1    0.12    0.00 149850000         float* std::__copy_move_backward<true, true, std::random_access_iterator_tag>::__copy_move_b<float>(float const*, float const*, float*) [26]
+                0.00    0.00 1039666/300941956     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const [19]
+-----------------------------------------------
+                                                 <spontaneous>
+[27]     0.9    0.04    0.07                 __gnu_cxx::new_allocator<float>::new_allocator(__gnu_cxx::new_allocator<float> const&) [27]
+                0.07    0.00 49950000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[28]     0.7    0.01    0.07                 std::remove_reference<__gnu_cxx::__ops::_Iter_less_iter&>::type&& std::move<__gnu_cxx::__ops::_Iter_less_iter&>(__gnu_cxx::__ops::_Iter_less_iter&) [28]
+                0.07    0.00 49950000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                   2             std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<float> >, std::is_move_constructible<float>, std::is_move_assignable<float> >::value, void>::type std::swap<float>(float&, float&) <cycle 2> [97]
+                                   8             void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.00    0.00       1/300706292     compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                0.00    0.00    1000/300706292     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.00    0.00    2286/300706292     main <cycle 7> [3]
+                0.00    0.00  100000/300706292     init_uniform(Particles&) [37]
+                0.00    0.00  100000/300706292     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__copy_move_backward_a<true, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [35]
+                0.00    0.00  100000/300706292     std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(unsigned long, std::allocator<Vec3> const&) [40]
+                0.08    0.00 49950000/300706292     __gnu_cxx::__enable_if<std::__is_scalar<float>::__value, void>::__type std::__fill_a1<float*, float>(float*, float*, float const&) [24]
+[29]     0.3    0.03    0.00 50253297         void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00       4/17          void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+                0.00    0.00       2/17          __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [92]
+                                   4             void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+-----------------------------------------------
+                                                 <spontaneous>
+[30]     0.2    0.02    0.00                 __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float*>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float*) [30]
+                0.00    0.00 1039666/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+[31]     0.1    0.01    0.00  519943+2002    <cycle 4 as a whole> [31]
+                0.01    0.00  521941+1003        void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+                0.00    0.00       4             std::enable_if<std::__is_bitwise_relocatable<float, void>::value, float*>::type std::__relocate_a_1<float, float>(float*, float*, float*, std::allocator<float>&) <cycle 4> [165]
+-----------------------------------------------
+                                1003             void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+                                2000             std::enable_if<std::__is_bitwise_relocatable<float, void>::value, float*>::type std::__relocate_a_1<float, float>(float*, float*, float*, std::allocator<float>&) <cycle 4> [165]
+                0.00    0.00       2/519943      void std::__fill_a<float*, float>(float*, float*, float const&) [94]
+                0.00    0.00       3/519943      std::vector<Vec3, std::allocator<Vec3> >::size() const [91]
+                0.00    0.00       3/519943      std::vector<Vec3, std::allocator<Vec3> >::assign(unsigned long, Vec3 const&) [89]
+                0.00    0.00     100/519943      std::allocator_traits<std::allocator<Vec3> >::allocate(std::allocator<Vec3>&, unsigned long) [4]
+                0.01    0.00  519833/519943      void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [13]
+[32]     0.1    0.01    0.00  521941+1003    void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+                0.00    0.00    1003/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00     200/400         std::__size_to_integer(unsigned long) [149]
+                                   2             std::enable_if<std::__is_bitwise_relocatable<float, void>::value, float*>::type std::__relocate_a_1<float, float>(float*, float*, float*, std::allocator<float>&) <cycle 4> [165]
+                                1003             void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+-----------------------------------------------
+                0.01    0.00 1039666/1039666     void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [13]
+[33]     0.1    0.01    0.00 1039666         float* std::__copy_move_backward_a2<true, float*, float*>(float*, float*, float*) [33]
+                0.00    0.00       1/1           bool __gnu_cxx::__ops::_Iter_less_val::operator()<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&) const [171]
+-----------------------------------------------
+                                                 <spontaneous>
+[34]     0.1    0.01    0.00                 void std::_Destroy_aux<true>::__destroy<float*>(float*, float*) [34]
+-----------------------------------------------
+                                                 <spontaneous>
+[35]     0.0    0.00    0.00                 __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__copy_move_backward_a<true, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [35]
+                0.00    0.00  100000/150469835     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.00    0.00  200000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00  100000/300706292     void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+-----------------------------------------------
+                                                 <spontaneous>
+[36]     0.0    0.00    0.00                 float* std::__copy_move_backward_a1<true, float*, float*>(float*, float*, float*) [36]
+                0.00    0.00 1039666/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                0.00    0.00       1/6           std::iterator_traits<Vec3*>::iterator_category std::__iterator_category<Vec3*>(Vec3* const&) [57]
+                0.00    0.00       1/6           cubic_spline_dWdr(float, float) [55]
+                0.00    0.00       1/6           std::cos(float) [56]
+                0.00    0.00       1/6           std::log(float) [58]
+                0.00    0.00       2/6           std::sin(float) [50]
+[37]     0.0    0.00    0.00       6         init_uniform(Particles&) [37]
+                0.00    0.00  700000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00  100000/300706292     void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+-----------------------------------------------
+[38]     0.0    0.00    0.00     508+343     <cycle 6 as a whole> [38]
+                0.00    0.00     328+106         init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00     105+811         compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                0.00    0.00     317+3           init_clustered(Particles&) <cycle 6> [98]
+                0.00    0.00     101+101         compute_pressure(Particles&, float, float) <cycle 6> [157]
+-----------------------------------------------
+                                                 <spontaneous>
+[39]     0.0    0.00    0.00                 float* std::__niter_base<float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [39]
+                0.00    0.00  519833/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[40]     0.0    0.00    0.00                 std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(unsigned long, std::allocator<Vec3> const&) [40]
+                0.00    0.00  200000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+                0.00    0.00  100000/300706292     void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00  100000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                 106             init_spherical(Particles&) <cycle 6> [41]
+                                 124             init_clustered(Particles&) <cycle 6> [98]
+                0.00    0.00       2/508         Vec3* std::__addressof<Vec3>(Vec3&) [68]
+                0.00    0.00       2/508         void std::_Construct<Vec3, Vec3 const&>(Vec3*, Vec3 const&) [65]
+                0.00    0.00     100/508         void std::__fill_a<Vec3*, Vec3>(Vec3*, Vec3*, Vec3 const&) [43]
+                0.00    0.00     100/508         __gnu_cxx::new_allocator<Vec3>::allocate(unsigned long, void const*) [52]
+[41]     0.0    0.00    0.00     328+106     init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00       1/1           std::sin(float) [50]
+                0.00    0.00       1/1           std::cos(float) [56]
+                0.00    0.00       4/4           __gnu_cxx::__enable_if<std::__is_integer<unsigned long>::__value, double>::__type std::cbrt<unsigned long>(unsigned long) [107]
+                0.00    0.00       2/4           std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::mersenne_twister_engine(unsigned long) [104]
+                0.00    0.00       6/23          std::vector<Vec3, std::allocator<Vec3> >::vector(std::initializer_list<Vec3>, std::allocator<Vec3> const&) [106]
+                0.00    0.00       2/2           std::normal_distribution<float>::normal_distribution(float, float) [109]
+                0.00    0.00       3/45          init_particles(Particles&, int) [108]
+                0.00    0.00     200/300         _GLOBAL__sub_I__Z12init_uniformR9Particles [150]
+                0.00    0.00     100/200         __static_initialization_and_destruction_0(int, int) [154]
+                0.00    0.00       2/2           std::allocator<Vec3>::allocator() [169]
+                                   6             init_clustered(Particles&) <cycle 6> [98]
+                                   1             compute_pressure(Particles&, float, float) <cycle 6> [157]
+                                 106             init_spherical(Particles&) <cycle 6> [41]
+-----------------------------------------------
+                                                 <spontaneous>
+[42]     0.0    0.00    0.00                 std::_Vector_base<Vec3, std::allocator<Vec3> >::~_Vector_base() [42]
+                0.00    0.00  300000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00  100000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[43]     0.0    0.00    0.00                 void std::__fill_a<Vec3*, Vec3>(Vec3*, Vec3*, Vec3 const&) [43]
+                0.00    0.00     100/508         compute_pressure(Particles&, float, float) <cycle 6> [157]
+                0.00    0.00     100/508         init_clustered(Particles&) <cycle 6> [98]
+                0.00    0.00     100/508         init_spherical(Particles&) <cycle 6> [41]
+-----------------------------------------------
+                                                 <spontaneous>
+[44]     0.0    0.00    0.00                 __static_initialization_and_destruction_0(int, int) [44]
+                0.00    0.00  303000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[45]     0.0    0.00    0.00                 Vec3::operator*(float) const [45]
+                0.00    0.00  303000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[46]     0.0    0.00    0.00                 std::vector<Vec3, std::allocator<Vec3> >::_M_erase_at_end(Vec3*) [46]
+                0.00    0.00  300300/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[47]     0.0    0.00    0.00                 bool __gnu_cxx::__ops::_Val_less_iter::operator()<float, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(float&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) const [47]
+                0.00    0.00  300000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[48]     0.0    0.00    0.00                 std::vector<Vec3, std::allocator<Vec3> >::_M_fill_initialize(unsigned long, Vec3 const&) [48]
+                0.00    0.00  300000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[49]     0.0    0.00    0.00                 void std::__fill_a1<Vec3*, std::vector<Vec3, std::allocator<Vec3> >, Vec3>(__gnu_cxx::__normal_iterator<Vec3*, std::vector<Vec3, std::allocator<Vec3> > >, __gnu_cxx::__normal_iterator<Vec3*, std::vector<Vec3, std::allocator<Vec3> > >, Vec3 const&) [49]
+                0.00    0.00  300000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                0.00    0.00       1/1           init_spherical(Particles&) <cycle 6> [41]
+[50]     0.0    0.00    0.00       1         std::sin(float) [50]
+                0.00    0.00       2/6           init_uniform(Particles&) [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[51]     0.0    0.00    0.00                 Vec3::operator-(Vec3 const&) const [51]
+                0.00    0.00  101000/300706292     void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.00    0.00  101000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[52]     0.0    0.00    0.00                 __gnu_cxx::new_allocator<Vec3>::allocate(unsigned long, void const*) [52]
+                0.00    0.00     100/508         compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                0.00    0.00     100/508         init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00       1/1           Vec3::length2() const [170]
+-----------------------------------------------
+                                                 <spontaneous>
+[53]     0.0    0.00    0.00                 std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_Vector_impl_data() [53]
+                0.00    0.00  200000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[54]     0.0    0.00    0.00                 Vec3* std::fill_n<Vec3*, unsigned long, Vec3>(Vec3*, unsigned long, Vec3 const&) [54]
+                0.00    0.00  200000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[55]     0.0    0.00    0.00                 cubic_spline_dWdr(float, float) [55]
+                0.00    0.00       1/6           init_uniform(Particles&) [37]
+                0.00    0.00       1/508         init_clustered(Particles&) <cycle 6> [98]
+-----------------------------------------------
+                0.00    0.00       1/1           init_spherical(Particles&) <cycle 6> [41]
+[56]     0.0    0.00    0.00       1         std::cos(float) [56]
+                0.00    0.00       1/6           init_uniform(Particles&) [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[57]     0.0    0.00    0.00                 std::iterator_traits<Vec3*>::iterator_category std::__iterator_category<Vec3*>(Vec3* const&) [57]
+                0.00    0.00       1/6           init_uniform(Particles&) [37]
+-----------------------------------------------
+                                                 <spontaneous>
+[58]     0.0    0.00    0.00                 std::log(float) [58]
+                0.00    0.00       1/6           init_uniform(Particles&) [37]
+-----------------------------------------------
+                                 811             compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                                   2             init_clustered(Particles&) <cycle 6> [98]
+                0.00    0.00       1/508         void std::_Construct<Vec3, Vec3 const&>(Vec3*, Vec3 const&) [65]
+                0.00    0.00       2/508         std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data const&) [67]
+                0.00    0.00     100/508         __gnu_cxx::new_allocator<Vec3>::allocate(unsigned long, void const*) [52]
+[59]     0.0    0.00    0.00     105+811     compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                0.00    0.00  101002/300706292     void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.00    0.00      33/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00       1/150469835     compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                0.00    0.00       1/300941956     __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const [19]
+                                 110             init_clustered(Particles&) <cycle 6> [98]
+                                 811             compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+-----------------------------------------------
+                                                 <spontaneous>
+[60]     0.0    0.00    0.00                 _GLOBAL__sub_I__Z16compute_pressureR9Particlesff [60]
+                0.00    0.00  101000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[61]     0.0    0.00    0.00                 std::pow(float, float) [61]
+                0.00    0.00  101000/1301650836     bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [7]
+-----------------------------------------------
+                                                 <spontaneous>
+[62]     0.0    0.00    0.00                 std::_Vector_base<Vec3, std::allocator<Vec3> >::_M_get_Tp_allocator() [62]
+                0.00    0.00  100000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[63]     0.0    0.00    0.00                 std::allocator_traits<std::allocator<Vec3> >::max_size(std::allocator<Vec3> const&) [63]
+                0.00    0.00  100000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[64]     0.0    0.00    0.00                 void std::_Destroy<Vec3*, Vec3>(Vec3*, Vec3*, std::allocator<Vec3>&) [64]
+                0.00    0.00  100000/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[65]     0.0    0.00    0.00                 void std::_Construct<Vec3, Vec3 const&>(Vec3*, Vec3 const&) [65]
+                0.00    0.00       2/508         init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00       1/508         compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+-----------------------------------------------
+                                1143             std::char_traits<char>::length(char const*) [66]
+                0.00    0.00    2298/2298        main <cycle 7> [3]
+[66]     0.0    0.00    0.00    2298+1143    std::char_traits<char>::length(char const*) [66]
+                0.00    0.00    2286/3094        Particles::Particles(unsigned long) <cycle 8> [70]
+                0.00    0.00    1143/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                                1143             std::char_traits<char>::length(char const*) [66]
+-----------------------------------------------
+                                                 <spontaneous>
+[67]     0.0    0.00    0.00                 std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data const&) [67]
+                0.00    0.00       2/508         compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                0.00    0.00       1/150469835     compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+-----------------------------------------------
+                                                 <spontaneous>
+[68]     0.0    0.00    0.00                 Vec3* std::__addressof<Vec3>(Vec3&) [68]
+                0.00    0.00       2/508         init_spherical(Particles&) <cycle 6> [41]
+-----------------------------------------------
+[69]     0.0    0.00    0.00    3094+4414    <cycle 8 as a whole> [69]
+                0.00    0.00    4941+18688       Particles::Particles(unsigned long) <cycle 8> [70]
+                0.00    0.00      36             unsigned int std::__detail::__to_chars_len<unsigned long>(unsigned long, int) <cycle 8> [99]
+                0.00    0.00    2531+24          std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+-----------------------------------------------
+                               18688             Particles::Particles(unsigned long) <cycle 8> [70]
+                                  60             unsigned int std::__detail::__to_chars_len<unsigned long>(unsigned long, int) <cycle 8> [99]
+                                2195             std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+                0.00    0.00     400/3094        std::operator|=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) [81]
+                0.00    0.00    2286/3094        std::char_traits<char>::length(char const*) [66]
+[70]     0.0    0.00    0.00    4941+18688   Particles::Particles(unsigned long) <cycle 8> [70]
+                0.00    0.00    2071/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00    1143/2286        std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [123]
+                                2147             std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+                               18688             Particles::Particles(unsigned long) <cycle 8> [70]
+-----------------------------------------------
+                                4512             compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                                3003             compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                0.00    0.00       1/150469835     compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+[71]     0.0    0.00    0.00    3004+4512    compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                0.00    0.00    1500/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00    9800/9800        Vec3::operator+=(Vec3 const&) [96]
+                0.00    0.00       2/17          void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+                0.00    0.00       1/15          void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter) [87]
+                0.00    0.00       1/17          __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [92]
+                0.00    0.00     624/624         __static_initialization_and_destruction_0(int, int) [100]
+                0.00    0.00     623/623         _GLOBAL__sub_I__Z15compute_gravityRK9ParticlesRSt6vectorIfSaIfEES5_S5_ff [101]
+                0.00    0.00       1/300706292     void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00    3000/3000        std::allocator<Vec3>::~allocator() [121]
+                0.00    0.00       3/3           Vec3::Vec3(float, float, float) [166]
+                0.00    0.00       1/1           _sub_I_00100_0 [174]
+                                   1             compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) <cycle 5> [10]
+                                4512             compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+-----------------------------------------------
+                0.00    0.00     100/100         Vec3* std::__uninitialized_fill_n<false>::__uninit_fill_n<Vec3*, unsigned long, Vec3>(Vec3*, unsigned long, Vec3 const&) [15]
+[72]     0.0    0.00    0.00     100         float const& std::max<float>(float const&, float const&) [72]
+                0.00    0.00    1000/300706292     void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+-----------------------------------------------
+                                1143             main <cycle 7> [3]
+[73]     0.0    0.00    0.00    1143         std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) <cycle 7> [73]
+                0.00    0.00    1143/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                                1143             main <cycle 7> [3]
+-----------------------------------------------
+                                                 <spontaneous>
+[74]     0.0    0.00    0.00                 std::sqrt(float) [74]
+                0.00    0.00     411/1357445795     std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+                0.00    0.00     411/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[75]     0.0    0.00    0.00                 std::vector<float, std::allocator<float> >::~vector() [75]
+                0.00    0.00     411/1357445795     void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+-----------------------------------------------
+                0.00    0.00     300/300         std::vector<float, std::allocator<float> >::end() [78]
+[76]     0.0    0.00    0.00     300         std::_Vector_base<float, std::allocator<float> >::_M_deallocate(float*, unsigned long) [76]
+                0.00    0.00     300/1357445795     std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+-----------------------------------------------
+                                                 <spontaneous>
+[77]     0.0    0.00    0.00                 __gnu_cxx::new_allocator<Vec3>::deallocate(Vec3*, unsigned long) [77]
+                0.00    0.00     300/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00     100/100         std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl::~_Vector_impl() [159]
+-----------------------------------------------
+                                                 <spontaneous>
+[78]     0.0    0.00    0.00                 std::vector<float, std::allocator<float> >::end() [78]
+                0.00    0.00     300/300         std::_Vector_base<float, std::allocator<float> >::_M_deallocate(float*, unsigned long) [76]
+-----------------------------------------------
+                                                 <spontaneous>
+[79]     0.0    0.00    0.00                 Vec3* std::__fill_n_a<Vec3*, unsigned long, Vec3>(Vec3*, unsigned long, Vec3 const&, std::random_access_iterator_tag) [79]
+                0.00    0.00     300/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[80]     0.0    0.00    0.00                 __gnu_cxx::__enable_if<!std::__is_scalar<Vec3>::__value, void>::__type std::__fill_a1<Vec3*, Vec3>(Vec3*, Vec3*, Vec3 const&) [80]
+                0.00    0.00     300/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[81]     0.0    0.00    0.00                 std::operator|=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags) [81]
+                0.00    0.00     400/3094        Particles::Particles(unsigned long) <cycle 8> [70]
+-----------------------------------------------
+                                                 <spontaneous>
+[82]     0.0    0.00    0.00                 __gnu_cxx::new_allocator<Vec3>::max_size() const [82]
+                0.00    0.00     200/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[83]     0.0    0.00    0.00                 __gnu_cxx::__normal_iterator<Vec3*, std::vector<Vec3, std::allocator<Vec3> > >::base() const [83]
+                0.00    0.00     100/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[84]     0.0    0.00    0.00                 std::_Vector_base<Vec3, std::allocator<Vec3> >::_M_allocate(unsigned long) [84]
+                0.00    0.00     100/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[85]     0.0    0.00    0.00                 std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [85]
+                0.00    0.00     100/3094        std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+-----------------------------------------------
+                                                 <spontaneous>
+[86]     0.0    0.00    0.00                 std::vector<Vec3, std::allocator<Vec3> >::~vector() [86]
+                0.00    0.00    3800/3800        std::vector<Vec3, std::allocator<Vec3> >::assign(unsigned long, Vec3 const&) [89]
+                0.00    0.00    3800/8848        std::vector<Vec3, std::allocator<Vec3> >::vector(unsigned long, Vec3 const&, std::allocator<Vec3> const&) [90]
+-----------------------------------------------
+                0.00    0.00       1/15          compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                0.00    0.00       6/15          void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+                0.00    0.00       8/15          __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [92]
+[87]     0.0    0.00    0.00      15         void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter) [87]
+                0.00    0.00       4/4           void std::__fill_a1<float*, std::vector<float, std::allocator<float> >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&) [93]
+                0.00    0.00       2/2           void std::__fill_a<float*, float>(float*, float*, float const&) [94]
+                0.00    0.00       1/1           float* std::__niter_base<float*>(float*) [173]
+-----------------------------------------------
+[88]     0.0    0.00    0.00      17+4       <cycle 3 as a whole> [88]
+                0.00    0.00       8             __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [92]
+                0.00    0.00      13             void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+-----------------------------------------------
+                0.00    0.00    3800/3800        std::vector<Vec3, std::allocator<Vec3> >::~vector() [86]
+[89]     0.0    0.00    0.00    3800         std::vector<Vec3, std::allocator<Vec3> >::assign(unsigned long, Vec3 const&) [89]
+                0.00    0.00       3/519943      void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+-----------------------------------------------
+                0.00    0.00     623/8848        _GLOBAL__sub_I__Z15compute_gravityRK9ParticlesRSt6vectorIfSaIfEES5_S5_ff [101]
+                0.00    0.00     624/8848        __static_initialization_and_destruction_0(int, int) [100]
+                0.00    0.00    3800/8848        std::vector<Vec3, std::allocator<Vec3> >::~vector() [86]
+                0.00    0.00    3801/8848        Vec3::operator+=(Vec3 const&) [96]
+[90]     0.0    0.00    0.00    8848         std::vector<Vec3, std::allocator<Vec3> >::vector(unsigned long, Vec3 const&, std::allocator<Vec3> const&) [90]
+                0.00    0.00       1/1           std::vector<Vec3, std::allocator<Vec3> >::size() const [91]
+-----------------------------------------------
+                0.00    0.00       1/1           std::vector<Vec3, std::allocator<Vec3> >::vector(unsigned long, Vec3 const&, std::allocator<Vec3> const&) [90]
+[91]     0.0    0.00    0.00       1         std::vector<Vec3, std::allocator<Vec3> >::size() const [91]
+                0.00    0.00       3/519943      void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+-----------------------------------------------
+                                   2             void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+                0.00    0.00       1/17          compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                0.00    0.00       2/17          void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+                0.00    0.00       3/17          std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<float> >, std::is_move_constructible<float>, std::is_move_assignable<float> >::value, void>::type std::swap<float>(float&, float&) <cycle 2> [97]
+[92]     0.0    0.00    0.00       8         __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [92]
+                0.00    0.00       8/15          void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter) [87]
+                                   2             void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+-----------------------------------------------
+                0.00    0.00       4/4           void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter) [87]
+[93]     0.0    0.00    0.00       4         void std::__fill_a1<float*, std::vector<float, std::allocator<float> >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&) [93]
+                0.00    0.00       2/519943      std::enable_if<std::__is_bitwise_relocatable<float, void>::value, float*>::type std::__relocate_a_1<float, float>(float*, float*, float*, std::allocator<float>&) <cycle 4> [165]
+-----------------------------------------------
+                0.00    0.00       2/2           void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter) [87]
+[94]     0.0    0.00    0.00       2         void std::__fill_a<float*, float>(float*, float*, float const&) [94]
+                0.00    0.00       2/519943      void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+-----------------------------------------------
+                                   2             __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [92]
+                0.00    0.00       1/17          std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<float> >, std::is_move_constructible<float>, std::is_move_assignable<float> >::value, void>::type std::swap<float>(float&, float&) <cycle 2> [97]
+                0.00    0.00       2/17          compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+                0.00    0.00       4/17          void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.00    0.00       4/17          void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+[95]     0.0    0.00    0.00      13         void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+                0.00    0.00       6/15          void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter) [87]
+                0.00    0.00       2/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                                   2             __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [92]
+-----------------------------------------------
+                0.00    0.00    9800/9800        compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+[96]     0.0    0.00    0.00    9800         Vec3::operator+=(Vec3 const&) [96]
+                0.00    0.00    3801/8848        std::vector<Vec3, std::allocator<Vec3> >::vector(unsigned long, Vec3 const&, std::allocator<Vec3> const&) [90]
+-----------------------------------------------
+                                   3             void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+[97]     0.0    0.00    0.00       3         std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<float> >, std::is_move_constructible<float>, std::is_move_assignable<float> >::value, void>::type std::swap<float>(float&, float&) <cycle 2> [97]
+                0.00    0.00       3/17          __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [92]
+                0.00    0.00       1/17          void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) <cycle 3> [95]
+                                   2             void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [29]
+-----------------------------------------------
+                                   3             init_clustered(Particles&) <cycle 6> [98]
+                                   6             init_spherical(Particles&) <cycle 6> [41]
+                                 100             compute_pressure(Particles&, float, float) <cycle 6> [157]
+                                 110             compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                0.00    0.00       1/508         cubic_spline_dWdr(float, float) [55]
+                0.00    0.00     100/508         void std::__fill_a<Vec3*, Vec3>(Vec3*, Vec3*, Vec3 const&) [43]
+[98]     0.0    0.00    0.00     317+3       init_clustered(Particles&) <cycle 6> [98]
+                0.00    0.00      11/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00       1/300706292     void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) <cycle 2> [17]
+                0.00    0.00       6/45          init_particles(Particles&, int) [108]
+                                 124             init_spherical(Particles&) <cycle 6> [41]
+                                   2             compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) <cycle 6> [59]
+                                   3             init_clustered(Particles&) <cycle 6> [98]
+-----------------------------------------------
+                                  12             std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+                0.00    0.00      24/3094        main <cycle 7> [3]
+[99]     0.0    0.00    0.00      36         unsigned int std::__detail::__to_chars_len<unsigned long>(unsigned long, int) <cycle 8> [99]
+                0.00    0.00      12/1357445795     compute_density_sph(Particles&, float) <cycle 1> [11]
+                                  60             Particles::Particles(unsigned long) <cycle 8> [70]
+-----------------------------------------------
+                0.00    0.00     624/624         compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+[100]    0.0    0.00    0.00     624         __static_initialization_and_destruction_0(int, int) [100]
+                0.00    0.00     624/8848        std::vector<Vec3, std::allocator<Vec3> >::vector(unsigned long, Vec3 const&, std::allocator<Vec3> const&) [90]
+-----------------------------------------------
+                0.00    0.00     623/623         compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+[101]    0.0    0.00    0.00     623         _GLOBAL__sub_I__Z15compute_gravityRK9ParticlesRSt6vectorIfSaIfEES5_S5_ff [101]
+                0.00    0.00     623/8848        std::vector<Vec3, std::allocator<Vec3> >::vector(unsigned long, Vec3 const&, std::allocator<Vec3> const&) [90]
+-----------------------------------------------
+                0.00    0.00       2/20          __gnu_cxx::__enable_if<std::__is_integer<unsigned long>::__value, double>::__type std::cbrt<unsigned long>(unsigned long) [107]
+                0.00    0.00       2/20          std::normal_distribution<float>::normal_distribution(float, float) [109]
+                0.00    0.00      16/20          std::vector<Vec3, std::allocator<Vec3> >::vector(std::initializer_list<Vec3>, std::allocator<Vec3> const&) [106]
+[102]    0.0    0.00    0.00      20         std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long) [102]
+                0.00    0.00       4/4           std::initializer_list<Vec3>::end() const [103]
+                0.00    0.00       2/2           std::initializer_list<Vec3>::begin() const [168]
+-----------------------------------------------
+                0.00    0.00       4/4           std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long) [102]
+[103]    0.0    0.00    0.00       4         std::initializer_list<Vec3>::end() const [103]
+                0.00    0.00       2/2           void std::vector<Vec3, std::allocator<Vec3> >::_M_range_initialize<Vec3 const*>(Vec3 const*, Vec3 const*, std::forward_iterator_tag) [105]
+                0.00    0.00       2/106         std::iterator_traits<Vec3 const*>::difference_type std::distance<Vec3 const*>(Vec3 const*, Vec3 const*) [155]
+-----------------------------------------------
+                0.00    0.00       2/4           init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00       2/4           __gnu_cxx::__enable_if<std::__is_integer<unsigned long>::__value, double>::__type std::cbrt<unsigned long>(unsigned long) [107]
+[104]    0.0    0.00    0.00       4         std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::mersenne_twister_engine(unsigned long) [104]
+                0.00    0.00       2/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00       4/6           float std::uniform_real_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [164]
+-----------------------------------------------
+                                   8             void std::vector<Vec3, std::allocator<Vec3> >::_M_range_initialize<Vec3 const*>(Vec3 const*, Vec3 const*, std::forward_iterator_tag) [105]
+                0.00    0.00       2/2           std::initializer_list<Vec3>::end() const [103]
+[105]    0.0    0.00    0.00       2+8       void std::vector<Vec3, std::allocator<Vec3> >::_M_range_initialize<Vec3 const*>(Vec3 const*, Vec3 const*, std::forward_iterator_tag) [105]
+                0.00    0.00       2/1357445795     cubic_spline_W(float, float) <cycle 1> [20]
+                0.00    0.00       2/106         std::iterator_traits<Vec3 const*>::difference_type std::distance<Vec3 const*>(Vec3 const*, Vec3 const*) [155]
+                                   8             void std::vector<Vec3, std::allocator<Vec3> >::_M_range_initialize<Vec3 const*>(Vec3 const*, Vec3 const*, std::forward_iterator_tag) [105]
+-----------------------------------------------
+                0.00    0.00       6/23          init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00      17/23          init_particles(Particles&, int) [108]
+[106]    0.0    0.00    0.00      23         std::vector<Vec3, std::allocator<Vec3> >::vector(std::initializer_list<Vec3>, std::allocator<Vec3> const&) [106]
+                0.00    0.00      16/20          std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long) [102]
+                0.00    0.00       2/202         std::normal_distribution<float>::param_type::param_type(float, float) [153]
+-----------------------------------------------
+                0.00    0.00       4/4           init_spherical(Particles&) <cycle 6> [41]
+[107]    0.0    0.00    0.00       4         __gnu_cxx::__enable_if<std::__is_integer<unsigned long>::__value, double>::__type std::cbrt<unsigned long>(unsigned long) [107]
+                0.00    0.00       2/4           std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::mersenne_twister_engine(unsigned long) [104]
+                0.00    0.00       2/20          std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long) [102]
+                0.00    0.00       2/2           __gnu_cxx::new_allocator<Vec3>::new_allocator() [167]
+-----------------------------------------------
+                                   1             init_particles(Particles&, int) [108]
+                0.00    0.00       3/45          init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00       6/45          init_clustered(Particles&) <cycle 6> [98]
+                0.00    0.00      36/45          main <cycle 7> [3]
+[108]    0.0    0.00    0.00      45+1       init_particles(Particles&, int) [108]
+                0.00    0.00      17/23          std::vector<Vec3, std::allocator<Vec3> >::vector(std::initializer_list<Vec3>, std::allocator<Vec3> const&) [106]
+                                   1             init_particles(Particles&, int) [108]
+-----------------------------------------------
+                0.00    0.00       2/2           init_spherical(Particles&) <cycle 6> [41]
+[109]    0.0    0.00    0.00       2         std::normal_distribution<float>::normal_distribution(float, float) [109]
+                0.00    0.00       2/20          std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long) [102]
+-----------------------------------------------
+                0.00    0.00    3000/3000        compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+[121]    0.0    0.00    0.00    3000         std::allocator<Vec3>::~allocator() [121]
+-----------------------------------------------
+                                  24             std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+                                2147             Particles::Particles(unsigned long) <cycle 8> [70]
+                0.00    0.00     100/3094        std::operator&(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [85]
+                0.00    0.00     284/3094        main <cycle 7> [3]
+[122]    0.0    0.00    0.00    2531+24      std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+                                2195             Particles::Particles(unsigned long) <cycle 8> [70]
+                                  12             unsigned int std::__detail::__to_chars_len<unsigned long>(unsigned long, int) <cycle 8> [99]
+                                  24             std::__cxx11::to_string(unsigned long) <cycle 8> [122]
+-----------------------------------------------
+                0.00    0.00    1143/2286        main <cycle 7> [3]
+                0.00    0.00    1143/2286        Particles::Particles(unsigned long) <cycle 8> [70]
+[123]    0.0    0.00    0.00    2286         std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [123]
+-----------------------------------------------
+                                 411             std::vector<float, std::allocator<float> >::push_back(float&&) <cycle 1> [142]
+                                1233             std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+[124]    0.0    0.00    0.00    1644         std::vector<float, std::allocator<float> >::_M_fill_assign(unsigned long, float const&) <cycle 1> [124]
+                                 411             std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+-----------------------------------------------
+                0.00    0.00    1644/1644        compute_density_sph(Particles&, float) <cycle 1> [11]
+[125]    0.0    0.00    0.00    1644         std::__lg(long) [125]
+-----------------------------------------------
+                                 411             std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+                                 411             operator new(unsigned long, void*) <cycle 1> [148]
+                                 411             unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [146]
+                0.00    0.00     411/1357445795     std::sqrt(float) [74]
+[126]    0.0    0.00    0.00    1233+411     std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+                                1233             std::vector<float, std::allocator<float> >::_M_fill_assign(unsigned long, float const&) <cycle 1> [124]
+                                 411             cubic_spline_W(float, float) <cycle 1> [20]
+                                 411             std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+-----------------------------------------------
+                                 411             unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [145]
+                                 411             std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+                0.00    0.00     411/1357445795     std::vector<float, std::allocator<float> >::~vector() [75]
+[127]    0.0    0.00    0.00    1233         void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+                0.00    0.00     822/822         std::vector<float, std::allocator<float> >::max_size() const [130]
+                0.00    0.00     411/411         std::vector<float, std::allocator<float> >::capacity() const [138]
+                0.00    0.00     411/822         std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) [131]
+                                 411             cubic_spline_W(float, float) <cycle 1> [20]
+-----------------------------------------------
+                0.00    0.00    1143/1143        main <cycle 7> [3]
+[128]    0.0    0.00    0.00    1143         _sub_I_00100_0 [128]
+-----------------------------------------------
+                                 411             std::vector<float, std::allocator<float> >::_M_fill_assign(unsigned long, float const&) <cycle 1> [124]
+                                 411             std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_Vector_impl_data() <cycle 1> [140]
+                0.00    0.00     300/1357445795     std::_Vector_base<float, std::allocator<float> >::_M_deallocate(float*, unsigned long) [76]
+[129]    0.0    0.00    0.00    1122         std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+                0.00    0.00     600/600         std::vector<float, std::allocator<float> >::_M_fill_initialize(unsigned long, float const&) [137]
+                0.00    0.00     411/822         std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) [131]
+                0.00    0.00     300/711         void std::vector<float, std::allocator<float> >::_M_realloc_insert<float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&&) [134]
+                                 411             void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+-----------------------------------------------
+                0.00    0.00     822/822         void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+[130]    0.0    0.00    0.00     822         std::vector<float, std::allocator<float> >::max_size() const [130]
+                0.00    0.00     411/411         float* std::fill_n<float*, unsigned long, float>(float*, unsigned long, float const&) [147]
+-----------------------------------------------
+                                 411             std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) [131]
+                0.00    0.00     411/822         void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+                0.00    0.00     411/822         std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+[131]    0.0    0.00    0.00     822+411     std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) [131]
+                                 411             std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) [131]
+-----------------------------------------------
+                                 411             compute_density_sph(Particles&, float) <cycle 1> [11]
+                                 411             std::_Vector_base<float, std::allocator<float> >::_Vector_impl::~_Vector_impl() <cycle 1> [139]
+[132]    0.0    0.00    0.00     822         std::_Vector_base<float, std::allocator<float> >::_Vector_base() <cycle 1> [132]
+                                 411             std::vector<float, std::allocator<float> >::push_back(float&&) <cycle 1> [142]
+-----------------------------------------------
+                0.00    0.00     411/822         compute_density_sph(Particles&, float) <cycle 1> [11]
+                0.00    0.00     411/822         std::vector<float, std::allocator<float> >::operator[](unsigned long) <cycle 1> [144]
+[133]    0.0    0.00    0.00     822         std::vector<float, std::allocator<float> >::vector(unsigned long, float const&, std::allocator<float> const&) [133]
+-----------------------------------------------
+                0.00    0.00     300/711         std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+                0.00    0.00     411/711         float* std::fill_n<float*, unsigned long, float>(float*, unsigned long, float const&) [147]
+[134]    0.0    0.00    0.00     711         void std::vector<float, std::allocator<float> >::_M_realloc_insert<float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&&) [134]
+-----------------------------------------------
+                0.00    0.00     100/600         void std::iter_swap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [161]
+                0.00    0.00     500/600         __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [21]
+[135]    0.0    0.00    0.00     600         __static_initialization_and_destruction_0(int, int) [135]
+                0.00    0.00     300/600         std::_Vector_base<float, std::allocator<float> >::~_Vector_base() [136]
+-----------------------------------------------
+                0.00    0.00     300/600         __static_initialization_and_destruction_0(int, int) [135]
+                0.00    0.00     300/600         _GLOBAL__sub_I__Z19compute_density_kNNR9Particlesi [177]
+[136]    0.0    0.00    0.00     600         std::_Vector_base<float, std::allocator<float> >::~_Vector_base() [136]
+-----------------------------------------------
+                0.00    0.00     600/600         std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+[137]    0.0    0.00    0.00     600         std::vector<float, std::allocator<float> >::_M_fill_initialize(unsigned long, float const&) [137]
+-----------------------------------------------
+                0.00    0.00     411/411         void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+[138]    0.0    0.00    0.00     411         std::vector<float, std::allocator<float> >::capacity() const [138]
+-----------------------------------------------
+                                 411             compute_density_sph(Particles&, float) <cycle 1> [11]
+[139]    0.0    0.00    0.00     411         std::_Vector_base<float, std::allocator<float> >::_Vector_impl::~_Vector_impl() <cycle 1> [139]
+                                 411             std::_Vector_base<float, std::allocator<float> >::_Vector_base() <cycle 1> [132]
+-----------------------------------------------
+                                 411             std::vector<float, std::allocator<float> >::begin() <cycle 1> [141]
+[140]    0.0    0.00    0.00     411         std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_Vector_impl_data() <cycle 1> [140]
+                                 411             std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) <cycle 1> [129]
+-----------------------------------------------
+                                 411             std::vector<float, std::allocator<float> >::vector() <cycle 1> [143]
+[141]    0.0    0.00    0.00     411         std::vector<float, std::allocator<float> >::begin() <cycle 1> [141]
+                                 411             std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_Vector_impl_data() <cycle 1> [140]
+-----------------------------------------------
+                                 411             std::_Vector_base<float, std::allocator<float> >::_Vector_base() <cycle 1> [132]
+[142]    0.0    0.00    0.00     411         std::vector<float, std::allocator<float> >::push_back(float&&) <cycle 1> [142]
+                                 411             std::vector<float, std::allocator<float> >::_M_fill_assign(unsigned long, float const&) <cycle 1> [124]
+-----------------------------------------------
+                                 411             compute_density_sph(Particles&, float) <cycle 1> [11]
+[143]    0.0    0.00    0.00     411         std::vector<float, std::allocator<float> >::vector() <cycle 1> [143]
+                                 411             std::vector<float, std::allocator<float> >::begin() <cycle 1> [141]
+-----------------------------------------------
+                                 411             unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [146]
+[144]    0.0    0.00    0.00     411         std::vector<float, std::allocator<float> >::operator[](unsigned long) <cycle 1> [144]
+                0.00    0.00     411/822         std::vector<float, std::allocator<float> >::vector(unsigned long, float const&, std::allocator<float> const&) [133]
+                                 411             unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [145]
+-----------------------------------------------
+                                 411             std::vector<float, std::allocator<float> >::operator[](unsigned long) <cycle 1> [144]
+[145]    0.0    0.00    0.00     411         unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [145]
+                                 411             void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) <cycle 1> [127]
+-----------------------------------------------
+                                 411             compute_density_sph(Particles&, float) <cycle 1> [11]
+[146]    0.0    0.00    0.00     411         unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&) <cycle 1> [146]
+                                 411             std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+                                 411             std::vector<float, std::allocator<float> >::operator[](unsigned long) <cycle 1> [144]
+-----------------------------------------------
+                0.00    0.00     411/411         std::vector<float, std::allocator<float> >::max_size() const [130]
+[147]    0.0    0.00    0.00     411         float* std::fill_n<float*, unsigned long, float>(float*, unsigned long, float const&) [147]
+                0.00    0.00     411/711         void std::vector<float, std::allocator<float> >::_M_realloc_insert<float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&&) [134]
+-----------------------------------------------
+                                 411             compute_density_sph(Particles&, float) <cycle 1> [11]
+[148]    0.0    0.00    0.00     411         operator new(unsigned long, void*) <cycle 1> [148]
+                                 411             std::vector<float, std::allocator<float> >::reserve(unsigned long) <cycle 1> [126]
+-----------------------------------------------
+                0.00    0.00     100/400         compute_density_kNN(Particles&, int) [5]
+                0.00    0.00     100/400         __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator--() [233]
+                0.00    0.00     200/400         void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+[149]    0.0    0.00    0.00     400         std::__size_to_integer(unsigned long) [149]
+-----------------------------------------------
+                0.00    0.00     100/300         main <cycle 7> [3]
+                0.00    0.00     200/300         init_spherical(Particles&) <cycle 6> [41]
+[150]    0.0    0.00    0.00     300         _GLOBAL__sub_I__Z12init_uniformR9Particles [150]
+                0.00    0.00     100/200         __static_initialization_and_destruction_0(int, int) [154]
+-----------------------------------------------
+                0.00    0.00     300/300         __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter) [21]
+[151]    0.0    0.00    0.00     300         __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator+(long) const [151]
+-----------------------------------------------
+                0.00    0.00     100/300         main <cycle 7> [3]
+                0.00    0.00     200/300         __static_initialization_and_destruction_0(int, int) [154]
+[152]    0.0    0.00    0.00     300         float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [152]
+                0.00    0.00     100/202         std::normal_distribution<float>::param_type::param_type(float, float) [153]
+-----------------------------------------------
+                0.00    0.00       2/202         std::vector<Vec3, std::allocator<Vec3> >::vector(std::initializer_list<Vec3>, std::allocator<Vec3> const&) [106]
+                0.00    0.00     100/202         float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [152]
+                0.00    0.00     100/202         std::uniform_real_distribution<float>::uniform_real_distribution(float, float) [158]
+[153]    0.0    0.00    0.00     202         std::normal_distribution<float>::param_type::param_type(float, float) [153]
+-----------------------------------------------
+                0.00    0.00     100/200         init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00     100/200         _GLOBAL__sub_I__Z12init_uniformR9Particles [150]
+[154]    0.0    0.00    0.00     200         __static_initialization_and_destruction_0(int, int) [154]
+                0.00    0.00     200/300         float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [152]
+-----------------------------------------------
+                0.00    0.00       2/106         std::initializer_list<Vec3>::begin() const [168]
+                0.00    0.00       2/106         std::initializer_list<Vec3>::end() const [103]
+                0.00    0.00       2/106         void std::vector<Vec3, std::allocator<Vec3> >::_M_range_initialize<Vec3 const*>(Vec3 const*, Vec3 const*, std::forward_iterator_tag) [105]
+                0.00    0.00     100/106         std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(std::allocator<Vec3> const&) [156]
+[155]    0.0    0.00    0.00     106         std::iterator_traits<Vec3 const*>::difference_type std::distance<Vec3 const*>(Vec3 const*, Vec3 const*) [155]
+-----------------------------------------------
+                0.00    0.00       2/102         float std::uniform_real_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [164]
+                0.00    0.00     100/102         std::uniform_real_distribution<float>::uniform_real_distribution(float, float) [158]
+[156]    0.0    0.00    0.00     102         std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(std::allocator<Vec3> const&) [156]
+                0.00    0.00     100/106         std::iterator_traits<Vec3 const*>::difference_type std::distance<Vec3 const*>(Vec3 const*, Vec3 const*) [155]
+-----------------------------------------------
+                                 101             compute_pressure(Particles&, float, float) <cycle 6> [157]
+                                   1             init_spherical(Particles&) <cycle 6> [41]
+                0.00    0.00     100/508         void std::__fill_a<Vec3*, Vec3>(Vec3*, Vec3*, Vec3 const&) [43]
+[157]    0.0    0.00    0.00     101+101     compute_pressure(Particles&, float, float) <cycle 6> [157]
+                                 100             init_clustered(Particles&) <cycle 6> [98]
+                                 101             compute_pressure(Particles&, float, float) <cycle 6> [157]
+-----------------------------------------------
+                0.00    0.00       1/101         std::allocator<Vec3>::allocator() [169]
+                0.00    0.00     100/101         _sub_D_00100_1 [564]
+[158]    0.0    0.00    0.00     101         std::uniform_real_distribution<float>::uniform_real_distribution(float, float) [158]
+                0.00    0.00     100/202         std::normal_distribution<float>::param_type::param_type(float, float) [153]
+                0.00    0.00     100/102         std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(std::allocator<Vec3> const&) [156]
+-----------------------------------------------
+                0.00    0.00     100/100         __gnu_cxx::new_allocator<Vec3>::deallocate(Vec3*, unsigned long) [77]
+[159]    0.0    0.00    0.00     100         std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl::~_Vector_impl() [159]
+-----------------------------------------------
+                                   1             std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data&) [160]
+                0.00    0.00     100/100         Vec3* std::__uninitialized_fill_n<false>::__uninit_fill_n<Vec3*, unsigned long, Vec3>(Vec3*, unsigned long, Vec3 const&) [15]
+[160]    0.0    0.00    0.00     100+1       std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data&) [160]
+                                   1             std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data&) [160]
+-----------------------------------------------
+                0.00    0.00     100/100         std::allocator_traits<std::allocator<Vec3> >::allocate(std::allocator<Vec3>&, unsigned long) [4]
+[161]    0.0    0.00    0.00     100         void std::iter_swap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [161]
+                0.00    0.00     100/600         __static_initialization_and_destruction_0(int, int) [135]
+-----------------------------------------------
+                0.00    0.00     100/100         main <cycle 7> [3]
+[162]    0.0    0.00    0.00     100         std::operator~(std::_Ios_Fmtflags) [162]
+-----------------------------------------------
+                0.00    0.00       7/7           std::vector<Vec3, std::allocator<Vec3> >::begin() [397]
+[163]    0.0    0.00    0.00       7         std::vector<Vec3, std::allocator<Vec3> >::end() [163]
+-----------------------------------------------
+                0.00    0.00       2/6           std::allocator<Vec3>::allocator() [169]
+                0.00    0.00       4/6           std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::mersenne_twister_engine(unsigned long) [104]
+[164]    0.0    0.00    0.00       6         float std::uniform_real_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [164]
+                0.00    0.00       2/102         std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(std::allocator<Vec3> const&) [156]
+-----------------------------------------------
+                                   2             void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+                0.00    0.00       2/519943      void std::__fill_a1<float*, std::vector<float, std::allocator<float> >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&) [93]
+[165]    0.0    0.00    0.00       4         std::enable_if<std::__is_bitwise_relocatable<float, void>::value, float*>::type std::__relocate_a_1<float, float>(float*, float*, float*, std::allocator<float>&) <cycle 4> [165]
+                                2000             void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter) <cycle 4> [32]
+-----------------------------------------------
+                0.00    0.00       3/3           compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+[166]    0.0    0.00    0.00       3         Vec3::Vec3(float, float, float) [166]
+-----------------------------------------------
+                0.00    0.00       2/2           __gnu_cxx::__enable_if<std::__is_integer<unsigned long>::__value, double>::__type std::cbrt<unsigned long>(unsigned long) [107]
+[167]    0.0    0.00    0.00       2         __gnu_cxx::new_allocator<Vec3>::new_allocator() [167]
+-----------------------------------------------
+                0.00    0.00       2/2           std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long) [102]
+[168]    0.0    0.00    0.00       2         std::initializer_list<Vec3>::begin() const [168]
+                0.00    0.00       2/106         std::iterator_traits<Vec3 const*>::difference_type std::distance<Vec3 const*>(Vec3 const*, Vec3 const*) [155]
+-----------------------------------------------
+                0.00    0.00       2/2           init_spherical(Particles&) <cycle 6> [41]
+[169]    0.0    0.00    0.00       2         std::allocator<Vec3>::allocator() [169]
+                0.00    0.00       2/6           float std::uniform_real_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [164]
+                0.00    0.00       1/101         std::uniform_real_distribution<float>::uniform_real_distribution(float, float) [158]
+-----------------------------------------------
+                0.00    0.00       1/1           __gnu_cxx::new_allocator<Vec3>::allocate(unsigned long, void const*) [52]
+[170]    0.0    0.00    0.00       1         Vec3::length2() const [170]
+-----------------------------------------------
+                0.00    0.00       1/1           float* std::__copy_move_backward_a2<true, float*, float*>(float*, float*, float*) [33]
+[171]    0.0    0.00    0.00       1         bool __gnu_cxx::__ops::_Iter_less_val::operator()<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&) const [171]
+-----------------------------------------------
+                0.00    0.00       1/1           std::__detail::_Adaptor<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, float>::operator()() [451]
+[172]    0.0    0.00    0.00       1         std::__detail::_Adaptor<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, float>::_Adaptor(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [172]
+-----------------------------------------------
+                0.00    0.00       1/1           void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter) [87]
+[173]    0.0    0.00    0.00       1         float* std::__niter_base<float*>(float*) [173]
+-----------------------------------------------
+                0.00    0.00       1/1           compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) <cycle 5> [71]
+[174]    0.0    0.00    0.00       1         _sub_I_00100_0 [174]
+-----------------------------------------------
+                                   1             __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator-(long) const [265]
+[265]    0.0    0.00    0.00       0+1       __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator-(long) const [265]
+                                   1             __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator-(long) const [265]
+-----------------------------------------------
+                                   1             float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::normal_distribution<float>::param_type const&) [374]
+[374]    0.0    0.00    0.00       0+1       float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::normal_distribution<float>::param_type const&) [374]
+                                   1             float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&, std::normal_distribution<float>::param_type const&) [374]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+ [150] _GLOBAL__sub_I__Z12init_uniformR9Particles (init.cpp) [139] std::_Vector_base<float, std::allocator<float> >::_Vector_impl::~_Vector_impl() [165] std::enable_if<std::__is_bitwise_relocatable<float, void>::value, float*>::type std::__relocate_a_1<float, float>(float*, float*, float*, std::allocator<float>&)
+ [101] _GLOBAL__sub_I__Z15compute_gravityRK9ParticlesRSt6vectorIfSaIfEES5_S5_ff (gravity.cpp) [76] std::_Vector_base<float, std::allocator<float> >::_M_deallocate(float*, unsigned long) [12] void std::__insertion_sort<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter)
+  [37] init_uniform(Particles&) [22] std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_M_copy_data(std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data const&) [149] std::__size_to_integer(unsigned long)
+  [98] init_clustered(Particles&) [140] std::_Vector_base<float, std::allocator<float> >::_Vector_impl_data::_Vector_impl_data() [25] float* std::uninitialized_fill_n<float*, unsigned long, float>(float*, unsigned long, float const&)
+ [108] init_particles(Particles&, int) [132] std::_Vector_base<float, std::allocator<float> >::_Vector_base() [92] __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter)
+  [41] init_spherical(Particles&) [136] std::_Vector_base<float, std::allocator<float> >::~_Vector_base() [95] void std::__move_median_to_first<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter)
+  [10] compute_gravity(Particles const&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, float, float) [23] std::allocator_traits<std::allocator<float> >::max_size(std::allocator<float> const&) [33] float* std::__copy_move_backward_a2<true, float*, float*>(float*, float*, float*)
+ [157] compute_pressure(Particles&, float, float) [153] std::normal_distribution<float>::param_type::param_type(float, float) [87] void std::__unguarded_linear_insert<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Val_less_iter)
+   [5] compute_density_kNN(Particles&, int) [109] std::normal_distribution<float>::normal_distribution(float, float) [21] __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__unguarded_partition_pivot<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter)
+  [11] compute_density_sph(Particles&, float) [152] float std::normal_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [56] std::cos(float)
+   [8] update_thermodynamics(Particles&, float) [26] float* std::__copy_move_backward<true, true, std::random_access_iterator_tag>::__copy_move_b<float>(float const*, float const*, float*) [72] float const& std::max<float>(float const&, float const&)
+  [71] compute_gravity_cached(Particles&, std::vector<Vec3, std::allocator<Vec3> >&, float, float) [102] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::seed(unsigned long) [145] unsigned long const& std::max<unsigned long>(unsigned long const&, unsigned long const&)
+  [59] compute_pressure_forces(Particles&, float, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&, std::vector<float, std::allocator<float> >&) [104] std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::mersenne_twister_engine(unsigned long) [146] unsigned long const& std::min<unsigned long>(unsigned long const&, unsigned long const&)
+ [135] __static_initialization_and_destruction_0(int, int) (density.cpp) [158] std::uniform_real_distribution<float>::uniform_real_distribution(float, float) [50] std::sin(float)
+ [100] __static_initialization_and_destruction_0(int, int) (gravity.cpp) [164] float std::uniform_real_distribution<float>::operator()<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul> >(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [125] std::__lg(long)
+ [154] __static_initialization_and_destruction_0(int, int) (init.cpp) [105] void std::vector<Vec3, std::allocator<Vec3> >::_M_range_initialize<Vec3 const*>(Vec3 const*, Vec3 const*, std::forward_iterator_tag) [107] __gnu_cxx::__enable_if<std::__is_integer<unsigned long>::__value, double>::__type std::cbrt<unsigned long>(unsigned long)
+  [20] cubic_spline_W(float, float) (density.cpp) [163] std::vector<Vec3, std::allocator<Vec3> >::end() [28] std::remove_reference<__gnu_cxx::__ops::_Iter_less_iter&>::type&& std::move<__gnu_cxx::__ops::_Iter_less_iter&>(__gnu_cxx::__ops::_Iter_less_iter&)
+ [166] Vec3::Vec3(float, float, float) [89] std::vector<Vec3, std::allocator<Vec3> >::assign(unsigned long, Vec3 const&) [97] std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<float> >, std::is_move_constructible<float>, std::is_move_assignable<float> >::value, void>::type std::swap<float>(float&, float&)
+  [96] Vec3::operator+=(Vec3 const&) [106] std::vector<Vec3, std::allocator<Vec3> >::vector(std::initializer_list<Vec3>, std::allocator<Vec3> const&) [147] float* std::fill_n<float*, unsigned long, float>(float*, unsigned long, float const&)
+  [70] Particles::Particles(unsigned long) [90] std::vector<Vec3, std::allocator<Vec3> >::vector(unsigned long, Vec3 const&, std::allocator<Vec3> const&) [94] void std::__fill_a<float*, float>(float*, float*, float const&)
+ [167] __gnu_cxx::new_allocator<Vec3>::new_allocator() [124] std::vector<float, std::allocator<float> >::_M_fill_assign(unsigned long, float const&) [155] std::iterator_traits<Vec3 const*>::difference_type std::distance<Vec3 const*>(Vec3 const*, Vec3 const*)
+  [27] __gnu_cxx::new_allocator<float>::new_allocator(__gnu_cxx::new_allocator<float> const&) [129] std::vector<float, std::allocator<float> >::_M_erase_at_end(float*) [93] void std::__fill_a1<float*, std::vector<float, std::allocator<float> >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&)
+  [18] bool __gnu_cxx::operator<=<float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [134] void std::vector<float, std::allocator<float> >::_M_realloc_insert<float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&&) [24] __gnu_cxx::__enable_if<std::__is_scalar<float>::__value, void>::__type std::__fill_a1<float*, float>(float*, float*, float const&)
+   [7] bool __gnu_cxx::operator< <float*, std::vector<float, std::allocator<float> > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > const&) [137] std::vector<float, std::allocator<float> >::_M_fill_initialize(unsigned long, float const&) [161] void std::iter_swap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >)
+ [170] Vec3::length2() const [141] std::vector<float, std::allocator<float> >::begin() [73] std::operator&=(std::_Ios_Fmtflags&, std::_Ios_Fmtflags)
+  [19] __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator*() const [126] std::vector<float, std::allocator<float> >::reserve(unsigned long) [162] std::operator~(std::_Ios_Fmtflags)
+ [151] __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >::operator+(long) const [142] std::vector<float, std::allocator<float> >::push_back(float&&) [148] operator new(unsigned long, void*)
+ [171] bool __gnu_cxx::__ops::_Iter_less_val::operator()<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float&) const [133] std::vector<float, std::allocator<float> >::vector(unsigned long, float const&, std::allocator<float> const&) [14] _init
+ [103] std::initializer_list<Vec3>::end() const [143] std::vector<float, std::allocator<float> >::vector() [174] _sub_I_00100_0 (gravity.cpp)
+ [168] std::initializer_list<Vec3>::begin() const [144] std::vector<float, std::allocator<float> >::operator[](unsigned long) [128] _sub_I_00100_0 (main.cpp)
+  [91] std::vector<Vec3, std::allocator<Vec3> >::size() const [122] std::__cxx11::to_string(unsigned long) [3] main
+ [138] std::vector<float, std::allocator<float> >::capacity() const [99] unsigned int std::__detail::__to_chars_len<unsigned long>(unsigned long, int) [6] <cycle 1>
+ [130] std::vector<float, std::allocator<float> >::max_size() const [172] std::__detail::_Adaptor<std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>, float>::_Adaptor(std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>&) [16] <cycle 2>
+ [169] std::allocator<Vec3>::allocator() [123] std::ios_base::setf(std::_Ios_Fmtflags, std::_Ios_Fmtflags) [88] <cycle 3>
+ [121] std::allocator<Vec3>::~allocator() [29] void std::__pop_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) [31] <cycle 4>
+  [66] std::char_traits<char>::length(char const*) [17] void std::__make_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__ops::_Iter_less_iter&) [9] <cycle 5>
+  [34] void std::_Destroy_aux<true>::__destroy<float*>(float*, float*) [13] void std::__push_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_val>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_val&) [38] <cycle 6>
+ [159] std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl::~_Vector_impl() [127] void std::nth_element<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > >(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >) [1] <cycle 7>
+ [160] std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data::_M_swap_data(std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_impl_data&) [173] float* std::__niter_base<float*>(float*) [69] <cycle 8>
+ [156] std::_Vector_base<Vec3, std::allocator<Vec3> >::_Vector_base(std::allocator<Vec3> const&) [30] __gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > > std::__niter_wrap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float*>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float*)
+ [131] std::_Vector_base<float, std::allocator<float> >::_M_allocate(unsigned long) [32] void std::__adjust_heap<__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, float, __gnu_cxx::__ops::_Iter_less_iter>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, long, long, float, __gnu_cxx::__ops::_Iter_less_iter)

@@ -1,5 +1,5 @@
 // init.cpp
-#include "init.hpp"
+#include "../include/init.hpp"
 #include <random>
 #include <cmath>
 #include <iostream>

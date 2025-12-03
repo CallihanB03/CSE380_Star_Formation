@@ -386,8 +386,11 @@
         -:  385:
         -:  386:#ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
         -:  387:  inline _GLIBCXX_CONSTEXPR float
+function _ZSt3powff called 0 returned 0% blocks executed 0%
     #####:  388:  pow(float __x, float __y)
     #####:  389:  { return __builtin_powf(__x, __y); }
+    %%%%%:  389-block  0
+unconditional  0 never executed
         -:  390:
         -:  391:  inline _GLIBCXX_CONSTEXPR long double
         -:  392:  pow(long double __x, long double __y)
@@ -461,16 +464,22 @@
         -:  460:
         -:  461:#ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
         -:  462:  inline _GLIBCXX_CONSTEXPR float
-   20000*:  463:  sqrt(float __x)
-   20000*:  464:  { return __builtin_sqrtf(__x); }
-------------------
-_ZSt4sqrtf:
-    20000:  463:  sqrt(float __x)
-    20000:  464:  { return __builtin_sqrtf(__x); }
-------------------
-_ZSt4sqrtf:
     #####:  463:  sqrt(float __x)
     #####:  464:  { return __builtin_sqrtf(__x); }
+------------------
+_ZSt4sqrtf:
+function _ZSt4sqrtf called 0 returned 0% blocks executed 0%
+    #####:  463:  sqrt(float __x)
+    #####:  464:  { return __builtin_sqrtf(__x); }
+    %%%%%:  464-block  0
+unconditional  0 never executed
+------------------
+_ZSt4sqrtf:
+function _ZSt4sqrtf called 0 returned 0% blocks executed 0%
+    #####:  463:  sqrt(float __x)
+    #####:  464:  { return __builtin_sqrtf(__x); }
+    %%%%%:  464-block  0
+unconditional  0 never executed
 ------------------
         -:  465:
         -:  466:  inline _GLIBCXX_CONSTEXPR long double

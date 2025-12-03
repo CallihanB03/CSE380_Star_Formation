@@ -240,16 +240,25 @@
     #####:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
 ------------------
 _ZSt19__iterator_categoryIP4Vec3ENSt15iterator_traitsIT_E17iterator_categoryERKS3_:
+function _ZSt19__iterator_categoryIP4Vec3ENSt15iterator_traitsIT_E17iterator_categoryERKS3_ called 0 returned 0% blocks executed 0%
     #####:  238:    __iterator_category(const _Iter&)
     #####:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
+    %%%%%:  239-block  0
+unconditional  0 never executed
 ------------------
 _ZSt19__iterator_categoryIPfENSt15iterator_traitsIT_E17iterator_categoryERKS2_:
+function _ZSt19__iterator_categoryIPfENSt15iterator_traitsIT_E17iterator_categoryERKS2_ called 0 returned 0% blocks executed 0%
     #####:  238:    __iterator_category(const _Iter&)
     #####:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
+    %%%%%:  239-block  0
+unconditional  0 never executed
 ------------------
 _ZSt19__iterator_categoryIPfENSt15iterator_traitsIT_E17iterator_categoryERKS2_:
+function _ZSt19__iterator_categoryIPfENSt15iterator_traitsIT_E17iterator_categoryERKS2_ called 0 returned 0% blocks executed 0%
     #####:  238:    __iterator_category(const _Iter&)
     #####:  239:    { return typename iterator_traits<_Iter>::iterator_category(); }
+    %%%%%:  239-block  0
+unconditional  0 never executed
 ------------------
         -:  240:
         -:  241:  ///@}

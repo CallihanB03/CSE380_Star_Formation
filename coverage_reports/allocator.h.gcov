@@ -154,23 +154,35 @@
         -:  153:      // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  154:      // 3035. std::allocator's constructors should be constexpr
         -:  155:      _GLIBCXX20_CONSTEXPR
+function _ZNSaIfEC2Ev called 0 returned 0% blocks executed 0%
     #####:  156:      allocator() _GLIBCXX_NOTHROW { }
+    %%%%%:  156-block  0
+call    0 never executed
         -:  157:
         -:  158:      _GLIBCXX20_CONSTEXPR
     #####:  159:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
     #####:  160:      : __allocator_base<_Tp>(__a) { }
 ------------------
 _ZNSaI4Vec3EC2ERKS0_:
+function _ZNSaI4Vec3EC2ERKS0_ called 0 returned 0% blocks executed 0%
     #####:  159:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
     #####:  160:      : __allocator_base<_Tp>(__a) { }
+    %%%%%:  160-block  0
+call    0 never executed
 ------------------
 _ZNSaIfEC2ERKS_:
+function _ZNSaIfEC2ERKS_ called 0 returned 0% blocks executed 0%
     #####:  159:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
     #####:  160:      : __allocator_base<_Tp>(__a) { }
+    %%%%%:  160-block  0
+call    0 never executed
 ------------------
 _ZNSaIfEC2ERKS_:
+function _ZNSaIfEC2ERKS_ called 0 returned 0% blocks executed 0%
     #####:  159:      allocator(const allocator& __a) _GLIBCXX_NOTHROW
     #####:  160:      : __allocator_base<_Tp>(__a) { }
+    %%%%%:  160-block  0
+call    0 never executed
 ------------------
         -:  161:
         -:  162:#if __cplusplus >= 201103L
@@ -188,13 +200,22 @@ _ZNSaIfEC2ERKS_:
     #####:  174:      ~allocator() _GLIBCXX_NOTHROW { }
 ------------------
 _ZNSaI4Vec3ED2Ev:
+function _ZNSaI4Vec3ED2Ev called 0 returned 0% blocks executed 0%
     #####:  174:      ~allocator() _GLIBCXX_NOTHROW { }
+    %%%%%:  174-block  0
+call    0 never executed
 ------------------
 _ZNSaIfED2Ev:
+function _ZNSaIfED2Ev called 0 returned 0% blocks executed 0%
     #####:  174:      ~allocator() _GLIBCXX_NOTHROW { }
+    %%%%%:  174-block  0
+call    0 never executed
 ------------------
 _ZNSaIfED2Ev:
+function _ZNSaIfED2Ev called 0 returned 0% blocks executed 0%
     #####:  174:      ~allocator() _GLIBCXX_NOTHROW { }
+    %%%%%:  174-block  0
+call    0 never executed
 ------------------
         -:  175:
         -:  176:#if __cplusplus > 201703L

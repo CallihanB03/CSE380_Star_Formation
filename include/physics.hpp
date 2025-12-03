@@ -1,4 +1,3 @@
-// include/physics.hpp (or modify existing)
 #pragma once
 #include "particles.hpp"
 

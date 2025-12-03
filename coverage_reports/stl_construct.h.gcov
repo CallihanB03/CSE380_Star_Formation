@@ -107,6 +107,7 @@
         -:  106:  template<typename _Tp, typename... _Args>
         -:  107:    _GLIBCXX20_CONSTEXPR
         -:  108:    inline void
+function _ZSt10_ConstructI4Vec3JRKS0_EEvPT_DpOT0_ called 0 returned 0% blocks executed 0%
     #####:  109:    _Construct(_Tp* __p, _Args&&... __args)
         -:  110:    {
         -:  111:#if __cplusplus >= 202002L && __has_builtin(__builtin_is_constant_evaluated)
@@ -118,6 +119,9 @@
         -:  117:	}
         -:  118:#endif
     #####:  119:      ::new((void*)__p) _Tp(std::forward<_Args>(__args)...);
+    %%%%%:  119-block  0
+call    0 never executed
+call    1 never executed
     #####:  120:    }
         -:  121:#else
         -:  122:  template<typename _T1, typename _T2>
@@ -173,12 +177,15 @@
     #####:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
 _ZNSt12_Destroy_auxILb1EE9__destroyIP4Vec3EEvT_S4_:
+function _ZNSt12_Destroy_auxILb1EE9__destroyIP4Vec3EEvT_S4_ called 0 returned 0% blocks executed 0%
     #####:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
 _ZNSt12_Destroy_auxILb1EE9__destroyIPfEEvT_S3_:
+function _ZNSt12_Destroy_auxILb1EE9__destroyIPfEEvT_S3_ called 0 returned 0% blocks executed 0%
     #####:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
 _ZNSt12_Destroy_auxILb1EE9__destroyIPfEEvT_S3_:
+function _ZNSt12_Destroy_auxILb1EE9__destroyIPfEEvT_S3_ called 0 returned 0% blocks executed 0%
     #####:  172:        __destroy(_ForwardIterator, _ForwardIterator) { }
 ------------------
         -:  173:    };
@@ -208,6 +215,7 @@ _ZNSt12_Destroy_auxILb1EE9__destroyIPfEEvT_S3_:
     #####:  197:    }
 ------------------
 _ZSt8_DestroyIP4Vec3EvT_S2_:
+function _ZSt8_DestroyIP4Vec3EvT_S2_ called 0 returned 0% blocks executed 0%
     #####:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
@@ -223,9 +231,12 @@ _ZSt8_DestroyIP4Vec3EvT_S2_:
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
     #####:  196:	__destroy(__first, __last);
+    %%%%%:  196-block  0
+call    0 never executed
     #####:  197:    }
 ------------------
 _ZSt8_DestroyIPfEvT_S1_:
+function _ZSt8_DestroyIPfEvT_S1_ called 0 returned 0% blocks executed 0%
     #####:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
@@ -241,9 +252,12 @@ _ZSt8_DestroyIPfEvT_S1_:
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
     #####:  196:	__destroy(__first, __last);
+    %%%%%:  196-block  0
+call    0 never executed
     #####:  197:    }
 ------------------
 _ZSt8_DestroyIPfEvT_S1_:
+function _ZSt8_DestroyIPfEvT_S1_ called 0 returned 0% blocks executed 0%
     #####:  182:    _Destroy(_ForwardIterator __first, _ForwardIterator __last)
         -:  183:    {
         -:  184:      typedef typename iterator_traits<_ForwardIterator>::value_type
@@ -259,6 +273,8 @@ _ZSt8_DestroyIPfEvT_S1_:
         -:  194:#endif
         -:  195:      std::_Destroy_aux<__has_trivial_destructor(_Value_type)>::
     #####:  196:	__destroy(__first, __last);
+    %%%%%:  196-block  0
+call    0 never executed
     #####:  197:    }
 ------------------
         -:  198:

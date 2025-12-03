@@ -278,50 +278,112 @@
     #####:  277:    }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EE14_M_fill_assignEmRKS0_:
+function _ZNSt6vectorI4Vec3SaIS0_EE14_M_fill_assignEmRKS0_ called 0 returned 0% blocks executed 0%
     #####:  257:    vector<_Tp, _Alloc>::
         -:  258:    _M_fill_assign(size_t __n, const value_type& __val)
         -:  259:    {
     #####:  260:      if (__n > capacity())
+    %%%%%:  260-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
         -:  261:	{
     #####:  262:	  vector __tmp(__n, __val, _M_get_Tp_allocator());
+    %%%%%:  262-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
     #####:  263:	  __tmp._M_impl._M_swap_data(this->_M_impl);
+    %%%%%:  263-block  0
+call    0 never executed
     #####:  264:	}
+call    0 never executed
     #####:  265:      else if (__n > size())
+    %%%%%:  265-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
         -:  266:	{
     #####:  267:	  std::fill(begin(), end(), __val);
+    %%%%%:  267-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
     #####:  268:	  const size_type __add = __n - size();
+call    0 never executed
         -:  269:	  _GLIBCXX_ASAN_ANNOTATE_GROW(__add);
     #####:  270:	  this->_M_impl._M_finish =
     #####:  271:	    std::__uninitialized_fill_n_a(this->_M_impl._M_finish,
+call    0 never executed
+unconditional  1 never executed
     #####:  272:					  __add, __val, _M_get_Tp_allocator());
+call    0 never executed
         -:  273:	  _GLIBCXX_ASAN_ANNOTATE_GREW(__add);
         -:  274:	}
         -:  275:      else
     #####:  276:        _M_erase_at_end(std::fill_n(this->_M_impl._M_start, __n, __val));
+    %%%%%:  276-block  0
+call    0 never executed
+call    1 never executed
+unconditional  2 never executed
     #####:  277:    }
+    %%%%%:  277-block  0
+unconditional  0 never executed
 ------------------
 _ZNSt6vectorIfSaIfEE14_M_fill_assignEmRKf:
+function _ZNSt6vectorIfSaIfEE14_M_fill_assignEmRKf called 0 returned 0% blocks executed 0%
     #####:  257:    vector<_Tp, _Alloc>::
         -:  258:    _M_fill_assign(size_t __n, const value_type& __val)
         -:  259:    {
     #####:  260:      if (__n > capacity())
+    %%%%%:  260-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
         -:  261:	{
     #####:  262:	  vector __tmp(__n, __val, _M_get_Tp_allocator());
+    %%%%%:  262-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
     #####:  263:	  __tmp._M_impl._M_swap_data(this->_M_impl);
+    %%%%%:  263-block  0
+call    0 never executed
     #####:  264:	}
+call    0 never executed
     #####:  265:      else if (__n > size())
+    %%%%%:  265-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
         -:  266:	{
     #####:  267:	  std::fill(begin(), end(), __val);
+    %%%%%:  267-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
     #####:  268:	  const size_type __add = __n - size();
+call    0 never executed
         -:  269:	  _GLIBCXX_ASAN_ANNOTATE_GROW(__add);
     #####:  270:	  this->_M_impl._M_finish =
     #####:  271:	    std::__uninitialized_fill_n_a(this->_M_impl._M_finish,
+call    0 never executed
+unconditional  1 never executed
     #####:  272:					  __add, __val, _M_get_Tp_allocator());
+call    0 never executed
         -:  273:	  _GLIBCXX_ASAN_ANNOTATE_GREW(__add);
         -:  274:	}
         -:  275:      else
     #####:  276:        _M_erase_at_end(std::fill_n(this->_M_impl._M_start, __n, __val));
+    %%%%%:  276-block  0
+call    0 never executed
+call    1 never executed
+unconditional  2 never executed
     #####:  277:    }
+    %%%%%:  277-block  0
+unconditional  0 never executed
 ------------------
         -:  278:
         -:  279:  template<typename _Tp, typename _Alloc>

@@ -1025,18 +1025,21 @@
         -: 1024:      : _M_current(_Iterator()) { }
         -: 1025:
         -: 1026:      explicit _GLIBCXX20_CONSTEXPR
-   40606*: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
-   40606*: 1028:      : _M_current(__i) { }
+    #####: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+    #####: 1028:      : _M_current(__i) { }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS1_SaIS1_EEEC2ERKS2_:
-    40000: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
-    40000: 1028:      : _M_current(__i) { }
+function _ZN9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS1_SaIS1_EEEC2ERKS2_ called 0 returned 0% blocks executed 0%
+    #####: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+    #####: 1028:      : _M_current(__i) { }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEC2ERKS1_:
-      606: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
-      606: 1028:      : _M_current(__i) { }
+function _ZN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEC2ERKS1_ called 0 returned 0% blocks executed 0%
+    #####: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
+    #####: 1028:      : _M_current(__i) { }
 ------------------
 _ZN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEC2ERKS1_:
+function _ZN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEC2ERKS1_ called 0 returned 0% blocks executed 0%
     #####: 1027:      __normal_iterator(const _Iterator& __i) _GLIBCXX_NOEXCEPT
     #####: 1028:      : _M_current(__i) { }
 ------------------
@@ -1116,20 +1119,29 @@ _ZN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEC2ERKS1_:
         -: 1102:
         -: 1103:      _GLIBCXX20_CONSTEXPR
         -: 1104:      const _Iterator&
-   40606*: 1105:      base() const _GLIBCXX_NOEXCEPT
-   40606*: 1106:      { return _M_current; }
-------------------
-_ZNK9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS1_SaIS1_EEE4baseEv:
-    40000: 1105:      base() const _GLIBCXX_NOEXCEPT
-    40000: 1106:      { return _M_current; }
-------------------
-_ZNK9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEE4baseEv:
-      606: 1105:      base() const _GLIBCXX_NOEXCEPT
-      606: 1106:      { return _M_current; }
-------------------
-_ZNK9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEE4baseEv:
     #####: 1105:      base() const _GLIBCXX_NOEXCEPT
     #####: 1106:      { return _M_current; }
+------------------
+_ZNK9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS1_SaIS1_EEE4baseEv:
+function _ZNK9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS1_SaIS1_EEE4baseEv called 0 returned 0% blocks executed 0%
+    #####: 1105:      base() const _GLIBCXX_NOEXCEPT
+    #####: 1106:      { return _M_current; }
+    %%%%%: 1106-block  0
+unconditional  0 never executed
+------------------
+_ZNK9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEE4baseEv:
+function _ZNK9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEE4baseEv called 0 returned 0% blocks executed 0%
+    #####: 1105:      base() const _GLIBCXX_NOEXCEPT
+    #####: 1106:      { return _M_current; }
+    %%%%%: 1106-block  0
+unconditional  0 never executed
+------------------
+_ZNK9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEE4baseEv:
+function _ZNK9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEE4baseEv called 0 returned 0% blocks executed 0%
+    #####: 1105:      base() const _GLIBCXX_NOEXCEPT
+    #####: 1106:      { return _M_current; }
+    %%%%%: 1106-block  0
+unconditional  0 never executed
 ------------------
         -: 1107:    };
         -: 1108:

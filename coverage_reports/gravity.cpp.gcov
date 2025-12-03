@@ -6,76 +6,219 @@
         -:    5:#include <cstddef>
         -:    6:#include <cmath>
         -:    7:
-      101:    8:void compute_gravity(const Particles& P,
+function _Z15compute_gravityRK9ParticlesRSt6vectorIfSaIfEES5_S5_ff called 0 returned 0% blocks executed 0%
+    #####:    8:void compute_gravity(const Particles& P,
         -:    9:                     std::vector<float>& ax,
         -:   10:                     std::vector<float>& ay,
         -:   11:                     std::vector<float>& az,
         -:   12:                     float G,
         -:   13:                     float softening)
         -:   14:{
-      101:   15:    size_t N = P.N;
-      101:   16:    std::fill(ax.begin(), ax.end(), 0.0f);
-      101:   17:    std::fill(ay.begin(), ay.end(), 0.0f);
-      101:   18:    std::fill(az.begin(), az.end(), 0.0f);
+    #####:   15:    size_t N = P.N;
+    #####:   16:    std::fill(ax.begin(), ax.end(), 0.0f);
+    %%%%%:   16-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   16-block  1
+call    5 never executed
+    #####:   17:    std::fill(ay.begin(), ay.end(), 0.0f);
+    %%%%%:   17-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    $$$$$:   17-block  1
+call    5 never executed
+    #####:   18:    std::fill(az.begin(), az.end(), 0.0f);
+    %%%%%:   18-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
         -:   19:
-      303:   20:    for (size_t i = 0; i < N; ++i) {
-     202*:   21:        if (!P.alive[i]) continue;
-      303:   22:        for (size_t j = i+1; j < N; ++j) {
-     101*:   23:            if (!P.alive[j]) continue;
-      101:   24:            float dx = P.x[j] - P.x[i];
-      101:   25:            float dy = P.y[j] - P.y[i];
-      101:   26:            float dz = P.z[j] - P.z[i];
-      101:   27:            float r2 = dx*dx + dy*dy + dz*dz;
-      101:   28:            float denom = std::sqrt(r2 + softening*softening);
-      101:   29:            float inv_r3 = 1.0f / (denom * denom * denom + 1e-20f);
-      101:   30:            float f = G * P.mass[i] * P.mass[j] * inv_r3;
+    #####:   20:    for (size_t i = 0; i < N; ++i) {
+    %%%%%:   20-block  0
+unconditional  0 never executed
+    %%%%%:   20-block  1
+unconditional  1 never executed
+    %%%%%:   20-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   21:        if (!P.alive[i]) continue;
+    %%%%%:   21-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   21-block  1
+unconditional  3 never executed
+    #####:   22:        for (size_t j = i+1; j < N; ++j) {
+    %%%%%:   22-block  0
+unconditional  0 never executed
+    %%%%%:   22-block  1
+unconditional  1 never executed
+    %%%%%:   22-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   23:            if (!P.alive[j]) continue;
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   23-block  1
+unconditional  3 never executed
+    #####:   24:            float dx = P.x[j] - P.x[i];
+    %%%%%:   24-block  0
+call    0 never executed
+call    1 never executed
+    #####:   25:            float dy = P.y[j] - P.y[i];
+call    0 never executed
+call    1 never executed
+    #####:   26:            float dz = P.z[j] - P.z[i];
+call    0 never executed
+call    1 never executed
+    #####:   27:            float r2 = dx*dx + dy*dy + dz*dz;
+    #####:   28:            float denom = std::sqrt(r2 + softening*softening);
+call    0 never executed
+    #####:   29:            float inv_r3 = 1.0f / (denom * denom * denom + 1e-20f);
+    #####:   30:            float f = G * P.mass[i] * P.mass[j] * inv_r3;
+call    0 never executed
+call    1 never executed
         -:   31:            // acceleration contributions
-      101:   32:            float aix = f * dx / P.mass[i]; // f/m_i = G m_j / r^3 * dx
-      101:   33:            float ajx = -f * dx / P.mass[j];
-      101:   34:            ax[i] += aix; ax[j] += ajx;
-      101:   35:            float aiy = f * dy / P.mass[i];
-      101:   36:            float ajy = -f * dy / P.mass[j];
-      101:   37:            ay[i] += aiy; ay[j] += ajy;
-      101:   38:            float aiz = f * dz / P.mass[i];
-      101:   39:            float ajz = -f * dz / P.mass[j];
-      101:   40:            az[i] += aiz; az[j] += ajz;
+    #####:   32:            float aix = f * dx / P.mass[i]; // f/m_i = G m_j / r^3 * dx
+call    0 never executed
+    #####:   33:            float ajx = -f * dx / P.mass[j];
+call    0 never executed
+    #####:   34:            ax[i] += aix; ax[j] += ajx;
+call    0 never executed
+call    1 never executed
+    #####:   35:            float aiy = f * dy / P.mass[i];
+call    0 never executed
+    #####:   36:            float ajy = -f * dy / P.mass[j];
+call    0 never executed
+    #####:   37:            ay[i] += aiy; ay[j] += ajy;
+call    0 never executed
+call    1 never executed
+    #####:   38:            float aiz = f * dz / P.mass[i];
+call    0 never executed
+    #####:   39:            float ajz = -f * dz / P.mass[j];
+call    0 never executed
+    #####:   40:            az[i] += aiz; az[j] += ajz;
+call    0 never executed
+call    1 never executed
+unconditional  2 never executed
         -:   41:        }
         -:   42:    }
-      101:   43:}
+    #####:   43:}
+    %%%%%:   43-block  0
+unconditional  0 never executed
         -:   44:
         -:   45:// cached version: compute per-particle acceleration Vec3 and fill acc_cache
-    20000:   46:void compute_gravity_cached(Particles& P,
+function _Z22compute_gravity_cachedR9ParticlesRSt6vectorI4Vec3SaIS2_EEff called 0 returned 0% blocks executed 0%
+    #####:   46:void compute_gravity_cached(Particles& P,
         -:   47:                           std::vector<Vec3>& acc_cache,
         -:   48:                           float G,
         -:   49:                           float softening)
         -:   50:{
-    20000:   51:    size_t N = P.N;
-   20000*:   52:    if (acc_cache.size() != N) acc_cache.assign(N, Vec3{0.0f,0.0f,0.0f});
-    20000:   53:    std::fill(acc_cache.begin(), acc_cache.end(), Vec3{0.0f,0.0f,0.0f});
+    #####:   51:    size_t N = P.N;
+    #####:   52:    if (acc_cache.size() != N) acc_cache.assign(N, Vec3{0.0f,0.0f,0.0f});
+    %%%%%:   52-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   52-block  1
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    %%%%%:   52-block  2
+unconditional  7 never executed
+    $$$$$:   52-block  3
+call    8 never executed
+    #####:   53:    std::fill(acc_cache.begin(), acc_cache.end(), Vec3{0.0f,0.0f,0.0f});
+    %%%%%:   53-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
         -:   54:
-    60000:   55:    for (size_t i = 0; i < N; ++i) {
-   40000*:   56:        if (!P.alive[i]) continue;
-    60000:   57:        for (size_t j = i+1; j < N; ++j) {
-   20000*:   58:            if (!P.alive[j]) continue;
-    20000:   59:            float dx = P.x[j] - P.x[i];
-    20000:   60:            float dy = P.y[j] - P.y[i];
-    20000:   61:            float dz = P.z[j] - P.z[i];
-    20000:   62:            float r2 = dx*dx + dy*dy + dz*dz;
-    20000:   63:            float denom = std::sqrt(r2 + softening*softening);
-    20000:   64:            float inv_r3 = 1.0f / (denom * denom * denom + 1e-20f);
-    20000:   65:            float a_scalar = G * inv_r3;
+    #####:   55:    for (size_t i = 0; i < N; ++i) {
+    %%%%%:   55-block  0
+unconditional  0 never executed
+    %%%%%:   55-block  1
+unconditional  1 never executed
+    %%%%%:   55-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   56:        if (!P.alive[i]) continue;
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   56-block  1
+unconditional  3 never executed
+    #####:   57:        for (size_t j = i+1; j < N; ++j) {
+    %%%%%:   57-block  0
+unconditional  0 never executed
+    %%%%%:   57-block  1
+unconditional  1 never executed
+    %%%%%:   57-block  2
+branch  2 never executed
+branch  3 never executed
+    #####:   58:            if (!P.alive[j]) continue;
+    %%%%%:   58-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   58-block  1
+unconditional  3 never executed
+    #####:   59:            float dx = P.x[j] - P.x[i];
+    %%%%%:   59-block  0
+call    0 never executed
+call    1 never executed
+    #####:   60:            float dy = P.y[j] - P.y[i];
+call    0 never executed
+call    1 never executed
+    #####:   61:            float dz = P.z[j] - P.z[i];
+call    0 never executed
+call    1 never executed
+    #####:   62:            float r2 = dx*dx + dy*dy + dz*dz;
+    #####:   63:            float denom = std::sqrt(r2 + softening*softening);
+call    0 never executed
+    #####:   64:            float inv_r3 = 1.0f / (denom * denom * denom + 1e-20f);
+    #####:   65:            float a_scalar = G * inv_r3;
         -:   66:            // acceleration on i due to j: a_i += a_scalar * m_j * (r_j - r_i)
-    20000:   67:            Vec3 aij{ a_scalar * P.mass[j] * dx,
-    40000:   68:                      a_scalar * P.mass[j] * dy,
-    20000:   69:                      a_scalar * P.mass[j] * dz };
-    20000:   70:            acc_cache[i] += aij;
+    #####:   67:            Vec3 aij{ a_scalar * P.mass[j] * dx,
+call    0 never executed
+    #####:   68:                      a_scalar * P.mass[j] * dy,
+    #####:   69:                      a_scalar * P.mass[j] * dz };
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   70:            acc_cache[i] += aij;
+call    0 never executed
+call    1 never executed
         -:   71:            // acceleration on j due to i: equal and opposite
-    20000:   72:            Vec3 aji{ -a_scalar * P.mass[i] * dx,
-    40000:   73:                      -a_scalar * P.mass[i] * dy,
-    20000:   74:                      -a_scalar * P.mass[i] * dz };
-    20000:   75:            acc_cache[j] += aji;
+    #####:   72:            Vec3 aji{ -a_scalar * P.mass[i] * dx,
+call    0 never executed
+    #####:   73:                      -a_scalar * P.mass[i] * dy,
+    #####:   74:                      -a_scalar * P.mass[i] * dz };
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   75:            acc_cache[j] += aji;
+call    0 never executed
+call    1 never executed
         -:   76:        }
         -:   77:    }
         -:   78:    // Note: acc_cache stores acceleration vectors (not divided by the particle mass).
-    20000:   79:    P.cache_valid = true;
-    20000:   80:}
+    #####:   79:    P.cache_valid = true;
+    #####:   80:}
+    %%%%%:   80-block  0
+unconditional  0 never executed

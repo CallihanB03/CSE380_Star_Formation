@@ -239,36 +239,60 @@
         -:  238:    }
 ------------------
 _ZSt3minImERKT_S2_S2_:
+function _ZSt3minImERKT_S2_S2_ called 0 returned 0% blocks executed 0%
     #####:  230:    min(const _Tp& __a, const _Tp& __b)
         -:  231:    {
         -:  232:      // concept requirements
         -:  233:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  234:      //return __b < __a ? __b : __a;
     #####:  235:      if (__b < __a)
+    %%%%%:  235-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  236:	return __b;
+    %%%%%:  236-block  0
+unconditional  0 never executed
     #####:  237:      return __a;
+    %%%%%:  237-block  0
+unconditional  0 never executed
         -:  238:    }
 ------------------
 _ZSt3minImERKT_S2_S2_:
+function _ZSt3minImERKT_S2_S2_ called 0 returned 0% blocks executed 0%
     #####:  230:    min(const _Tp& __a, const _Tp& __b)
         -:  231:    {
         -:  232:      // concept requirements
         -:  233:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  234:      //return __b < __a ? __b : __a;
     #####:  235:      if (__b < __a)
+    %%%%%:  235-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  236:	return __b;
+    %%%%%:  236-block  0
+unconditional  0 never executed
     #####:  237:      return __a;
+    %%%%%:  237-block  0
+unconditional  0 never executed
         -:  238:    }
 ------------------
 _ZSt3minImERKT_S2_S2_:
+function _ZSt3minImERKT_S2_S2_ called 0 returned 0% blocks executed 0%
     #####:  230:    min(const _Tp& __a, const _Tp& __b)
         -:  231:    {
         -:  232:      // concept requirements
         -:  233:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  234:      //return __b < __a ? __b : __a;
     #####:  235:      if (__b < __a)
+    %%%%%:  235-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  236:	return __b;
+    %%%%%:  236-block  0
+unconditional  0 never executed
     #####:  237:      return __a;
+    %%%%%:  237-block  0
+unconditional  0 never executed
         -:  238:    }
 ------------------
         -:  239:
@@ -286,14 +310,22 @@ _ZSt3minImERKT_S2_S2_:
         -:  251:  template<typename _Tp>
         -:  252:    _GLIBCXX14_CONSTEXPR
         -:  253:    inline const _Tp&
+function _ZSt3maxIfERKT_S2_S2_ called 0 returned 0% blocks executed 0%
     #####:  254:    max(const _Tp& __a, const _Tp& __b)
         -:  255:    {
         -:  256:      // concept requirements
         -:  257:      __glibcxx_function_requires(_LessThanComparableConcept<_Tp>)
         -:  258:      //return  __a < __b ? __b : __a;
     #####:  259:      if (__a < __b)
+    %%%%%:  259-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  260:	return __b;
+    %%%%%:  260-block  0
+unconditional  0 never executed
     #####:  261:      return __a;
+    %%%%%:  261-block  0
+unconditional  0 never executed
         -:  262:    }
         -:  263:
         -:  264:  /**
@@ -940,12 +972,20 @@ _ZSt3minImERKT_S2_S2_:
         -:  905:    _GLIBCXX20_CONSTEXPR
         -:  906:    inline typename
         -:  907:    __gnu_cxx::__enable_if<!__is_scalar<_Tp>::__value, void>::__type
-    20000:  908:    __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
+function _ZSt9__fill_a1IP4Vec3S0_EN9__gnu_cxx11__enable_ifIXntsrSt11__is_scalarIT0_E7__valueEvE6__typeET_S9_RKS5_ called 0 returned 0% blocks executed 0%
+    #####:  908:    __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
         -:  909:	      const _Tp& __value)
         -:  910:    {
-    60000:  911:      for (; __first != __last; ++__first)
-    40000:  912:	*__first = __value;
-    20000:  913:    }
+    #####:  911:      for (; __first != __last; ++__first)
+    %%%%%:  911-block  0
+unconditional  0 never executed
+    %%%%%:  911-block  1
+branch  1 never executed
+branch  2 never executed
+    #####:  912:	*__first = __value;
+    %%%%%:  912-block  0
+unconditional  0 never executed
+    #####:  913:    }
         -:  914:
         -:  915:  template<typename _ForwardIterator, typename _Tp>
         -:  916:    _GLIBCXX20_CONSTEXPR
@@ -960,30 +1000,54 @@ _ZSt3minImERKT_S2_S2_:
     #####:  925:    }
 ------------------
 _ZSt9__fill_a1IPffEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT0_E7__valueEvE6__typeET_S8_RKS4_:
+function _ZSt9__fill_a1IPffEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT0_E7__valueEvE6__typeET_S8_RKS4_ called 0 returned 0% blocks executed 0%
     #####:  919:    __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
         -:  920:	      const _Tp& __value)
         -:  921:    {
     #####:  922:      const _Tp __tmp = __value;
     #####:  923:      for (; __first != __last; ++__first)
+    %%%%%:  923-block  0
+unconditional  0 never executed
+    %%%%%:  923-block  1
+branch  1 never executed
+branch  2 never executed
     #####:  924:	*__first = __tmp;
+    %%%%%:  924-block  0
+unconditional  0 never executed
     #####:  925:    }
 ------------------
 _ZSt9__fill_a1IPffEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT0_E7__valueEvE6__typeET_S8_RKS4_:
+function _ZSt9__fill_a1IPffEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT0_E7__valueEvE6__typeET_S8_RKS4_ called 0 returned 0% blocks executed 0%
     #####:  919:    __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
         -:  920:	      const _Tp& __value)
         -:  921:    {
     #####:  922:      const _Tp __tmp = __value;
     #####:  923:      for (; __first != __last; ++__first)
+    %%%%%:  923-block  0
+unconditional  0 never executed
+    %%%%%:  923-block  1
+branch  1 never executed
+branch  2 never executed
     #####:  924:	*__first = __tmp;
+    %%%%%:  924-block  0
+unconditional  0 never executed
     #####:  925:    }
 ------------------
 _ZSt9__fill_a1IPffEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT0_E7__valueEvE6__typeET_S8_RKS4_:
+function _ZSt9__fill_a1IPffEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT0_E7__valueEvE6__typeET_S8_RKS4_ called 0 returned 0% blocks executed 0%
     #####:  919:    __fill_a1(_ForwardIterator __first, _ForwardIterator __last,
         -:  920:	      const _Tp& __value)
         -:  921:    {
     #####:  922:      const _Tp __tmp = __value;
     #####:  923:      for (; __first != __last; ++__first)
+    %%%%%:  923-block  0
+unconditional  0 never executed
+    %%%%%:  923-block  1
+branch  1 never executed
+branch  2 never executed
     #####:  924:	*__first = __tmp;
+    %%%%%:  924-block  0
+unconditional  0 never executed
     #####:  925:    }
 ------------------
         -:  926:
@@ -1010,28 +1074,43 @@ _ZSt9__fill_a1IPffEN9__gnu_cxx11__enable_ifIXsrSt11__is_scalarIT0_E7__valueEvE6_
         -:  947:  template<typename _Ite, typename _Cont, typename _Tp>
         -:  948:    _GLIBCXX20_CONSTEXPR
         -:  949:    inline void
-   20303*:  950:    __fill_a1(::__gnu_cxx::__normal_iterator<_Ite, _Cont> __first,
-        -:  951:	      ::__gnu_cxx::__normal_iterator<_Ite, _Cont> __last,
-        -:  952:	      const _Tp& __value)
-   20303*:  953:    { std::__fill_a1(__first.base(), __last.base(), __value); }
-------------------
-_ZSt9__fill_a1IP4Vec3St6vectorIS0_SaIS0_EES0_EvN9__gnu_cxx17__normal_iteratorIT_T0_EES9_RKT1_:
-    20000:  950:    __fill_a1(::__gnu_cxx::__normal_iterator<_Ite, _Cont> __first,
-        -:  951:	      ::__gnu_cxx::__normal_iterator<_Ite, _Cont> __last,
-        -:  952:	      const _Tp& __value)
-    20000:  953:    { std::__fill_a1(__first.base(), __last.base(), __value); }
-------------------
-_ZSt9__fill_a1IPfSt6vectorIfSaIfEEfEvN9__gnu_cxx17__normal_iteratorIT_T0_EES8_RKT1_:
-      303:  950:    __fill_a1(::__gnu_cxx::__normal_iterator<_Ite, _Cont> __first,
-        -:  951:	      ::__gnu_cxx::__normal_iterator<_Ite, _Cont> __last,
-        -:  952:	      const _Tp& __value)
-      303:  953:    { std::__fill_a1(__first.base(), __last.base(), __value); }
-------------------
-_ZSt9__fill_a1IPfSt6vectorIfSaIfEEfEvN9__gnu_cxx17__normal_iteratorIT_T0_EES8_RKT1_:
     #####:  950:    __fill_a1(::__gnu_cxx::__normal_iterator<_Ite, _Cont> __first,
         -:  951:	      ::__gnu_cxx::__normal_iterator<_Ite, _Cont> __last,
         -:  952:	      const _Tp& __value)
     #####:  953:    { std::__fill_a1(__first.base(), __last.base(), __value); }
+------------------
+_ZSt9__fill_a1IP4Vec3St6vectorIS0_SaIS0_EES0_EvN9__gnu_cxx17__normal_iteratorIT_T0_EES9_RKT1_:
+function _ZSt9__fill_a1IP4Vec3St6vectorIS0_SaIS0_EES0_EvN9__gnu_cxx17__normal_iteratorIT_T0_EES9_RKT1_ called 0 returned 0% blocks executed 0%
+    #####:  950:    __fill_a1(::__gnu_cxx::__normal_iterator<_Ite, _Cont> __first,
+        -:  951:	      ::__gnu_cxx::__normal_iterator<_Ite, _Cont> __last,
+        -:  952:	      const _Tp& __value)
+    #####:  953:    { std::__fill_a1(__first.base(), __last.base(), __value); }
+    %%%%%:  953-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+------------------
+_ZSt9__fill_a1IPfSt6vectorIfSaIfEEfEvN9__gnu_cxx17__normal_iteratorIT_T0_EES8_RKT1_:
+function _ZSt9__fill_a1IPfSt6vectorIfSaIfEEfEvN9__gnu_cxx17__normal_iteratorIT_T0_EES8_RKT1_ called 0 returned 0% blocks executed 0%
+    #####:  950:    __fill_a1(::__gnu_cxx::__normal_iterator<_Ite, _Cont> __first,
+        -:  951:	      ::__gnu_cxx::__normal_iterator<_Ite, _Cont> __last,
+        -:  952:	      const _Tp& __value)
+    #####:  953:    { std::__fill_a1(__first.base(), __last.base(), __value); }
+    %%%%%:  953-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+------------------
+_ZSt9__fill_a1IPfSt6vectorIfSaIfEEfEvN9__gnu_cxx17__normal_iteratorIT_T0_EES8_RKT1_:
+function _ZSt9__fill_a1IPfSt6vectorIfSaIfEEfEvN9__gnu_cxx17__normal_iteratorIT_T0_EES8_RKT1_ called 0 returned 0% blocks executed 0%
+    #####:  950:    __fill_a1(::__gnu_cxx::__normal_iterator<_Ite, _Cont> __first,
+        -:  951:	      ::__gnu_cxx::__normal_iterator<_Ite, _Cont> __last,
+        -:  952:	      const _Tp& __value)
+    #####:  953:    { std::__fill_a1(__first.base(), __last.base(), __value); }
+    %%%%%:  953-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
 ------------------
         -:  954:
         -:  955:  template<typename _Tp, typename _VTp>
@@ -1047,32 +1126,50 @@ _ZSt9__fill_a1IPfSt6vectorIfSaIfEEfEvN9__gnu_cxx17__normal_iteratorIT_T0_EES8_RK
         -:  965:  template<typename _FIte, typename _Tp>
         -:  966:    _GLIBCXX20_CONSTEXPR
         -:  967:    inline void
-   20303*:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
-   20303*:  969:    { std::__fill_a1(__first, __last, __value); }
+    #####:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
+    #####:  969:    { std::__fill_a1(__first, __last, __value); }
 ------------------
 _ZSt8__fill_aIP4Vec3S0_EvT_S2_RKT0_:
+function _ZSt8__fill_aIP4Vec3S0_EvT_S2_RKT0_ called 0 returned 0% blocks executed 0%
     #####:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
     #####:  969:    { std::__fill_a1(__first, __last, __value); }
+    %%%%%:  969-block  0
+call    0 never executed
 ------------------
 _ZSt8__fill_aIN9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS2_SaIS2_EEEES2_EvT_S8_RKT0_:
-    20000:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
-    20000:  969:    { std::__fill_a1(__first, __last, __value); }
+function _ZSt8__fill_aIN9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS2_SaIS2_EEEES2_EvT_S8_RKT0_ called 0 returned 0% blocks executed 0%
+    #####:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
+    #####:  969:    { std::__fill_a1(__first, __last, __value); }
+    %%%%%:  969-block  0
+call    0 never executed
 ------------------
 _ZSt8__fill_aIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_:
-      303:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
-      303:  969:    { std::__fill_a1(__first, __last, __value); }
-------------------
-_ZSt8__fill_aIPffEvT_S1_RKT0_:
+function _ZSt8__fill_aIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_ called 0 returned 0% blocks executed 0%
     #####:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
     #####:  969:    { std::__fill_a1(__first, __last, __value); }
+    %%%%%:  969-block  0
+call    0 never executed
+------------------
+_ZSt8__fill_aIPffEvT_S1_RKT0_:
+function _ZSt8__fill_aIPffEvT_S1_RKT0_ called 0 returned 0% blocks executed 0%
+    #####:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
+    #####:  969:    { std::__fill_a1(__first, __last, __value); }
+    %%%%%:  969-block  0
+call    0 never executed
 ------------------
 _ZSt8__fill_aIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_:
+function _ZSt8__fill_aIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_ called 0 returned 0% blocks executed 0%
     #####:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
     #####:  969:    { std::__fill_a1(__first, __last, __value); }
+    %%%%%:  969-block  0
+call    0 never executed
 ------------------
 _ZSt8__fill_aIPffEvT_S1_RKT0_:
+function _ZSt8__fill_aIPffEvT_S1_RKT0_ called 0 returned 0% blocks executed 0%
     #####:  968:    __fill_a(_FIte __first, _FIte __last, const _Tp& __value)
     #####:  969:    { std::__fill_a1(__first, __last, __value); }
+    %%%%%:  969-block  0
+call    0 never executed
 ------------------
         -:  970:
         -:  971:  template<typename _Ite, typename _Seq, typename _Cat, typename _Tp>
@@ -1096,39 +1193,6 @@ _ZSt8__fill_aIPffEvT_S1_RKT0_:
         -:  989:  template<typename _ForwardIterator, typename _Tp>
         -:  990:    _GLIBCXX20_CONSTEXPR
         -:  991:    inline void
-   20303*:  992:    fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
-        -:  993:    {
-        -:  994:      // concept requirements
-        -:  995:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
-        -:  996:				  _ForwardIterator>)
-        -:  997:      __glibcxx_requires_valid_range(__first, __last);
-        -:  998:
-   20303*:  999:      std::__fill_a(__first, __last, __value);
-   20303*: 1000:    }
-------------------
-_ZSt4fillIN9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS2_SaIS2_EEEES2_EvT_S8_RKT0_:
-    20000:  992:    fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
-        -:  993:    {
-        -:  994:      // concept requirements
-        -:  995:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
-        -:  996:				  _ForwardIterator>)
-        -:  997:      __glibcxx_requires_valid_range(__first, __last);
-        -:  998:
-    20000:  999:      std::__fill_a(__first, __last, __value);
-    20000: 1000:    }
-------------------
-_ZSt4fillIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_:
-      303:  992:    fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
-        -:  993:    {
-        -:  994:      // concept requirements
-        -:  995:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
-        -:  996:				  _ForwardIterator>)
-        -:  997:      __glibcxx_requires_valid_range(__first, __last);
-        -:  998:
-      303:  999:      std::__fill_a(__first, __last, __value);
-      303: 1000:    }
-------------------
-_ZSt4fillIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_:
     #####:  992:    fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
         -:  993:    {
         -:  994:      // concept requirements
@@ -1137,6 +1201,48 @@ _ZSt4fillIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_:
         -:  997:      __glibcxx_requires_valid_range(__first, __last);
         -:  998:
     #####:  999:      std::__fill_a(__first, __last, __value);
+    #####: 1000:    }
+------------------
+_ZSt4fillIN9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS2_SaIS2_EEEES2_EvT_S8_RKT0_:
+function _ZSt4fillIN9__gnu_cxx17__normal_iteratorIP4Vec3St6vectorIS2_SaIS2_EEEES2_EvT_S8_RKT0_ called 0 returned 0% blocks executed 0%
+    #####:  992:    fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
+        -:  993:    {
+        -:  994:      // concept requirements
+        -:  995:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
+        -:  996:				  _ForwardIterator>)
+        -:  997:      __glibcxx_requires_valid_range(__first, __last);
+        -:  998:
+    #####:  999:      std::__fill_a(__first, __last, __value);
+    %%%%%:  999-block  0
+call    0 never executed
+    #####: 1000:    }
+------------------
+_ZSt4fillIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_:
+function _ZSt4fillIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_ called 0 returned 0% blocks executed 0%
+    #####:  992:    fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
+        -:  993:    {
+        -:  994:      // concept requirements
+        -:  995:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
+        -:  996:				  _ForwardIterator>)
+        -:  997:      __glibcxx_requires_valid_range(__first, __last);
+        -:  998:
+    #####:  999:      std::__fill_a(__first, __last, __value);
+    %%%%%:  999-block  0
+call    0 never executed
+    #####: 1000:    }
+------------------
+_ZSt4fillIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_:
+function _ZSt4fillIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_ called 0 returned 0% blocks executed 0%
+    #####:  992:    fill(_ForwardIterator __first, _ForwardIterator __last, const _Tp& __value)
+        -:  993:    {
+        -:  994:      // concept requirements
+        -:  995:      __glibcxx_function_requires(_Mutable_ForwardIteratorConcept<
+        -:  996:				  _ForwardIterator>)
+        -:  997:      __glibcxx_requires_valid_range(__first, __last);
+        -:  998:
+    #####:  999:      std::__fill_a(__first, __last, __value);
+    %%%%%:  999-block  0
+call    0 never executed
     #####: 1000:    }
 ------------------
         -: 1001:
@@ -1151,13 +1257,22 @@ _ZSt4fillIN9__gnu_cxx17__normal_iteratorIPfSt6vectorIfSaIfEEEEfEvT_S7_RKT0_:
     #####: 1010:  __size_to_integer(unsigned long __n) { return __n; }
 ------------------
 _ZSt17__size_to_integerm:
+function _ZSt17__size_to_integerm called 0 returned 0% blocks executed 0%
     #####: 1010:  __size_to_integer(unsigned long __n) { return __n; }
+    %%%%%: 1010-block  0
+unconditional  0 never executed
 ------------------
 _ZSt17__size_to_integerm:
+function _ZSt17__size_to_integerm called 0 returned 0% blocks executed 0%
     #####: 1010:  __size_to_integer(unsigned long __n) { return __n; }
+    %%%%%: 1010-block  0
+unconditional  0 never executed
 ------------------
 _ZSt17__size_to_integerm:
+function _ZSt17__size_to_integerm called 0 returned 0% blocks executed 0%
     #####: 1010:  __size_to_integer(unsigned long __n) { return __n; }
+    %%%%%: 1010-block  0
+unconditional  0 never executed
 ------------------
         -: 1011:  inline _GLIBCXX_CONSTEXPR long long
         -: 1012:  __size_to_integer(long long __n) { return __n; }
@@ -1273,6 +1388,7 @@ _ZSt17__size_to_integerm:
         -: 1122:    }
 ------------------
 _ZSt10__fill_n_aIP4Vec3mS0_ET_S2_T0_RKT1_St26random_access_iterator_tag:
+function _ZSt10__fill_n_aIP4Vec3mS0_ET_S2_T0_RKT1_St26random_access_iterator_tag called 0 returned 0% blocks executed 0%
     #####: 1109:    __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value,
         -: 1110:	       std::random_access_iterator_tag)
         -: 1111:    {
@@ -1280,15 +1396,24 @@ _ZSt10__fill_n_aIP4Vec3mS0_ET_S2_T0_RKT1_St26random_access_iterator_tag:
         -: 1113:      static_assert(is_integral<_Size>{}, "fill_n must pass integral size");
         -: 1114:#endif
     #####: 1115:      if (__n <= 0)
+    %%%%%: 1115-block  0
+branch  0 never executed
+branch  1 never executed
     #####: 1116:	return __first;
+    %%%%%: 1116-block  0
+unconditional  0 never executed
         -: 1117:
         -: 1118:      __glibcxx_requires_can_increment(__first, __n);
         -: 1119:
     #####: 1120:      std::__fill_a(__first, __first + __n, __value);
+    %%%%%: 1120-block  0
+call    0 never executed
     #####: 1121:      return __first + __n;
+unconditional  0 never executed
         -: 1122:    }
 ------------------
 _ZSt10__fill_n_aIPfmfET_S1_T0_RKT1_St26random_access_iterator_tag:
+function _ZSt10__fill_n_aIPfmfET_S1_T0_RKT1_St26random_access_iterator_tag called 0 returned 0% blocks executed 0%
     #####: 1109:    __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value,
         -: 1110:	       std::random_access_iterator_tag)
         -: 1111:    {
@@ -1296,15 +1421,24 @@ _ZSt10__fill_n_aIPfmfET_S1_T0_RKT1_St26random_access_iterator_tag:
         -: 1113:      static_assert(is_integral<_Size>{}, "fill_n must pass integral size");
         -: 1114:#endif
     #####: 1115:      if (__n <= 0)
+    %%%%%: 1115-block  0
+branch  0 never executed
+branch  1 never executed
     #####: 1116:	return __first;
+    %%%%%: 1116-block  0
+unconditional  0 never executed
         -: 1117:
         -: 1118:      __glibcxx_requires_can_increment(__first, __n);
         -: 1119:
     #####: 1120:      std::__fill_a(__first, __first + __n, __value);
+    %%%%%: 1120-block  0
+call    0 never executed
     #####: 1121:      return __first + __n;
+unconditional  0 never executed
         -: 1122:    }
 ------------------
 _ZSt10__fill_n_aIPfmfET_S1_T0_RKT1_St26random_access_iterator_tag:
+function _ZSt10__fill_n_aIPfmfET_S1_T0_RKT1_St26random_access_iterator_tag called 0 returned 0% blocks executed 0%
     #####: 1109:    __fill_n_a(_OutputIterator __first, _Size __n, const _Tp& __value,
         -: 1110:	       std::random_access_iterator_tag)
         -: 1111:    {
@@ -1312,12 +1446,20 @@ _ZSt10__fill_n_aIPfmfET_S1_T0_RKT1_St26random_access_iterator_tag:
         -: 1113:      static_assert(is_integral<_Size>{}, "fill_n must pass integral size");
         -: 1114:#endif
     #####: 1115:      if (__n <= 0)
+    %%%%%: 1115-block  0
+branch  0 never executed
+branch  1 never executed
     #####: 1116:	return __first;
+    %%%%%: 1116-block  0
+unconditional  0 never executed
         -: 1117:
         -: 1118:      __glibcxx_requires_can_increment(__first, __n);
         -: 1119:
     #####: 1120:      std::__fill_a(__first, __first + __n, __value);
+    %%%%%: 1120-block  0
+call    0 never executed
     #####: 1121:      return __first + __n;
+unconditional  0 never executed
         -: 1122:    }
 ------------------
         -: 1123:

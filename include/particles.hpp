@@ -23,6 +23,8 @@ struct Particles {
     std::vector<float> density;
     std::vector<float> pressure;
 
+    // Optimization 1: 
+    
     // sink/star bookkeeping
     // std::vector<bool> is_star;   // true if particle is a star / sink
     // std::vector<bool> alive;
@@ -34,9 +36,6 @@ struct Particles {
     std::vector<Vec3> acc_cache;
     std::vector<float> r2_cache;
     bool cache_valid = false;
-
-    // ⭐ NEW: store stars separately
-    std::vector<Star> stars;
 
     Particles(size_t n)
         : N(n),
@@ -69,40 +68,7 @@ struct Particles {
         file.close();
     }
 
-    void write_stars_csv(const std::string& fname) const {
-        std::ofstream f(fname);
-        f << "mass,x,y,z,vx,vy,vz,formation_time\n";
-        for (const auto& s : stars) {
-            f << s.mass << ","
-            << s.position.x << "," << s.position.y << "," << s.position.z << ","
-            << s.velocity.x << "," << s.velocity.y << "," << s.velocity.z << ","
-            << s.formation_time << "\n";
-        }
-    }
-
-     // --- NEW METHODS ---
     size_t count_particles_in_stars() const {
-        size_t count = 0;
-        for (size_t i = 0; i < N; i++) {
-            if (is_star[i]) count++;
-        }
-        return count;
-    }
-
-    void print_star_particles() const {
-        std::cout << "Particles that became stars: ";
-        bool any = false;
-        for (size_t i = 0; i < N; i++) {
-            if (is_star[i]) {
-                std::cout << i << " ";
-                any = true;
-            }
-        }
-        if (!any) std::cout << "None";
-        std::cout << "\n";
-    }
-
-    size_t count_star_particles() const {
         size_t count = 0;
         for (size_t i = 0; i < N; i++) {
             if (is_star[i]) count++;

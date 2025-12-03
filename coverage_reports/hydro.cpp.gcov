@@ -8,34 +8,77 @@
         -:    7:#endif
         -:    8:
         -:    9:// cubic spline kernel derivative dW/dr for 3D; returns dWdr
+function _ZL17cubic_spline_dWdrff called 0 returned 0% blocks executed 0%
     #####:   10:static inline float cubic_spline_dWdr(float r, float h) {
     #####:   11:    const float q = r / h;
     #####:   12:    const float inv_h4 = 1.0f / (h*h*h*h);
     #####:   13:    const float sigma = 1.0f / (M_PI) * inv_h4; // normalization for derivative in 3D
     #####:   14:    if (r <= 0.0f) return 0.0f;
+    %%%%%:   14-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   14-block  1
+unconditional  2 never executed
     #####:   15:    if (q < 1.0f) {
+    %%%%%:   15-block  0
+branch  0 never executed
+branch  1 never executed
         -:   16:        // d/dr [1 - 1.5 q^2 + 0.75 q^3] = (-3 q + (9/4) q^2) * (1/h)
     #####:   17:        return sigma * (-3.0f * q + 2.25f * q * q);
+    %%%%%:   17-block  0
+unconditional  0 never executed
     #####:   18:    } else if (q < 2.0f) {
+    %%%%%:   18-block  0
+branch  0 never executed
+branch  1 never executed
     #####:   19:        float t = 2.0f - q;
         -:   20:        // d/dr[0.25 t^3] = 0.25 * 3 * t^2 * (-1/h) = -0.75 * t^2 / h
     #####:   21:        return sigma * (-0.75f * t * t);
+    %%%%%:   21-block  0
+unconditional  0 never executed
         -:   22:    } else {
     #####:   23:        return 0.0f;
+    %%%%%:   23-block  0
+unconditional  0 never executed
         -:   24:    }
         -:   25:}
         -:   26:
+function _Z16compute_pressureR9Particlesff called 0 returned 0% blocks executed 0%
     #####:   27:void compute_pressure(Particles& P, float K, float gamma) {
     #####:   28:    size_t N = P.N;
     #####:   29:    if (P.pressure.size() != N) P.pressure.assign(N, 0.0f);
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   29-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   29-block  2
+unconditional  6 never executed
     #####:   30:    for (size_t i = 0; i < N; ++i) {
+    %%%%%:   30-block  0
+unconditional  0 never executed
+    %%%%%:   30-block  1
+branch  1 never executed
+branch  2 never executed
         -:   31:        // polytropic EOS (robust for collapse tests)
     #####:   32:        float rho = std::max(P.density[i], 1e-12f);
+    %%%%%:   32-block  0
+call    0 never executed
+call    1 never executed
     #####:   33:        P.pressure[i] = K * std::pow(rho, gamma);
+call    0 never executed
+call    1 never executed
+unconditional  2 never executed
         -:   34:    }
     #####:   35:}
+    %%%%%:   35-block  0
+unconditional  0 never executed
         -:   36:
         -:   37:// Computes SPH pressure forces: a_i = sum_j -m_j (P_i/rho_i^2 + P_j/rho_j^2) grad W_ij
+function _Z23compute_pressure_forcesR9ParticlesfRSt6vectorIfSaIfEES4_S4_ called 0 returned 0% blocks executed 0%
     #####:   38:void compute_pressure_forces(
         -:   39:    Particles& P,
         -:   40:    float h,
@@ -47,52 +90,160 @@
         -:   46:
         -:   47:    // resize acceleration vectors if needed
     #####:   48:    if (ax.size() != N) ax.assign(N, 0.0f);
+    %%%%%:   48-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   48-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   48-block  2
+unconditional  6 never executed
+    $$$$$:   48-block  3
+unconditional  7 never executed
     #####:   49:    if (ay.size() != N) ay.assign(N, 0.0f);
+    %%%%%:   49-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   49-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   49-block  2
+unconditional  6 never executed
+    $$$$$:   49-block  3
+unconditional  7 never executed
     #####:   50:    if (az.size() != N) az.assign(N, 0.0f);
+    %%%%%:   50-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   50-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   50-block  2
+unconditional  6 never executed
+    $$$$$:   50-block  3
+unconditional  7 never executed
         -:   51:
         -:   52:    // small epsilon to avoid division by zero
     #####:   53:    const float eps = 1e-12f;
         -:   54:
         -:   55:    // pairwise loop
     #####:   56:    for (size_t i = 0; i < N; ++i) {
+    %%%%%:   56-block  0
+unconditional  0 never executed
+    %%%%%:   56-block  1
+unconditional  1 never executed
+    %%%%%:   56-block  2
+branch  2 never executed
+branch  3 never executed
     #####:   57:        if (!P.alive[i]) continue;
+    %%%%%:   57-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   57-block  1
+unconditional  3 never executed
         -:   58:
     #####:   59:        float rho_i = std::max(P.density[i], eps);
+    %%%%%:   59-block  0
+call    0 never executed
+call    1 never executed
     #####:   60:        float rho_i2_inv = 1.0f / (rho_i * rho_i);
     #####:   61:        float P_i_rho2 = P.pressure[i] * rho_i2_inv;
+call    0 never executed
         -:   62:
     #####:   63:        Vec3 xi(P.x[i], P.y[i], P.z[i]);
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
         -:   64:
     #####:   65:        for (size_t j = i + 1; j < N; ++j) {
+unconditional  0 never executed
+    %%%%%:   65-block  0
+unconditional  1 never executed
+    %%%%%:   65-block  1
+branch  2 never executed
+branch  3 never executed
     #####:   66:            if (!P.alive[j]) continue;
+    %%%%%:   66-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   66-block  1
+unconditional  3 never executed
+    %%%%%:   66-block  2
+unconditional  4 never executed
         -:   67:
     #####:   68:            Vec3 xj(P.x[j], P.y[j], P.z[j]);
+    %%%%%:   68-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
     #####:   69:            Vec3 dx = xj - xi;
+call    0 never executed
     #####:   70:            float r2 = dx.length2();
+call    0 never executed
     #####:   71:            float r = std::sqrt(r2);
+call    0 never executed
         -:   72:
     #####:   73:            if (r > 2.0f * h || r < eps) continue;
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   73-block  0
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   73-block  1
+unconditional  4 never executed
         -:   74:
     #####:   75:            float dWdr = cubic_spline_dWdr(r, h);
+    %%%%%:   75-block  0
+call    0 never executed
     #####:   76:            if (dWdr == 0.0f) continue;
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   76-block  0
+unconditional  2 never executed
         -:   77:
     #####:   78:            float rho_j = std::max(P.density[j], eps);
+    %%%%%:   78-block  0
+call    0 never executed
+call    1 never executed
     #####:   79:            float rho_j2_inv = 1.0f / (rho_j * rho_j);
     #####:   80:            float P_j_rho2 = P.pressure[j] * rho_j2_inv;
+call    0 never executed
         -:   81:
     #####:   82:            float term = -P.mass[j] * (P_i_rho2 + P_j_rho2);
+call    0 never executed
         -:   83:
     #####:   84:            Vec3 gradW = dx * (dWdr / r); // grad W_ij
+call    0 never executed
     #####:   85:            Vec3 a = gradW * term;
+call    0 never executed
         -:   86:
         -:   87:            // symmetric update (momentum conserved)
     #####:   88:            ax[i] += a.x;
+call    0 never executed
     #####:   89:            ay[i] += a.y;
+call    0 never executed
     #####:   90:            az[i] += a.z;
+call    0 never executed
         -:   91:
     #####:   92:            ax[j] -= a.x;
+call    0 never executed
     #####:   93:            ay[j] -= a.y;
+call    0 never executed
     #####:   94:            az[j] -= a.z;
+call    0 never executed
+unconditional  1 never executed
         -:   95:        }
         -:   96:    }
     #####:   97:}
+    %%%%%:   97-block  0
+unconditional  0 never executed

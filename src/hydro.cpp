@@ -34,6 +34,7 @@ void compute_pressure(Particles& P, float K, float gamma) {
     }
 }
 
+// Optimization 3
 // Computes SPH pressure forces: a_i = sum_j -m_j (P_i/rho_i^2 + P_j/rho_j^2) grad W_ij
 void compute_pressure_forces(
     Particles& P,
@@ -60,15 +61,22 @@ void compute_pressure_forces(
         float rho_i2_inv = 1.0f / (rho_i * rho_i);
         float P_i_rho2 = P.pressure[i] * rho_i2_inv;
 
-        Vec3 xi(P.x[i], P.y[i], P.z[i]);
+        float xi = P.x[i]; float yi = P.y[i]; float zi = P.z[i];
+
+        // Vec3 xi(P.x[i], P.y[i], P.z[i]);
 
         for (size_t j = i + 1; j < N; ++j) {
             if (!P.alive[j]) continue;
 
-            Vec3 xj(P.x[j], P.y[j], P.z[j]);
-            Vec3 dx = xj - xi;
-            float r2 = dx.length2();
-            float r = std::sqrt(r2);
+            // Vec3 xj(P.x[j], P.y[j], P.z[j]);
+
+            float xj = P.x[j]; float yj = P.y[j]; float zj = P.z[j];
+
+            // Vec3 dx = xj - xi;
+            float dx = (xj - xi); float dy = (yj - yi); float dz = (zj - zi);
+            float r = std::sqrt( dx*dx + dy*dy + dz*dz );
+            // float r2 = dx.length2();
+            // float r = std::sqrt(r2);
 
             if (r > 2.0f * h || r < eps) continue;
 
@@ -81,17 +89,35 @@ void compute_pressure_forces(
 
             float term = -P.mass[j] * (P_i_rho2 + P_j_rho2);
 
-            Vec3 gradW = dx * (dWdr / r); // grad W_ij
-            Vec3 a = gradW * term;
+            // Vec3 gradW = dx * (dWdr / r); // grad W_ij
+            // Vec3 a = gradW * term;
+
+            float grad_scalar = (dWdr / r);
+            float grad_x = dx * grad_scalar;
+            float grad_y = dy * grad_scalar;
+            float grad_z = dz * grad_scalar;
+
+            float a_x = grad_x * term;
+            float a_y = grad_y * term;
+            float a_z = grad_z * term;
 
             // symmetric update (momentum conserved)
-            ax[i] += a.x;
-            ay[i] += a.y;
-            az[i] += a.z;
+            // ax[i] += a.x;
+            // ay[i] += a.y;
+            // az[i] += a.z;
 
-            ax[j] -= a.x;
-            ay[j] -= a.y;
-            az[j] -= a.z;
+            // ax[j] -= a.x;
+            // ay[j] -= a.y;
+            // az[j] -= a.z;
+
+            // symmetric update (momentum conserved)
+            ax[i] += a_x;
+            ay[i] += a_y;
+            az[i] += a_z;
+
+            ax[j] -= a_x;
+            ay[j] -= a_y;
+            az[j] -= a_z;
         }
     }
 }

@@ -465,16 +465,28 @@
     #####:  464:      { return __a.allocate(__n); }
 ------------------
 _ZNSt16allocator_traitsISaI4Vec3EE8allocateERS1_m:
+function _ZNSt16allocator_traitsISaI4Vec3EE8allocateERS1_m called 0 returned 0% blocks executed 0%
     #####:  463:      allocate(allocator_type& __a, size_type __n)
     #####:  464:      { return __a.allocate(__n); }
+    %%%%%:  464-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
 _ZNSt16allocator_traitsISaIfEE8allocateERS0_m:
+function _ZNSt16allocator_traitsISaIfEE8allocateERS0_m called 0 returned 0% blocks executed 0%
     #####:  463:      allocate(allocator_type& __a, size_type __n)
     #####:  464:      { return __a.allocate(__n); }
+    %%%%%:  464-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
 _ZNSt16allocator_traitsISaIfEE8allocateERS0_m:
+function _ZNSt16allocator_traitsISaIfEE8allocateERS0_m called 0 returned 0% blocks executed 0%
     #####:  463:      allocate(allocator_type& __a, size_type __n)
     #####:  464:      { return __a.allocate(__n); }
+    %%%%%:  464-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
         -:  465:
         -:  466:      /**
@@ -510,16 +522,25 @@ _ZNSt16allocator_traitsISaIfEE8allocateERS0_m:
     #####:  496:      { __a.deallocate(__p, __n); }
 ------------------
 _ZNSt16allocator_traitsISaI4Vec3EE10deallocateERS1_PS0_m:
+function _ZNSt16allocator_traitsISaI4Vec3EE10deallocateERS1_PS0_m called 0 returned 0% blocks executed 0%
     #####:  495:      deallocate(allocator_type& __a, pointer __p, size_type __n)
     #####:  496:      { __a.deallocate(__p, __n); }
+    %%%%%:  496-block  0
+call    0 never executed
 ------------------
 _ZNSt16allocator_traitsISaIfEE10deallocateERS0_Pfm:
+function _ZNSt16allocator_traitsISaIfEE10deallocateERS0_Pfm called 0 returned 0% blocks executed 0%
     #####:  495:      deallocate(allocator_type& __a, pointer __p, size_type __n)
     #####:  496:      { __a.deallocate(__p, __n); }
+    %%%%%:  496-block  0
+call    0 never executed
 ------------------
 _ZNSt16allocator_traitsISaIfEE10deallocateERS0_Pfm:
+function _ZNSt16allocator_traitsISaIfEE10deallocateERS0_Pfm called 0 returned 0% blocks executed 0%
     #####:  495:      deallocate(allocator_type& __a, pointer __p, size_type __n)
     #####:  496:      { __a.deallocate(__p, __n); }
+    %%%%%:  496-block  0
+call    0 never executed
 ------------------
         -:  497:
         -:  498:      /**
@@ -581,30 +602,39 @@ _ZNSt16allocator_traitsISaIfEE10deallocateERS0_Pfm:
         -:  554:      }
 ------------------
 _ZNSt16allocator_traitsISaI4Vec3EE8max_sizeERKS1_:
+function _ZNSt16allocator_traitsISaI4Vec3EE8max_sizeERKS1_ called 0 returned 0% blocks executed 0%
     #####:  547:      max_size(const allocator_type& __a __attribute__((__unused__))) noexcept
         -:  548:      {
         -:  549:#if __cplusplus <= 201703L
     #####:  550:	return __a.max_size();
+    %%%%%:  550-block  0
+call    0 never executed
         -:  551:#else
         -:  552:	return size_t(-1) / sizeof(value_type);
         -:  553:#endif
         -:  554:      }
 ------------------
 _ZNSt16allocator_traitsISaIfEE8max_sizeERKS0_:
+function _ZNSt16allocator_traitsISaIfEE8max_sizeERKS0_ called 0 returned 0% blocks executed 0%
     #####:  547:      max_size(const allocator_type& __a __attribute__((__unused__))) noexcept
         -:  548:      {
         -:  549:#if __cplusplus <= 201703L
     #####:  550:	return __a.max_size();
+    %%%%%:  550-block  0
+call    0 never executed
         -:  551:#else
         -:  552:	return size_t(-1) / sizeof(value_type);
         -:  553:#endif
         -:  554:      }
 ------------------
 _ZNSt16allocator_traitsISaIfEE8max_sizeERKS0_:
+function _ZNSt16allocator_traitsISaIfEE8max_sizeERKS0_ called 0 returned 0% blocks executed 0%
     #####:  547:      max_size(const allocator_type& __a __attribute__((__unused__))) noexcept
         -:  548:      {
         -:  549:#if __cplusplus <= 201703L
     #####:  550:	return __a.max_size();
+    %%%%%:  550-block  0
+call    0 never executed
         -:  551:#else
         -:  552:	return size_t(-1) / sizeof(value_type);
         -:  553:#endif
@@ -907,24 +937,33 @@ _ZNSt16allocator_traitsISaIfEE8max_sizeERKS0_:
     #####:  849:    }
 ------------------
 _ZSt8_DestroyIP4Vec3S0_EvT_S2_RSaIT0_E:
+function _ZSt8_DestroyIP4Vec3S0_EvT_S2_RSaIT0_E called 0 returned 0% blocks executed 0%
     #####:  845:    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
         -:  846:	     allocator<_Tp>&)
         -:  847:    {
     #####:  848:      _Destroy(__first, __last);
+    %%%%%:  848-block  0
+call    0 never executed
     #####:  849:    }
 ------------------
 _ZSt8_DestroyIPffEvT_S1_RSaIT0_E:
+function _ZSt8_DestroyIPffEvT_S1_RSaIT0_E called 0 returned 0% blocks executed 0%
     #####:  845:    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
         -:  846:	     allocator<_Tp>&)
         -:  847:    {
     #####:  848:      _Destroy(__first, __last);
+    %%%%%:  848-block  0
+call    0 never executed
     #####:  849:    }
 ------------------
 _ZSt8_DestroyIPffEvT_S1_RSaIT0_E:
+function _ZSt8_DestroyIPffEvT_S1_RSaIT0_E called 0 returned 0% blocks executed 0%
     #####:  845:    _Destroy(_ForwardIterator __first, _ForwardIterator __last,
         -:  846:	     allocator<_Tp>&)
         -:  847:    {
     #####:  848:      _Destroy(__first, __last);
+    %%%%%:  848-block  0
+call    0 never executed
     #####:  849:    }
 ------------------
         -:  850:

@@ -1,4 +1,4 @@
-#include "starform.hpp"
+#include "../include/starform.hpp"
 #include <algorithm>
 #include <iostream>
 
@@ -29,7 +29,7 @@ int StarFormation::count_neighbors(const Particles& P, int idx) const {
 }
 
 
-
+// Optimization 2
 float StarFormation::compute_local_density(const Particles& P, int idx) const {
     if (!P.alive[idx]) return 0.0f;
     // Vec3 xi = get_pos(P, idx);
@@ -84,15 +84,7 @@ void StarFormation::form_stars(
     for (int idx : idxs) {
         if (!P.alive[idx]) continue;
 
-        // mark particle as star
+        // mark particle as a part of the star
         P.is_star[idx] = true;
-
-        // add to star catalog (still keep particle in simulation)
-        float mass = P.mass[idx];
-        Vec3 pos = get_pos(P, idx);
-        Vec3 vel = get_vel(P, idx);
-
-        Star s(mass, pos, vel, current_time);
-        P.stars.push_back(s);
     }
 }

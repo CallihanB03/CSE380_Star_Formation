@@ -228,6 +228,7 @@
         -:  227:    {
         -:  228:      template<typename _ForwardIterator, typename _Size, typename _Tp>
         -:  229:        static _ForwardIterator
+function _ZNSt22__uninitialized_fill_nILb0EE15__uninit_fill_nIP4Vec3mS2_EET_S4_T0_RKT1_ called 0 returned 0% blocks executed 0%
     #####:  230:        __uninit_fill_n(_ForwardIterator __first, _Size __n,
         -:  231:			const _Tp& __x)
         -:  232:        {
@@ -235,8 +236,19 @@
         -:  234:	  __try
         -:  235:	    {
     #####:  236:	      for (; __n > 0; --__n, (void) ++__cur)
+    %%%%%:  236-block  0
+unconditional  0 never executed
+unconditional  1 never executed
+    %%%%%:  236-block  1
+branch  2 never executed
+branch  3 never executed
     #####:  237:		std::_Construct(std::__addressof(*__cur), __x);
+    %%%%%:  237-block  0
+call    0 never executed
+call    1 never executed
     #####:  238:	      return __cur;
+    %%%%%:  238-block  0
+unconditional  0 never executed
         -:  239:	    }
         -:  240:	  __catch(...)
         -:  241:	    {
@@ -256,14 +268,22 @@
     #####:  255:        { return std::fill_n(__first, __n, __x); }
 ------------------
 _ZNSt22__uninitialized_fill_nILb1EE15__uninit_fill_nIPfmfEET_S3_T0_RKT1_:
+function _ZNSt22__uninitialized_fill_nILb1EE15__uninit_fill_nIPfmfEET_S3_T0_RKT1_ called 0 returned 0% blocks executed 0%
     #####:  253:        __uninit_fill_n(_ForwardIterator __first, _Size __n,
         -:  254:			const _Tp& __x)
     #####:  255:        { return std::fill_n(__first, __n, __x); }
+    %%%%%:  255-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
 _ZNSt22__uninitialized_fill_nILb1EE15__uninit_fill_nIPfmfEET_S3_T0_RKT1_:
+function _ZNSt22__uninitialized_fill_nILb1EE15__uninit_fill_nIPfmfEET_S3_T0_RKT1_ called 0 returned 0% blocks executed 0%
     #####:  253:        __uninit_fill_n(_ForwardIterator __first, _Size __n,
         -:  254:			const _Tp& __x)
     #####:  255:        { return std::fill_n(__first, __n, __x); }
+    %%%%%:  255-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
         -:  256:    };
         -:  257:
@@ -310,6 +330,7 @@ _ZNSt22__uninitialized_fill_nILb1EE15__uninit_fill_nIPfmfEET_S3_T0_RKT1_:
         -:  298:    }
 ------------------
 _ZSt20uninitialized_fill_nIP4Vec3mS0_ET_S2_T0_RKT1_:
+function _ZSt20uninitialized_fill_nIP4Vec3mS0_ET_S2_T0_RKT1_ called 0 returned 0% blocks executed 0%
     #####:  273:    uninitialized_fill_n(_ForwardIterator __first, _Size __n, const _Tp& __x)
         -:  274:    {
         -:  275:      typedef typename iterator_traits<_ForwardIterator>::value_type
@@ -335,9 +356,13 @@ _ZSt20uninitialized_fill_nIP4Vec3mS0_ET_S2_T0_RKT1_:
         -:  295:#endif
         -:  296:      return __uninitialized_fill_n<__is_trivial(_ValueType) && __can_fill>::
     #####:  297:	__uninit_fill_n(__first, __n, __x);
+    %%%%%:  297-block  0
+call    0 never executed
+unconditional  1 never executed
         -:  298:    }
 ------------------
 _ZSt20uninitialized_fill_nIPfmfET_S1_T0_RKT1_:
+function _ZSt20uninitialized_fill_nIPfmfET_S1_T0_RKT1_ called 0 returned 0% blocks executed 0%
     #####:  273:    uninitialized_fill_n(_ForwardIterator __first, _Size __n, const _Tp& __x)
         -:  274:    {
         -:  275:      typedef typename iterator_traits<_ForwardIterator>::value_type
@@ -363,9 +388,13 @@ _ZSt20uninitialized_fill_nIPfmfET_S1_T0_RKT1_:
         -:  295:#endif
         -:  296:      return __uninitialized_fill_n<__is_trivial(_ValueType) && __can_fill>::
     #####:  297:	__uninit_fill_n(__first, __n, __x);
+    %%%%%:  297-block  0
+call    0 never executed
+unconditional  1 never executed
         -:  298:    }
 ------------------
 _ZSt20uninitialized_fill_nIPfmfET_S1_T0_RKT1_:
+function _ZSt20uninitialized_fill_nIPfmfET_S1_T0_RKT1_ called 0 returned 0% blocks executed 0%
     #####:  273:    uninitialized_fill_n(_ForwardIterator __first, _Size __n, const _Tp& __x)
         -:  274:    {
         -:  275:      typedef typename iterator_traits<_ForwardIterator>::value_type
@@ -391,6 +420,9 @@ _ZSt20uninitialized_fill_nIPfmfET_S1_T0_RKT1_:
         -:  295:#endif
         -:  296:      return __uninitialized_fill_n<__is_trivial(_ValueType) && __can_fill>::
     #####:  297:	__uninit_fill_n(__first, __n, __x);
+    %%%%%:  297-block  0
+call    0 never executed
+unconditional  1 never executed
         -:  298:    }
 ------------------
         -:  299:
@@ -507,19 +539,31 @@ _ZSt20uninitialized_fill_nIPfmfET_S1_T0_RKT1_:
     #####:  410:    { return std::uninitialized_fill_n(__first, __n, __x); }
 ------------------
 _ZSt24__uninitialized_fill_n_aIP4Vec3mS0_S0_ET_S2_T0_RKT1_RSaIT2_E:
+function _ZSt24__uninitialized_fill_n_aIP4Vec3mS0_S0_ET_S2_T0_RKT1_RSaIT2_E called 0 returned 0% blocks executed 0%
     #####:  408:    __uninitialized_fill_n_a(_ForwardIterator __first, _Size __n, 
         -:  409:			     const _Tp& __x, allocator<_Tp2>&)
     #####:  410:    { return std::uninitialized_fill_n(__first, __n, __x); }
+    %%%%%:  410-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
 _ZSt24__uninitialized_fill_n_aIPfmffET_S1_T0_RKT1_RSaIT2_E:
+function _ZSt24__uninitialized_fill_n_aIPfmffET_S1_T0_RKT1_RSaIT2_E called 0 returned 0% blocks executed 0%
     #####:  408:    __uninitialized_fill_n_a(_ForwardIterator __first, _Size __n, 
         -:  409:			     const _Tp& __x, allocator<_Tp2>&)
     #####:  410:    { return std::uninitialized_fill_n(__first, __n, __x); }
+    %%%%%:  410-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
 _ZSt24__uninitialized_fill_n_aIPfmffET_S1_T0_RKT1_RSaIT2_E:
+function _ZSt24__uninitialized_fill_n_aIPfmffET_S1_T0_RKT1_RSaIT2_E called 0 returned 0% blocks executed 0%
     #####:  408:    __uninitialized_fill_n_a(_ForwardIterator __first, _Size __n, 
         -:  409:			     const _Tp& __x, allocator<_Tp2>&)
     #####:  410:    { return std::uninitialized_fill_n(__first, __n, __x); }
+    %%%%%:  410-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
         -:  411:
         -:  412:

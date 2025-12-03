@@ -32,19 +32,8 @@ struct Vec3 {
     return Vec3(x - v.x, y - v.y, z - v.z);
     }
 
-    // inline Vec3 operator-(const Vec3& a, const Vec3& b) {
-    //     return Vec3(a.x-b.x, a.y-b.y, a.z-b.z);
-    // }
-
 
     float length2() const {
         return x*x + y*y + z*z;
     }
-
-    // inline float length2(const Vec3& a, const Vec3& b) {
-    //     float dx = a.x - b.x;
-    //     float dy = a.y - b.y;
-    //     float dz = a.z - b.z;
-    //     return dx*dx + dy*dy + dz*dz;
-    // }
 };

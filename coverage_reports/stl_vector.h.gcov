@@ -100,16 +100,19 @@
     #####:   99:	{ }
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_Vector_impl_dataC2Ev:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_Vector_impl_dataC2Ev called 0 returned 0% blocks executed 0%
     #####:   97:	_Vector_impl_data() _GLIBCXX_NOEXCEPT
     #####:   98:	: _M_start(), _M_finish(), _M_end_of_storage()
     #####:   99:	{ }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_dataC2Ev:
+function _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_dataC2Ev called 0 returned 0% blocks executed 0%
     #####:   97:	_Vector_impl_data() _GLIBCXX_NOEXCEPT
     #####:   98:	: _M_start(), _M_finish(), _M_end_of_storage()
     #####:   99:	{ }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_dataC2Ev:
+function _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_dataC2Ev called 0 returned 0% blocks executed 0%
     #####:   97:	_Vector_impl_data() _GLIBCXX_NOEXCEPT
     #####:   98:	: _M_start(), _M_finish(), _M_end_of_storage()
     #####:   99:	{ }
@@ -131,6 +134,7 @@ _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_dataC2Ev:
     #####:  114:	}
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_Vector_impl_data12_M_copy_dataERKS3_:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_Vector_impl_data12_M_copy_dataERKS3_ called 0 returned 0% blocks executed 0%
     #####:  109:	_M_copy_data(_Vector_impl_data const& __x) _GLIBCXX_NOEXCEPT
         -:  110:	{
     #####:  111:	  _M_start = __x._M_start;
@@ -139,6 +143,7 @@ _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_Vector_impl_data12_M_copy_dataERKS3_:
     #####:  114:	}
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_data12_M_copy_dataERKS2_:
+function _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_data12_M_copy_dataERKS2_ called 0 returned 0% blocks executed 0%
     #####:  109:	_M_copy_data(_Vector_impl_data const& __x) _GLIBCXX_NOEXCEPT
         -:  110:	{
     #####:  111:	  _M_start = __x._M_start;
@@ -159,25 +164,37 @@ _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_data12_M_copy_dataERKS2_:
     #####:  125:	}
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_Vector_impl_data12_M_swap_dataERS3_:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_Vector_impl_data12_M_swap_dataERS3_ called 0 returned 0% blocks executed 0%
     #####:  117:	_M_swap_data(_Vector_impl_data& __x) _GLIBCXX_NOEXCEPT
         -:  118:	{
         -:  119:	  // Do not use std::swap(_M_start, __x._M_start), etc as it loses
         -:  120:	  // information used by TBAA.
     #####:  121:	  _Vector_impl_data __tmp;
+    %%%%%:  121-block  0
+call    0 never executed
     #####:  122:	  __tmp._M_copy_data(*this);
+call    0 never executed
     #####:  123:	  _M_copy_data(__x);
+call    0 never executed
     #####:  124:	  __x._M_copy_data(__tmp);
+call    0 never executed
     #####:  125:	}
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_data12_M_swap_dataERS2_:
+function _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_data12_M_swap_dataERS2_ called 0 returned 0% blocks executed 0%
     #####:  117:	_M_swap_data(_Vector_impl_data& __x) _GLIBCXX_NOEXCEPT
         -:  118:	{
         -:  119:	  // Do not use std::swap(_M_start, __x._M_start), etc as it loses
         -:  120:	  // information used by TBAA.
     #####:  121:	  _Vector_impl_data __tmp;
+    %%%%%:  121-block  0
+call    0 never executed
     #####:  122:	  __tmp._M_copy_data(*this);
+call    0 never executed
     #####:  123:	  _M_copy_data(__x);
+call    0 never executed
     #####:  124:	  __x._M_copy_data(__tmp);
+call    0 never executed
     #####:  125:	}
 ------------------
         -:  126:      };
@@ -195,18 +212,30 @@ _ZNSt12_Vector_baseIfSaIfEE17_Vector_impl_data12_M_swap_dataERS2_:
     #####:  138:	{ }
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EE12_Vector_implC2ERKS1_:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EE12_Vector_implC2ERKS1_ called 0 returned 0% blocks executed 0%
     #####:  136:	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
     #####:  137:	: _Tp_alloc_type(__a)
+    %%%%%:  137-block  0
+call    0 never executed
+call    1 never executed
     #####:  138:	{ }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE12_Vector_implC2ERKS0_:
+function _ZNSt12_Vector_baseIfSaIfEE12_Vector_implC2ERKS0_ called 0 returned 0% blocks executed 0%
     #####:  136:	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
     #####:  137:	: _Tp_alloc_type(__a)
+    %%%%%:  137-block  0
+call    0 never executed
+call    1 never executed
     #####:  138:	{ }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE12_Vector_implC2ERKS0_:
+function _ZNSt12_Vector_baseIfSaIfEE12_Vector_implC2ERKS0_ called 0 returned 0% blocks executed 0%
     #####:  136:	_Vector_impl(_Tp_alloc_type const& __a) _GLIBCXX_NOEXCEPT
     #####:  137:	: _Tp_alloc_type(__a)
+    %%%%%:  137-block  0
+call    0 never executed
+call    1 never executed
     #####:  138:	{ }
 ------------------
         -:  139:
@@ -350,16 +379,25 @@ _ZNSt12_Vector_baseIfSaIfEE12_Vector_implC2ERKS0_:
     #####:  277:      { return this->_M_impl; }
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EE19_M_get_Tp_allocatorEv:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EE19_M_get_Tp_allocatorEv called 0 returned 0% blocks executed 0%
     #####:  276:      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
     #####:  277:      { return this->_M_impl; }
+    %%%%%:  277-block  0
+unconditional  0 never executed
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE19_M_get_Tp_allocatorEv:
+function _ZNSt12_Vector_baseIfSaIfEE19_M_get_Tp_allocatorEv called 0 returned 0% blocks executed 0%
     #####:  276:      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
     #####:  277:      { return this->_M_impl; }
+    %%%%%:  277-block  0
+unconditional  0 never executed
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE19_M_get_Tp_allocatorEv:
+function _ZNSt12_Vector_baseIfSaIfEE19_M_get_Tp_allocatorEv called 0 returned 0% blocks executed 0%
     #####:  276:      _M_get_Tp_allocator() _GLIBCXX_NOEXCEPT
     #####:  277:      { return this->_M_impl; }
+    %%%%%:  277-block  0
+unconditional  0 never executed
 ------------------
         -:  278:
         -:  279:      const _Tp_alloc_type&
@@ -391,19 +429,49 @@ _ZNSt12_Vector_baseIfSaIfEE19_M_get_Tp_allocatorEv:
     #####:  305:      { _M_create_storage(__n); }
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EEC2EmRKS1_:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EEC2EmRKS1_ called 0 returned 0% blocks executed 0%
     #####:  303:      _Vector_base(size_t __n, const allocator_type& __a)
     #####:  304:      : _M_impl(__a)
+    %%%%%:  304-block  0
+call    0 never executed
     #####:  305:      { _M_create_storage(__n); }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  305-block  0
+unconditional  3 never executed
+    $$$$$:  305-block  1
+call    4 never executed
 ------------------
 _ZNSt12_Vector_baseIfSaIfEEC2EmRKS0_:
+function _ZNSt12_Vector_baseIfSaIfEEC2EmRKS0_ called 0 returned 0% blocks executed 0%
     #####:  303:      _Vector_base(size_t __n, const allocator_type& __a)
     #####:  304:      : _M_impl(__a)
+    %%%%%:  304-block  0
+call    0 never executed
     #####:  305:      { _M_create_storage(__n); }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  305-block  0
+unconditional  3 never executed
+    $$$$$:  305-block  1
+call    4 never executed
 ------------------
 _ZNSt12_Vector_baseIfSaIfEEC2EmRKS0_:
+function _ZNSt12_Vector_baseIfSaIfEEC2EmRKS0_ called 0 returned 0% blocks executed 0%
     #####:  303:      _Vector_base(size_t __n, const allocator_type& __a)
     #####:  304:      : _M_impl(__a)
+    %%%%%:  304-block  0
+call    0 never executed
     #####:  305:      { _M_create_storage(__n); }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  305-block  0
+unconditional  3 never executed
+    $$$$$:  305-block  1
+call    4 never executed
 ------------------
         -:  306:
         -:  307:#if __cplusplus >= 201103L
@@ -439,25 +507,37 @@ _ZNSt12_Vector_baseIfSaIfEEC2EmRKS0_:
     #####:  337:      }
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EED2Ev:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EED2Ev called 0 returned 0% blocks executed 0%
     #####:  333:      ~_Vector_base() _GLIBCXX_NOEXCEPT
         -:  334:      {
     #####:  335:	_M_deallocate(_M_impl._M_start,
     #####:  336:		      _M_impl._M_end_of_storage - _M_impl._M_start);
+    %%%%%:  336-block  0
+call    0 never executed
     #####:  337:      }
+call    0 never executed
 ------------------
 _ZNSt12_Vector_baseIfSaIfEED2Ev:
+function _ZNSt12_Vector_baseIfSaIfEED2Ev called 0 returned 0% blocks executed 0%
     #####:  333:      ~_Vector_base() _GLIBCXX_NOEXCEPT
         -:  334:      {
     #####:  335:	_M_deallocate(_M_impl._M_start,
     #####:  336:		      _M_impl._M_end_of_storage - _M_impl._M_start);
+    %%%%%:  336-block  0
+call    0 never executed
     #####:  337:      }
+call    0 never executed
 ------------------
 _ZNSt12_Vector_baseIfSaIfEED2Ev:
+function _ZNSt12_Vector_baseIfSaIfEED2Ev called 0 returned 0% blocks executed 0%
     #####:  333:      ~_Vector_base() _GLIBCXX_NOEXCEPT
         -:  334:      {
     #####:  335:	_M_deallocate(_M_impl._M_start,
     #####:  336:		      _M_impl._M_end_of_storage - _M_impl._M_start);
+    %%%%%:  336-block  0
+call    0 never executed
     #####:  337:      }
+call    0 never executed
 ------------------
         -:  338:
         -:  339:    public:
@@ -471,24 +551,57 @@ _ZNSt12_Vector_baseIfSaIfEED2Ev:
         -:  347:      }
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EE11_M_allocateEm:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EE11_M_allocateEm called 0 returned 0% blocks executed 0%
     #####:  343:      _M_allocate(size_t __n)
         -:  344:      {
         -:  345:	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
     #####:  346:	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+    %%%%%:  346-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  346-block  1
+call    2 never executed
+unconditional  3 never executed
+    %%%%%:  346-block  2
+unconditional  4 never executed
+    %%%%%:  346-block  3
+unconditional  5 never executed
         -:  347:      }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE11_M_allocateEm:
+function _ZNSt12_Vector_baseIfSaIfEE11_M_allocateEm called 0 returned 0% blocks executed 0%
     #####:  343:      _M_allocate(size_t __n)
         -:  344:      {
         -:  345:	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
     #####:  346:	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+    %%%%%:  346-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  346-block  1
+call    2 never executed
+unconditional  3 never executed
+    %%%%%:  346-block  2
+unconditional  4 never executed
+    %%%%%:  346-block  3
+unconditional  5 never executed
         -:  347:      }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE11_M_allocateEm:
+function _ZNSt12_Vector_baseIfSaIfEE11_M_allocateEm called 0 returned 0% blocks executed 0%
     #####:  343:      _M_allocate(size_t __n)
         -:  344:      {
         -:  345:	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
     #####:  346:	return __n != 0 ? _Tr::allocate(_M_impl, __n) : pointer();
+    %%%%%:  346-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  346-block  1
+call    2 never executed
+unconditional  3 never executed
+    %%%%%:  346-block  2
+unconditional  4 never executed
+    %%%%%:  346-block  3
+unconditional  5 never executed
         -:  347:      }
 ------------------
         -:  348:
@@ -501,27 +614,48 @@ _ZNSt12_Vector_baseIfSaIfEE11_M_allocateEm:
     #####:  355:      }
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EE13_M_deallocateEPS0_m:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EE13_M_deallocateEPS0_m called 0 returned 0% blocks executed 0%
     #####:  350:      _M_deallocate(pointer __p, size_t __n)
         -:  351:      {
         -:  352:	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
     #####:  353:	if (__p)
+    %%%%%:  353-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  354:	  _Tr::deallocate(_M_impl, __p, __n);
+    %%%%%:  354-block  0
+call    0 never executed
+unconditional  1 never executed
     #####:  355:      }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE13_M_deallocateEPfm:
+function _ZNSt12_Vector_baseIfSaIfEE13_M_deallocateEPfm called 0 returned 0% blocks executed 0%
     #####:  350:      _M_deallocate(pointer __p, size_t __n)
         -:  351:      {
         -:  352:	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
     #####:  353:	if (__p)
+    %%%%%:  353-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  354:	  _Tr::deallocate(_M_impl, __p, __n);
+    %%%%%:  354-block  0
+call    0 never executed
+unconditional  1 never executed
     #####:  355:      }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE13_M_deallocateEPfm:
+function _ZNSt12_Vector_baseIfSaIfEE13_M_deallocateEPfm called 0 returned 0% blocks executed 0%
     #####:  350:      _M_deallocate(pointer __p, size_t __n)
         -:  351:      {
         -:  352:	typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tr;
     #####:  353:	if (__p)
+    %%%%%:  353-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  354:	  _Tr::deallocate(_M_impl, __p, __n);
+    %%%%%:  354-block  0
+call    0 never executed
+unconditional  1 never executed
     #####:  355:      }
 ------------------
         -:  356:
@@ -535,25 +669,34 @@ _ZNSt12_Vector_baseIfSaIfEE13_M_deallocateEPfm:
     #####:  364:      }
 ------------------
 _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_M_create_storageEm:
+function _ZNSt12_Vector_baseI4Vec3SaIS0_EE17_M_create_storageEm called 0 returned 0% blocks executed 0%
     #####:  359:      _M_create_storage(size_t __n)
         -:  360:      {
     #####:  361:	this->_M_impl._M_start = this->_M_allocate(__n);
+    %%%%%:  361-block  0
+call    0 never executed
     #####:  362:	this->_M_impl._M_finish = this->_M_impl._M_start;
     #####:  363:	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
     #####:  364:      }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE17_M_create_storageEm:
+function _ZNSt12_Vector_baseIfSaIfEE17_M_create_storageEm called 0 returned 0% blocks executed 0%
     #####:  359:      _M_create_storage(size_t __n)
         -:  360:      {
     #####:  361:	this->_M_impl._M_start = this->_M_allocate(__n);
+    %%%%%:  361-block  0
+call    0 never executed
     #####:  362:	this->_M_impl._M_finish = this->_M_impl._M_start;
     #####:  363:	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
     #####:  364:      }
 ------------------
 _ZNSt12_Vector_baseIfSaIfEE17_M_create_storageEm:
+function _ZNSt12_Vector_baseIfSaIfEE17_M_create_storageEm called 0 returned 0% blocks executed 0%
     #####:  359:      _M_create_storage(size_t __n)
         -:  360:      {
     #####:  361:	this->_M_impl._M_start = this->_M_allocate(__n);
+    %%%%%:  361-block  0
+call    0 never executed
     #####:  362:	this->_M_impl._M_finish = this->_M_impl._M_start;
     #####:  363:	this->_M_impl._M_end_of_storage = this->_M_impl._M_start + __n;
     #####:  364:      }
@@ -721,22 +864,55 @@ _ZNSt12_Vector_baseIfSaIfEE17_M_create_storageEm:
     #####:  525:      { _M_fill_initialize(__n, __value); }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EEC2EmRKS0_RKS1_:
+function _ZNSt6vectorI4Vec3SaIS0_EEC2EmRKS0_RKS1_ called 0 returned 0% blocks executed 0%
     #####:  522:      vector(size_type __n, const value_type& __value,
         -:  523:	     const allocator_type& __a = allocator_type())
     #####:  524:      : _Base(_S_check_init_len(__n, __a), __a)
+    %%%%%:  524-block  0
+call    0 never executed
+call    1 never executed
     #####:  525:      { _M_fill_initialize(__n, __value); }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  525-block  0
+unconditional  3 never executed
+    $$$$$:  525-block  1
+call    4 never executed
 ------------------
 _ZNSt6vectorIfSaIfEEC2EmRKfRKS0_:
+function _ZNSt6vectorIfSaIfEEC2EmRKfRKS0_ called 0 returned 0% blocks executed 0%
     #####:  522:      vector(size_type __n, const value_type& __value,
         -:  523:	     const allocator_type& __a = allocator_type())
     #####:  524:      : _Base(_S_check_init_len(__n, __a), __a)
+    %%%%%:  524-block  0
+call    0 never executed
+call    1 never executed
     #####:  525:      { _M_fill_initialize(__n, __value); }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  525-block  0
+unconditional  3 never executed
+    $$$$$:  525-block  1
+call    4 never executed
 ------------------
 _ZNSt6vectorIfSaIfEEC2EmRKfRKS0_:
+function _ZNSt6vectorIfSaIfEEC2EmRKfRKS0_ called 0 returned 0% blocks executed 0%
     #####:  522:      vector(size_type __n, const value_type& __value,
         -:  523:	     const allocator_type& __a = allocator_type())
     #####:  524:      : _Base(_S_check_init_len(__n, __a), __a)
+    %%%%%:  524-block  0
+call    0 never executed
+call    1 never executed
     #####:  525:      { _M_fill_initialize(__n, __value); }
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  525-block  0
+unconditional  3 never executed
+    $$$$$:  525-block  1
+call    4 never executed
 ------------------
         -:  526:#else
         -:  527:      /**
@@ -898,28 +1074,43 @@ _ZNSt6vectorIfSaIfEEC2EmRKfRKS0_:
     #####:  683:      }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EED2Ev:
+function _ZNSt6vectorI4Vec3SaIS0_EED2Ev called 0 returned 0% blocks executed 0%
     #####:  678:      ~vector() _GLIBCXX_NOEXCEPT
         -:  679:      {
     #####:  680:	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+call    0 never executed
     #####:  681:		      _M_get_Tp_allocator());
+    %%%%%:  681-block  0
+call    0 never executed
         -:  682:	_GLIBCXX_ASAN_ANNOTATE_BEFORE_DEALLOC;
     #####:  683:      }
+call    0 never executed
 ------------------
 _ZNSt6vectorIfSaIfEED2Ev:
+function _ZNSt6vectorIfSaIfEED2Ev called 0 returned 0% blocks executed 0%
     #####:  678:      ~vector() _GLIBCXX_NOEXCEPT
         -:  679:      {
     #####:  680:	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+call    0 never executed
     #####:  681:		      _M_get_Tp_allocator());
+    %%%%%:  681-block  0
+call    0 never executed
         -:  682:	_GLIBCXX_ASAN_ANNOTATE_BEFORE_DEALLOC;
     #####:  683:      }
+call    0 never executed
 ------------------
 _ZNSt6vectorIfSaIfEED2Ev:
+function _ZNSt6vectorIfSaIfEED2Ev called 0 returned 0% blocks executed 0%
     #####:  678:      ~vector() _GLIBCXX_NOEXCEPT
         -:  679:      {
     #####:  680:	std::_Destroy(this->_M_impl._M_start, this->_M_impl._M_finish,
+call    0 never executed
     #####:  681:		      _M_get_Tp_allocator());
+    %%%%%:  681-block  0
+call    0 never executed
         -:  682:	_GLIBCXX_ASAN_ANNOTATE_BEFORE_DEALLOC;
     #####:  683:      }
+call    0 never executed
 ------------------
         -:  684:
         -:  685:      /**
@@ -990,12 +1181,18 @@ _ZNSt6vectorIfSaIfEED2Ev:
     #####:  750:      { _M_fill_assign(__n, __val); }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EE6assignEmRKS0_:
+function _ZNSt6vectorI4Vec3SaIS0_EE6assignEmRKS0_ called 0 returned 0% blocks executed 0%
     #####:  749:      assign(size_type __n, const value_type& __val)
     #####:  750:      { _M_fill_assign(__n, __val); }
+    %%%%%:  750-block  0
+call    0 never executed
 ------------------
 _ZNSt6vectorIfSaIfEE6assignEmRKf:
+function _ZNSt6vectorIfSaIfEE6assignEmRKf called 0 returned 0% blocks executed 0%
     #####:  749:      assign(size_type __n, const value_type& __val)
     #####:  750:      { _M_fill_assign(__n, __val); }
+    %%%%%:  750-block  0
+call    0 never executed
 ------------------
         -:  751:
         -:  752:      /**
@@ -1057,20 +1254,32 @@ _ZNSt6vectorIfSaIfEE6assignEmRKf:
         -:  808:       *  element order.
         -:  809:       */
         -:  810:      iterator
-   20303*:  811:      begin() _GLIBCXX_NOEXCEPT
-   20303*:  812:      { return iterator(this->_M_impl._M_start); }
-------------------
-_ZNSt6vectorI4Vec3SaIS0_EE5beginEv:
-    20000:  811:      begin() _GLIBCXX_NOEXCEPT
-    20000:  812:      { return iterator(this->_M_impl._M_start); }
-------------------
-_ZNSt6vectorIfSaIfEE5beginEv:
-      303:  811:      begin() _GLIBCXX_NOEXCEPT
-      303:  812:      { return iterator(this->_M_impl._M_start); }
-------------------
-_ZNSt6vectorIfSaIfEE5beginEv:
     #####:  811:      begin() _GLIBCXX_NOEXCEPT
     #####:  812:      { return iterator(this->_M_impl._M_start); }
+------------------
+_ZNSt6vectorI4Vec3SaIS0_EE5beginEv:
+function _ZNSt6vectorI4Vec3SaIS0_EE5beginEv called 0 returned 0% blocks executed 0%
+    #####:  811:      begin() _GLIBCXX_NOEXCEPT
+    #####:  812:      { return iterator(this->_M_impl._M_start); }
+    %%%%%:  812-block  0
+call    0 never executed
+unconditional  1 never executed
+------------------
+_ZNSt6vectorIfSaIfEE5beginEv:
+function _ZNSt6vectorIfSaIfEE5beginEv called 0 returned 0% blocks executed 0%
+    #####:  811:      begin() _GLIBCXX_NOEXCEPT
+    #####:  812:      { return iterator(this->_M_impl._M_start); }
+    %%%%%:  812-block  0
+call    0 never executed
+unconditional  1 never executed
+------------------
+_ZNSt6vectorIfSaIfEE5beginEv:
+function _ZNSt6vectorIfSaIfEE5beginEv called 0 returned 0% blocks executed 0%
+    #####:  811:      begin() _GLIBCXX_NOEXCEPT
+    #####:  812:      { return iterator(this->_M_impl._M_start); }
+    %%%%%:  812-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
         -:  813:
         -:  814:      /**
@@ -1088,20 +1297,32 @@ _ZNSt6vectorIfSaIfEE5beginEv:
         -:  826:       *  element order.
         -:  827:       */
         -:  828:      iterator
-   20303*:  829:      end() _GLIBCXX_NOEXCEPT
-   20303*:  830:      { return iterator(this->_M_impl._M_finish); }
-------------------
-_ZNSt6vectorI4Vec3SaIS0_EE3endEv:
-    20000:  829:      end() _GLIBCXX_NOEXCEPT
-    20000:  830:      { return iterator(this->_M_impl._M_finish); }
-------------------
-_ZNSt6vectorIfSaIfEE3endEv:
-      303:  829:      end() _GLIBCXX_NOEXCEPT
-      303:  830:      { return iterator(this->_M_impl._M_finish); }
-------------------
-_ZNSt6vectorIfSaIfEE3endEv:
     #####:  829:      end() _GLIBCXX_NOEXCEPT
     #####:  830:      { return iterator(this->_M_impl._M_finish); }
+------------------
+_ZNSt6vectorI4Vec3SaIS0_EE3endEv:
+function _ZNSt6vectorI4Vec3SaIS0_EE3endEv called 0 returned 0% blocks executed 0%
+    #####:  829:      end() _GLIBCXX_NOEXCEPT
+    #####:  830:      { return iterator(this->_M_impl._M_finish); }
+    %%%%%:  830-block  0
+call    0 never executed
+unconditional  1 never executed
+------------------
+_ZNSt6vectorIfSaIfEE3endEv:
+function _ZNSt6vectorIfSaIfEE3endEv called 0 returned 0% blocks executed 0%
+    #####:  829:      end() _GLIBCXX_NOEXCEPT
+    #####:  830:      { return iterator(this->_M_impl._M_finish); }
+    %%%%%:  830-block  0
+call    0 never executed
+unconditional  1 never executed
+------------------
+_ZNSt6vectorIfSaIfEE3endEv:
+function _ZNSt6vectorIfSaIfEE3endEv called 0 returned 0% blocks executed 0%
+    #####:  829:      end() _GLIBCXX_NOEXCEPT
+    #####:  830:      { return iterator(this->_M_impl._M_finish); }
+    %%%%%:  830-block  0
+call    0 never executed
+unconditional  1 never executed
 ------------------
         -:  831:
         -:  832:      /**
@@ -1190,16 +1411,22 @@ _ZNSt6vectorIfSaIfEE3endEv:
         -:  915:      // [23.2.4.2] capacity
         -:  916:      /**  Returns the number of elements in the %vector.  */
         -:  917:      size_type
-   20000*:  918:      size() const _GLIBCXX_NOEXCEPT
-   20000*:  919:      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
-------------------
-_ZNKSt6vectorI4Vec3SaIS0_EE4sizeEv:
-    20000:  918:      size() const _GLIBCXX_NOEXCEPT
-    20000:  919:      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
-------------------
-_ZNKSt6vectorIfSaIfEE4sizeEv:
     #####:  918:      size() const _GLIBCXX_NOEXCEPT
     #####:  919:      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+------------------
+_ZNKSt6vectorI4Vec3SaIS0_EE4sizeEv:
+function _ZNKSt6vectorI4Vec3SaIS0_EE4sizeEv called 0 returned 0% blocks executed 0%
+    #####:  918:      size() const _GLIBCXX_NOEXCEPT
+    #####:  919:      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+    %%%%%:  919-block  0
+unconditional  0 never executed
+------------------
+_ZNKSt6vectorIfSaIfEE4sizeEv:
+function _ZNKSt6vectorIfSaIfEE4sizeEv called 0 returned 0% blocks executed 0%
+    #####:  918:      size() const _GLIBCXX_NOEXCEPT
+    #####:  919:      { return size_type(this->_M_impl._M_finish - this->_M_impl._M_start); }
+    %%%%%:  919-block  0
+unconditional  0 never executed
 ------------------
         -:  920:
         -:  921:      /**  Returns the size() of the largest possible %vector.  */
@@ -1284,14 +1511,20 @@ _ZNKSt6vectorIfSaIfEE4sizeEv:
     #####: 1000:			 - this->_M_impl._M_start); }
 ------------------
 _ZNKSt6vectorI4Vec3SaIS0_EE8capacityEv:
+function _ZNKSt6vectorI4Vec3SaIS0_EE8capacityEv called 0 returned 0% blocks executed 0%
     #####:  998:      capacity() const _GLIBCXX_NOEXCEPT
     #####:  999:      { return size_type(this->_M_impl._M_end_of_storage
     #####: 1000:			 - this->_M_impl._M_start); }
+    %%%%%: 1000-block  0
+unconditional  0 never executed
 ------------------
 _ZNKSt6vectorIfSaIfEE8capacityEv:
+function _ZNKSt6vectorIfSaIfEE8capacityEv called 0 returned 0% blocks executed 0%
     #####:  998:      capacity() const _GLIBCXX_NOEXCEPT
     #####:  999:      { return size_type(this->_M_impl._M_end_of_storage
     #####: 1000:			 - this->_M_impl._M_start); }
+    %%%%%: 1000-block  0
+unconditional  0 never executed
 ------------------
         -: 1001:
         -: 1002:      /**
@@ -1335,59 +1568,80 @@ _ZNKSt6vectorIfSaIfEE8capacityEv:
         -: 1040:       *  see at().)
         -: 1041:       */
         -: 1042:      reference
-   60202*: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+    #####: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
         -: 1044:      {
         -: 1045:	__glibcxx_requires_subscript(__n);
-   60202*: 1046:	return *(this->_M_impl._M_start + __n);
+    #####: 1046:	return *(this->_M_impl._M_start + __n);
         -: 1047:      }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EEixEm:
+function _ZNSt6vectorI4Vec3SaIS0_EEixEm called 0 returned 0% blocks executed 0%
     #####: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
         -: 1044:      {
         -: 1045:	__glibcxx_requires_subscript(__n);
     #####: 1046:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1046-block  0
+unconditional  0 never executed
         -: 1047:      }
 ------------------
 _ZNSt6vectorIhSaIhEEixEm:
-    60202: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
-        -: 1044:      {
-        -: 1045:	__glibcxx_requires_subscript(__n);
-    60202: 1046:	return *(this->_M_impl._M_start + __n);
-        -: 1047:      }
-------------------
-_ZNSt6vectorIfSaIfEEixEm:
+function _ZNSt6vectorIhSaIhEEixEm called 0 returned 0% blocks executed 0%
     #####: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
         -: 1044:      {
         -: 1045:	__glibcxx_requires_subscript(__n);
     #####: 1046:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1046-block  0
+unconditional  0 never executed
+        -: 1047:      }
+------------------
+_ZNSt6vectorIfSaIfEEixEm:
+function _ZNSt6vectorIfSaIfEEixEm called 0 returned 0% blocks executed 0%
+    #####: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
+        -: 1044:      {
+        -: 1045:	__glibcxx_requires_subscript(__n);
+    #####: 1046:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1046-block  0
+unconditional  0 never executed
         -: 1047:      }
 ------------------
 _ZNSt6vectorIhSaIhEEixEm:
+function _ZNSt6vectorIhSaIhEEixEm called 0 returned 0% blocks executed 0%
     #####: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
         -: 1044:      {
         -: 1045:	__glibcxx_requires_subscript(__n);
     #####: 1046:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1046-block  0
+unconditional  0 never executed
         -: 1047:      }
 ------------------
 _ZNSt6vectorIfSaIfEEixEm:
+function _ZNSt6vectorIfSaIfEEixEm called 0 returned 0% blocks executed 0%
     #####: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
         -: 1044:      {
         -: 1045:	__glibcxx_requires_subscript(__n);
     #####: 1046:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1046-block  0
+unconditional  0 never executed
         -: 1047:      }
 ------------------
 _ZNSt6vectorIfSaIfEEixEm:
+function _ZNSt6vectorIfSaIfEEixEm called 0 returned 0% blocks executed 0%
     #####: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
         -: 1044:      {
         -: 1045:	__glibcxx_requires_subscript(__n);
     #####: 1046:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1046-block  0
+unconditional  0 never executed
         -: 1047:      }
 ------------------
 _ZNSt6vectorIhSaIhEEixEm:
+function _ZNSt6vectorIhSaIhEEixEm called 0 returned 0% blocks executed 0%
     #####: 1043:      operator[](size_type __n) _GLIBCXX_NOEXCEPT
         -: 1044:      {
         -: 1045:	__glibcxx_requires_subscript(__n);
     #####: 1046:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1046-block  0
+unconditional  0 never executed
         -: 1047:      }
 ------------------
         -: 1048:
@@ -1403,31 +1657,40 @@ _ZNSt6vectorIhSaIhEEixEm:
         -: 1058:       *  see at().)
         -: 1059:       */
         -: 1060:      const_reference
-     303*: 1061:      operator[](size_type __n) const _GLIBCXX_NOEXCEPT
-        -: 1062:      {
-        -: 1063:	__glibcxx_requires_subscript(__n);
-     303*: 1064:	return *(this->_M_impl._M_start + __n);
-        -: 1065:      }
-------------------
-_ZNKSt6vectorIfSaIfEEixEm:
     #####: 1061:      operator[](size_type __n) const _GLIBCXX_NOEXCEPT
         -: 1062:      {
         -: 1063:	__glibcxx_requires_subscript(__n);
     #####: 1064:	return *(this->_M_impl._M_start + __n);
+        -: 1065:      }
+------------------
+_ZNKSt6vectorIfSaIfEEixEm:
+function _ZNKSt6vectorIfSaIfEEixEm called 0 returned 0% blocks executed 0%
+    #####: 1061:      operator[](size_type __n) const _GLIBCXX_NOEXCEPT
+        -: 1062:      {
+        -: 1063:	__glibcxx_requires_subscript(__n);
+    #####: 1064:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1064-block  0
+unconditional  0 never executed
         -: 1065:      }
 ------------------
 _ZNKSt6vectorIhSaIhEEixEm:
-      303: 1061:      operator[](size_type __n) const _GLIBCXX_NOEXCEPT
-        -: 1062:      {
-        -: 1063:	__glibcxx_requires_subscript(__n);
-      303: 1064:	return *(this->_M_impl._M_start + __n);
-        -: 1065:      }
-------------------
-_ZNKSt6vectorIfSaIfEEixEm:
+function _ZNKSt6vectorIhSaIhEEixEm called 0 returned 0% blocks executed 0%
     #####: 1061:      operator[](size_type __n) const _GLIBCXX_NOEXCEPT
         -: 1062:      {
         -: 1063:	__glibcxx_requires_subscript(__n);
     #####: 1064:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1064-block  0
+unconditional  0 never executed
+        -: 1065:      }
+------------------
+_ZNKSt6vectorIfSaIfEEixEm:
+function _ZNKSt6vectorIfSaIfEEixEm called 0 returned 0% blocks executed 0%
+    #####: 1061:      operator[](size_type __n) const _GLIBCXX_NOEXCEPT
+        -: 1062:      {
+        -: 1063:	__glibcxx_requires_subscript(__n);
+    #####: 1064:	return *(this->_M_impl._M_start + __n);
+    %%%%%: 1064-block  0
+unconditional  0 never executed
         -: 1065:      }
 ------------------
         -: 1066:
@@ -1965,27 +2228,39 @@ _ZNKSt6vectorIfSaIfEEixEm:
     #####: 1598:      }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EE18_M_fill_initializeEmRKS0_:
+function _ZNSt6vectorI4Vec3SaIS0_EE18_M_fill_initializeEmRKS0_ called 0 returned 0% blocks executed 0%
     #####: 1593:      _M_fill_initialize(size_type __n, const value_type& __value)
         -: 1594:      {
     #####: 1595:	this->_M_impl._M_finish =
     #####: 1596:	  std::__uninitialized_fill_n_a(this->_M_impl._M_start, __n, __value,
+call    0 never executed
     #####: 1597:					_M_get_Tp_allocator());
+    %%%%%: 1597-block  0
+call    0 never executed
     #####: 1598:      }
 ------------------
 _ZNSt6vectorIfSaIfEE18_M_fill_initializeEmRKf:
+function _ZNSt6vectorIfSaIfEE18_M_fill_initializeEmRKf called 0 returned 0% blocks executed 0%
     #####: 1593:      _M_fill_initialize(size_type __n, const value_type& __value)
         -: 1594:      {
     #####: 1595:	this->_M_impl._M_finish =
     #####: 1596:	  std::__uninitialized_fill_n_a(this->_M_impl._M_start, __n, __value,
+call    0 never executed
     #####: 1597:					_M_get_Tp_allocator());
+    %%%%%: 1597-block  0
+call    0 never executed
     #####: 1598:      }
 ------------------
 _ZNSt6vectorIfSaIfEE18_M_fill_initializeEmRKf:
+function _ZNSt6vectorIfSaIfEE18_M_fill_initializeEmRKf called 0 returned 0% blocks executed 0%
     #####: 1593:      _M_fill_initialize(size_type __n, const value_type& __value)
         -: 1594:      {
     #####: 1595:	this->_M_impl._M_finish =
     #####: 1596:	  std::__uninitialized_fill_n_a(this->_M_impl._M_start, __n, __value,
+call    0 never executed
     #####: 1597:					_M_get_Tp_allocator());
+    %%%%%: 1597-block  0
+call    0 never executed
     #####: 1598:      }
 ------------------
         -: 1599:
@@ -2165,30 +2440,63 @@ _ZNSt6vectorIfSaIfEE18_M_fill_initializeEmRKf:
         -: 1773:      }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EE17_S_check_init_lenEmRKS1_:
+function _ZNSt6vectorI4Vec3SaIS0_EE17_S_check_init_lenEmRKS1_ called 0 returned 0% blocks executed 0%
     #####: 1767:      _S_check_init_len(size_type __n, const allocator_type& __a)
         -: 1768:      {
     #####: 1769:	if (__n > _S_max_size(_Tp_alloc_type(__a)))
+    %%%%%: 1769-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
     #####: 1770:	  __throw_length_error(
+    %%%%%: 1770-block  0
+call    0 never executed
         -: 1771:	      __N("cannot create std::vector larger than max_size()"));
     #####: 1772:	return __n;
+    %%%%%: 1772-block  0
+unconditional  0 never executed
         -: 1773:      }
 ------------------
 _ZNSt6vectorIfSaIfEE17_S_check_init_lenEmRKS0_:
+function _ZNSt6vectorIfSaIfEE17_S_check_init_lenEmRKS0_ called 0 returned 0% blocks executed 0%
     #####: 1767:      _S_check_init_len(size_type __n, const allocator_type& __a)
         -: 1768:      {
     #####: 1769:	if (__n > _S_max_size(_Tp_alloc_type(__a)))
+    %%%%%: 1769-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
     #####: 1770:	  __throw_length_error(
+    %%%%%: 1770-block  0
+call    0 never executed
         -: 1771:	      __N("cannot create std::vector larger than max_size()"));
     #####: 1772:	return __n;
+    %%%%%: 1772-block  0
+unconditional  0 never executed
         -: 1773:      }
 ------------------
 _ZNSt6vectorIfSaIfEE17_S_check_init_lenEmRKS0_:
+function _ZNSt6vectorIfSaIfEE17_S_check_init_lenEmRKS0_ called 0 returned 0% blocks executed 0%
     #####: 1767:      _S_check_init_len(size_type __n, const allocator_type& __a)
         -: 1768:      {
     #####: 1769:	if (__n > _S_max_size(_Tp_alloc_type(__a)))
+    %%%%%: 1769-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
     #####: 1770:	  __throw_length_error(
+    %%%%%: 1770-block  0
+call    0 never executed
         -: 1771:	      __N("cannot create std::vector larger than max_size()"));
     #####: 1772:	return __n;
+    %%%%%: 1772-block  0
+unconditional  0 never executed
         -: 1773:      }
 ------------------
         -: 1774:
@@ -2205,6 +2513,7 @@ _ZNSt6vectorIfSaIfEE17_S_check_init_lenEmRKS0_:
         -: 1785:      }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EE11_S_max_sizeERKS1_:
+function _ZNSt6vectorI4Vec3SaIS0_EE11_S_max_sizeERKS1_ called 0 returned 0% blocks executed 0%
     #####: 1776:      _S_max_size(const _Tp_alloc_type& __a) _GLIBCXX_NOEXCEPT
         -: 1777:      {
         -: 1778:	// std::distance(begin(), end()) cannot be greater than PTRDIFF_MAX,
@@ -2213,10 +2522,15 @@ _ZNSt6vectorI4Vec3SaIS0_EE11_S_max_sizeERKS1_:
     #####: 1781:	const size_t __diffmax
         -: 1782:	  = __gnu_cxx::__numeric_traits<ptrdiff_t>::__max / sizeof(_Tp);
     #####: 1783:	const size_t __allocmax = _Alloc_traits::max_size(__a);
+    %%%%%: 1783-block  0
+call    0 never executed
     #####: 1784:	return (std::min)(__diffmax, __allocmax);
+call    0 never executed
+unconditional  1 never executed
         -: 1785:      }
 ------------------
 _ZNSt6vectorIfSaIfEE11_S_max_sizeERKS0_:
+function _ZNSt6vectorIfSaIfEE11_S_max_sizeERKS0_ called 0 returned 0% blocks executed 0%
     #####: 1776:      _S_max_size(const _Tp_alloc_type& __a) _GLIBCXX_NOEXCEPT
         -: 1777:      {
         -: 1778:	// std::distance(begin(), end()) cannot be greater than PTRDIFF_MAX,
@@ -2225,10 +2539,15 @@ _ZNSt6vectorIfSaIfEE11_S_max_sizeERKS0_:
     #####: 1781:	const size_t __diffmax
         -: 1782:	  = __gnu_cxx::__numeric_traits<ptrdiff_t>::__max / sizeof(_Tp);
     #####: 1783:	const size_t __allocmax = _Alloc_traits::max_size(__a);
+    %%%%%: 1783-block  0
+call    0 never executed
     #####: 1784:	return (std::min)(__diffmax, __allocmax);
+call    0 never executed
+unconditional  1 never executed
         -: 1785:      }
 ------------------
 _ZNSt6vectorIfSaIfEE11_S_max_sizeERKS0_:
+function _ZNSt6vectorIfSaIfEE11_S_max_sizeERKS0_ called 0 returned 0% blocks executed 0%
     #####: 1776:      _S_max_size(const _Tp_alloc_type& __a) _GLIBCXX_NOEXCEPT
         -: 1777:      {
         -: 1778:	// std::distance(begin(), end()) cannot be greater than PTRDIFF_MAX,
@@ -2237,7 +2556,11 @@ _ZNSt6vectorIfSaIfEE11_S_max_sizeERKS0_:
     #####: 1781:	const size_t __diffmax
         -: 1782:	  = __gnu_cxx::__numeric_traits<ptrdiff_t>::__max / sizeof(_Tp);
     #####: 1783:	const size_t __allocmax = _Alloc_traits::max_size(__a);
+    %%%%%: 1783-block  0
+call    0 never executed
     #####: 1784:	return (std::min)(__diffmax, __allocmax);
+call    0 never executed
+unconditional  1 never executed
         -: 1785:      }
 ------------------
         -: 1786:
@@ -2258,25 +2581,41 @@ _ZNSt6vectorIfSaIfEE11_S_max_sizeERKS0_:
     #####: 1801:      }
 ------------------
 _ZNSt6vectorI4Vec3SaIS0_EE15_M_erase_at_endEPS0_:
+function _ZNSt6vectorI4Vec3SaIS0_EE15_M_erase_at_endEPS0_ called 0 returned 0% blocks executed 0%
     #####: 1792:      _M_erase_at_end(pointer __pos) _GLIBCXX_NOEXCEPT
         -: 1793:      {
     #####: 1794:	if (size_type __n = this->_M_impl._M_finish - __pos)
+    %%%%%: 1794-block  0
+branch  0 never executed
+branch  1 never executed
         -: 1795:	  {
     #####: 1796:	    std::_Destroy(__pos, this->_M_impl._M_finish,
+call    0 never executed
     #####: 1797:			  _M_get_Tp_allocator());
+    %%%%%: 1797-block  0
+call    0 never executed
     #####: 1798:	    this->_M_impl._M_finish = __pos;
+unconditional  0 never executed
         -: 1799:	    _GLIBCXX_ASAN_ANNOTATE_SHRINK(__n);
         -: 1800:	  }
     #####: 1801:      }
 ------------------
 _ZNSt6vectorIfSaIfEE15_M_erase_at_endEPf:
+function _ZNSt6vectorIfSaIfEE15_M_erase_at_endEPf called 0 returned 0% blocks executed 0%
     #####: 1792:      _M_erase_at_end(pointer __pos) _GLIBCXX_NOEXCEPT
         -: 1793:      {
     #####: 1794:	if (size_type __n = this->_M_impl._M_finish - __pos)
+    %%%%%: 1794-block  0
+branch  0 never executed
+branch  1 never executed
         -: 1795:	  {
     #####: 1796:	    std::_Destroy(__pos, this->_M_impl._M_finish,
+call    0 never executed
     #####: 1797:			  _M_get_Tp_allocator());
+    %%%%%: 1797-block  0
+call    0 never executed
     #####: 1798:	    this->_M_impl._M_finish = __pos;
+unconditional  0 never executed
         -: 1799:	    _GLIBCXX_ASAN_ANNOTATE_SHRINK(__n);
         -: 1800:	  }
     #####: 1801:      }

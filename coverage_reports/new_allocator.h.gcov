@@ -77,18 +77,22 @@
         -:   76:#endif
         -:   77:
         -:   78:      _GLIBCXX20_CONSTEXPR
+function _ZN9__gnu_cxx13new_allocatorIfEC2Ev called 0 returned 0% blocks executed 0%
     #####:   79:      new_allocator() _GLIBCXX_USE_NOEXCEPT { }
         -:   80:
         -:   81:      _GLIBCXX20_CONSTEXPR
     #####:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorI4Vec3EC2ERKS2_:
+function _ZN9__gnu_cxx13new_allocatorI4Vec3EC2ERKS2_ called 0 returned 0% blocks executed 0%
     #####:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIfEC2ERKS1_:
+function _ZN9__gnu_cxx13new_allocatorIfEC2ERKS1_ called 0 returned 0% blocks executed 0%
     #####:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIfEC2ERKS1_:
+function _ZN9__gnu_cxx13new_allocatorIfEC2ERKS1_ called 0 returned 0% blocks executed 0%
     #####:   82:      new_allocator(const new_allocator&) _GLIBCXX_USE_NOEXCEPT { }
 ------------------
         -:   83:
@@ -100,12 +104,15 @@ _ZN9__gnu_cxx13new_allocatorIfEC2ERKS1_:
     #####:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorI4Vec3ED2Ev:
+function _ZN9__gnu_cxx13new_allocatorI4Vec3ED2Ev called 0 returned 0% blocks executed 0%
     #####:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIfED2Ev:
+function _ZN9__gnu_cxx13new_allocatorIfED2Ev called 0 returned 0% blocks executed 0%
     #####:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIfED2Ev:
+function _ZN9__gnu_cxx13new_allocatorIfED2Ev called 0 returned 0% blocks executed 0%
     #####:   89:      ~new_allocator() _GLIBCXX_USE_NOEXCEPT { }
 ------------------
         -:   90:
@@ -149,6 +156,7 @@ _ZN9__gnu_cxx13new_allocatorIfED2Ev:
         -:  128:      }
 ------------------
 _ZN9__gnu_cxx13new_allocatorI4Vec3E8allocateEmPKv:
+function _ZN9__gnu_cxx13new_allocatorI4Vec3E8allocateEmPKv called 0 returned 0% blocks executed 0%
     #####:  103:      allocate(size_type __n, const void* = static_cast<const void*>(0))
         -:  104:      {
         -:  105:#if __cplusplus >= 201103L
@@ -158,12 +166,23 @@ _ZN9__gnu_cxx13new_allocatorI4Vec3E8allocateEmPKv:
         -:  109:#endif
         -:  110:
     #####:  111:	if (__builtin_expect(__n > this->_M_max_size(), false))
+    %%%%%:  111-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
         -:  112:	  {
         -:  113:	    // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  114:	    // 3190. allocator::allocate sometimes returns too little storage
     #####:  115:	    if (__n > (std::size_t(-1) / sizeof(_Tp)))
+    %%%%%:  115-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  116:	      std::__throw_bad_array_new_length();
+    %%%%%:  116-block  0
+call    0 never executed
     #####:  117:	    std::__throw_bad_alloc();
+    %%%%%:  117-block  0
+call    0 never executed
         -:  118:	  }
         -:  119:
         -:  120:#if __cpp_aligned_new
@@ -174,9 +193,13 @@ _ZN9__gnu_cxx13new_allocatorI4Vec3E8allocateEmPKv:
         -:  125:	  }
         -:  126:#endif
     #####:  127:	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+    %%%%%:  127-block  0
+call    0 never executed
+unconditional  1 never executed
         -:  128:      }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv:
+function _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv called 0 returned 0% blocks executed 0%
     #####:  103:      allocate(size_type __n, const void* = static_cast<const void*>(0))
         -:  104:      {
         -:  105:#if __cplusplus >= 201103L
@@ -186,12 +209,23 @@ _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv:
         -:  109:#endif
         -:  110:
     #####:  111:	if (__builtin_expect(__n > this->_M_max_size(), false))
+    %%%%%:  111-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
         -:  112:	  {
         -:  113:	    // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  114:	    // 3190. allocator::allocate sometimes returns too little storage
     #####:  115:	    if (__n > (std::size_t(-1) / sizeof(_Tp)))
+    %%%%%:  115-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  116:	      std::__throw_bad_array_new_length();
+    %%%%%:  116-block  0
+call    0 never executed
     #####:  117:	    std::__throw_bad_alloc();
+    %%%%%:  117-block  0
+call    0 never executed
         -:  118:	  }
         -:  119:
         -:  120:#if __cpp_aligned_new
@@ -202,9 +236,13 @@ _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv:
         -:  125:	  }
         -:  126:#endif
     #####:  127:	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+    %%%%%:  127-block  0
+call    0 never executed
+unconditional  1 never executed
         -:  128:      }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv:
+function _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv called 0 returned 0% blocks executed 0%
     #####:  103:      allocate(size_type __n, const void* = static_cast<const void*>(0))
         -:  104:      {
         -:  105:#if __cplusplus >= 201103L
@@ -214,12 +252,23 @@ _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv:
         -:  109:#endif
         -:  110:
     #####:  111:	if (__builtin_expect(__n > this->_M_max_size(), false))
+    %%%%%:  111-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
         -:  112:	  {
         -:  113:	    // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  114:	    // 3190. allocator::allocate sometimes returns too little storage
     #####:  115:	    if (__n > (std::size_t(-1) / sizeof(_Tp)))
+    %%%%%:  115-block  0
+branch  0 never executed
+branch  1 never executed
     #####:  116:	      std::__throw_bad_array_new_length();
+    %%%%%:  116-block  0
+call    0 never executed
     #####:  117:	    std::__throw_bad_alloc();
+    %%%%%:  117-block  0
+call    0 never executed
         -:  118:	  }
         -:  119:
         -:  120:#if __cpp_aligned_new
@@ -230,6 +279,9 @@ _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv:
         -:  125:	  }
         -:  126:#endif
     #####:  127:	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+    %%%%%:  127-block  0
+call    0 never executed
+unconditional  1 never executed
         -:  128:      }
 ------------------
         -:  129:
@@ -256,7 +308,10 @@ _ZN9__gnu_cxx13new_allocatorIfE8allocateEmPKv:
         -:  150:      }
 ------------------
 _ZN9__gnu_cxx13new_allocatorI4Vec3E10deallocateEPS1_m:
+function _ZN9__gnu_cxx13new_allocatorI4Vec3E10deallocateEPS1_m called 0 returned 0% blocks executed 0%
     #####:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
+    %%%%%:  132-block  0
+unconditional  0 never executed
         -:  133:      {
         -:  134:#if __cpp_aligned_new
         -:  135:	if (alignof(_Tp) > __STDCPP_DEFAULT_NEW_ALIGNMENT__)
@@ -270,6 +325,8 @@ _ZN9__gnu_cxx13new_allocatorI4Vec3E10deallocateEPS1_m:
         -:  143:	  }
         -:  144:#endif
     #####:  145:	::operator delete(__p
+    %%%%%:  145-block  0
+call    0 never executed
         -:  146:#if __cpp_sized_deallocation
         -:  147:			  , __t * sizeof(_Tp)
         -:  148:#endif
@@ -277,7 +334,10 @@ _ZN9__gnu_cxx13new_allocatorI4Vec3E10deallocateEPS1_m:
         -:  150:      }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIfE10deallocateEPfm:
+function _ZN9__gnu_cxx13new_allocatorIfE10deallocateEPfm called 0 returned 0% blocks executed 0%
     #####:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
+    %%%%%:  132-block  0
+unconditional  0 never executed
         -:  133:      {
         -:  134:#if __cpp_aligned_new
         -:  135:	if (alignof(_Tp) > __STDCPP_DEFAULT_NEW_ALIGNMENT__)
@@ -291,6 +351,8 @@ _ZN9__gnu_cxx13new_allocatorIfE10deallocateEPfm:
         -:  143:	  }
         -:  144:#endif
     #####:  145:	::operator delete(__p
+    %%%%%:  145-block  0
+call    0 never executed
         -:  146:#if __cpp_sized_deallocation
         -:  147:			  , __t * sizeof(_Tp)
         -:  148:#endif
@@ -298,7 +360,10 @@ _ZN9__gnu_cxx13new_allocatorIfE10deallocateEPfm:
         -:  150:      }
 ------------------
 _ZN9__gnu_cxx13new_allocatorIfE10deallocateEPfm:
+function _ZN9__gnu_cxx13new_allocatorIfE10deallocateEPfm called 0 returned 0% blocks executed 0%
     #####:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
+    %%%%%:  132-block  0
+unconditional  0 never executed
         -:  133:      {
         -:  134:#if __cpp_aligned_new
         -:  135:	if (alignof(_Tp) > __STDCPP_DEFAULT_NEW_ALIGNMENT__)
@@ -312,6 +377,8 @@ _ZN9__gnu_cxx13new_allocatorIfE10deallocateEPfm:
         -:  143:	  }
         -:  144:#endif
     #####:  145:	::operator delete(__p
+    %%%%%:  145-block  0
+call    0 never executed
         -:  146:#if __cpp_sized_deallocation
         -:  147:			  , __t * sizeof(_Tp)
         -:  148:#endif
@@ -325,16 +392,25 @@ _ZN9__gnu_cxx13new_allocatorIfE10deallocateEPfm:
     #####:  155:      { return _M_max_size(); }
 ------------------
 _ZNK9__gnu_cxx13new_allocatorI4Vec3E8max_sizeEv:
+function _ZNK9__gnu_cxx13new_allocatorI4Vec3E8max_sizeEv called 0 returned 0% blocks executed 0%
     #####:  154:      max_size() const _GLIBCXX_USE_NOEXCEPT
     #####:  155:      { return _M_max_size(); }
+    %%%%%:  155-block  0
+call    0 never executed
 ------------------
 _ZNK9__gnu_cxx13new_allocatorIfE8max_sizeEv:
+function _ZNK9__gnu_cxx13new_allocatorIfE8max_sizeEv called 0 returned 0% blocks executed 0%
     #####:  154:      max_size() const _GLIBCXX_USE_NOEXCEPT
     #####:  155:      { return _M_max_size(); }
+    %%%%%:  155-block  0
+call    0 never executed
 ------------------
 _ZNK9__gnu_cxx13new_allocatorIfE8max_sizeEv:
+function _ZNK9__gnu_cxx13new_allocatorIfE8max_sizeEv called 0 returned 0% blocks executed 0%
     #####:  154:      max_size() const _GLIBCXX_USE_NOEXCEPT
     #####:  155:      { return _M_max_size(); }
+    %%%%%:  155-block  0
+call    0 never executed
 ------------------
         -:  156:
         -:  157:#if __cplusplus >= 201103L

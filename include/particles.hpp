@@ -17,6 +17,7 @@ struct Particles {
     std::vector<float> mass;
     std::vector<float> x, y, z;
     std::vector<float> vx, vy, vz;
+    std::vector<float> ax, ay, az; // caching for reuse and O(N log N) gravity computation
     std::vector<float> temperature;
 
     // thermodynamic
@@ -32,24 +33,18 @@ struct Particles {
     std::vector<uint8_t> is_star;   // true if particle is a star / sink
     std::vector<uint8_t> alive;
 
-    // caching
-    std::vector<Vec3> acc_cache;
-    std::vector<float> r2_cache;
-    bool cache_valid = false;
 
     Particles(size_t n)
         : N(n),
           mass(n, 1.0f),
           x(n, 0.0f), y(n, 0.0f), z(n, 0.0f),
           vx(n, 0.0f), vy(n, 0.0f), vz(n, 0.0f),
+          ax(n, 0.0f), ay(n, 0.0f), az(n, 0.0f),
           temperature(n, 1.0f),
           density(n, 0.0f),
           pressure(n, 0.0f),
           is_star(n, false),
-          alive(n, true),
-          acc_cache(n, Vec3{0.0f,0.0f,0.0f}),
-          r2_cache(n*n, 0.0f),
-          cache_valid(false)
+          alive(n, true)
     {}
 
     // write CSV of *alive* particles only

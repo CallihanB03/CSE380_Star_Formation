@@ -11,3 +11,5 @@ void compute_pressure_forces(Particles& P, float h,
                              std::vector<float>& ax,
                              std::vector<float>& ay,
                              std::vector<float>& az);
+
+void compute_pressure_forces_cached(Particles& P, float h);

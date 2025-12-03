@@ -121,3 +121,63 @@ void compute_pressure_forces(
         }
     }
 }
+
+void compute_pressure_forces_cached(
+    Particles& P,
+    float h
+) {
+    size_t N = P.N;
+
+    // small epsilon to avoid division by zero
+    const float eps = 1e-12f;
+
+    // pairwise loop
+    for (size_t i = 0; i < N; ++i) {
+        if (!P.alive[i]) continue;
+
+        float rho_i = std::max(P.density[i], eps);
+        float rho_i2_inv = 1.0f / (rho_i * rho_i);
+        float P_i_rho2 = P.pressure[i] * rho_i2_inv;
+
+        float xi = P.x[i]; float yi = P.y[i]; float zi = P.z[i];
+
+        for (size_t j = i + 1; j < N; ++j) {
+            if (!P.alive[j]) continue;
+
+            float xj = P.x[j]; float yj = P.y[j]; float zj = P.z[j];
+
+            float dx = (xj - xi); float dy = (yj - yi); float dz = (zj - zi);
+            float r = std::sqrt( dx*dx + dy*dy + dz*dz );
+
+            if (r > 2.0f * h || r < eps) continue;
+
+            float dWdr = cubic_spline_dWdr(r, h);
+            if (dWdr == 0.0f) continue;
+
+            float rho_j = std::max(P.density[j], eps);
+            float rho_j2_inv = 1.0f / (rho_j * rho_j);
+            float P_j_rho2 = P.pressure[j] * rho_j2_inv;
+
+            float term = -P.mass[j] * (P_i_rho2 + P_j_rho2);
+
+            float grad_scalar = (dWdr / r);
+            float grad_x = dx * grad_scalar;
+            float grad_y = dy * grad_scalar;
+            float grad_z = dz * grad_scalar;
+
+            float a_x = grad_x * term;
+            float a_y = grad_y * term;
+            float a_z = grad_z * term;
+
+            // symmetric update (momentum conserved)
+            P.ax[i] += a_x;
+            P.ay[i] += a_y;
+            P.az[i] += a_z;
+
+            P.ax[j] -= a_x;
+            P.ay[j] -= a_y;
+            P.az[j] -= a_z;
+        }
+    }
+}
+

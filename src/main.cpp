@@ -8,6 +8,7 @@
 #include "../include/thermo.hpp"
 #include "../include/starform.hpp"
 #include "../include/distance.hpp"
+#include "../include/bh.hpp"
 
 
 
@@ -29,7 +30,7 @@ int main(int argc, char** argv) {
     float density_threshold =  100.0; 
     int version_type = 2;      
 
-    bool use_density_knn = (argc > 1 && std::string(argv[1]) == "--use_density_knn");
+    bool use_bh = (argc > 1 && std::string(argv[1]) == "--use_bh");
              
 
     Particles P(N);
@@ -37,77 +38,131 @@ int main(int argc, char** argv) {
     // Initialize particle positions
     // ----------------------------------------------------
     init_particles(P, version_type);
-
-
-    // ----------------------------------------------------
-    // Cache particle distances
-    // ----------------------------------------------------
-    std::vector<float> particle_dist_L2_sqr = compute_particle_distances(P);
-
     StarFormation SF(neighbor_radius, min_neighbors, density_threshold);
-    
     auto start = std::chrono::high_resolution_clock::now();
 
-    // ----------------------------------------------------
-    // Simulation loop
-    // ----------------------------------------------------
-    float h = 0.03f; // smoothing length
-    for (size_t t = 0; t < num_steps; ++t) {
-        // ------------------------------------------------
-        // 1. Compute gravitational acceleration
-        // ------------------------------------------------
-        std::vector<float> ax(P.N, 0.0f);
-        std::vector<float> ay(P.N, 0.0f);
-        std::vector<float> az(P.N, 0.0f);
 
-        compute_gravity(P, ax, ay, az);
+    float h = 0.03f; // smoothing length for Density
 
-        // ------------------------------------------------
-        // 2. Compute densities (SPH or KNN)
-        // ------------------------------------------------
-        
-        // compute_density_sph(P, h);
-        // compute_density_kNN(P,20);
-        compute_density_sph(P, h);
-
-
-        // ------------------------------------------------
-        // 3. Compute pressure forces
-        // ------------------------------------------------
-        compute_pressure_forces(P, h, ax, ay, az);
-
-        // ------------------------------------------------
-        // 4. Integrate motion
-        // ------------------------------------------------
-        velocity_verlet(P, ax, ay, az, dt);
-
-
-        // 5. Update thermodynamics
-        update_thermodynamics(P, dt);
+    if (use_bh){
+        BarnesHutSolver bh(P, 0.6, 1e-3);
+        bh.build_with_particles(P);
+        start = std::chrono::high_resolution_clock::now();
 
         // ----------------------------------------------------
-        // 6. Update thermodynamic physics
-        //    (temperature, pressure eqn of state, etc.)
+        // Simulation loop
         // ----------------------------------------------------
-        update_physics(P, dt);
+        for (size_t t = 0; t < num_steps; ++t) {
+            // ------------------------------------------------
+            // 1. Compute gravitational acceleration
+            // ------------------------------------------------
+            bh.compute_accelerations(P, 1.0); // writes accelerations into P.ax,P.ay,P.az
+
+            // ------------------------------------------------
+            // 2. Compute densities (SPH or KNN)
+            // ------------------------------------------------
+            compute_density_sph(P, h);
+
+
+            // ------------------------------------------------
+            // 3. Compute pressure forces
+            // ------------------------------------------------
+            compute_pressure_forces_cached(P, h);
+
+            // ------------------------------------------------
+            // 4. Integrate motion
+            // ------------------------------------------------
+            velocity_verlet_cached(P, dt);
+
+            // ------------------------------------------------
+            // 5. Update thermodynamics
+            // ------------------------------------------------
+            update_thermodynamics(P, dt);
+
+            // ----------------------------------------------------
+            // 6. Update thermodynamic physics
+            //    (temperature, pressure eqn of state, etc.)
+            // ----------------------------------------------------
+            update_physics(P, dt);
+
+            // ----------------------------------------------------
+            // 7. Check star formation
+            // ----------------------------------------------------
+            auto candidates = SF.detect_star_candidates(P);
+            SF.form_stars(P, candidates, t * dt);
+
+            // ----------------------------------------------------
+            // 8. Output snapshot
+            // ----------------------------------------------------
+            std::string fname = "frames/frame_" + std::to_string(t) + ".csv";
+            P.write_csv(fname);
+        }
+
+
+    }
+
+    else {
+        start = std::chrono::high_resolution_clock::now();
 
         // ----------------------------------------------------
-        // 7. Check star formation
+        // Simulation loop
         // ----------------------------------------------------
-        auto candidates = SF.detect_star_candidates(P);
-        SF.form_stars(P, candidates, t * dt);
+        for (size_t t = 0; t < num_steps; ++t) {
+            // ------------------------------------------------
+            // 1. Compute gravitational acceleration
+            // ------------------------------------------------
+            std::vector<float> ax(P.N, 0.0f);
+            std::vector<float> ay(P.N, 0.0f);
+            std::vector<float> az(P.N, 0.0f);
 
-        // ----------------------------------------------------
-        // 8. Output snapshot
-        // ----------------------------------------------------
-        std::string fname = "frames/frame_" + std::to_string(t) + ".csv";
-        P.write_csv(fname);
+            compute_gravity(P, ax, ay, az);
+
+            // ------------------------------------------------
+            // 2. Compute densities (SPH or KNN)
+            // ------------------------------------------------
+            compute_density_sph(P, h);
+
+
+            // ------------------------------------------------
+            // 3. Compute pressure forces
+            // ------------------------------------------------
+            compute_pressure_forces(P, h, ax, ay, az);
+
+            // ------------------------------------------------
+            // 4. Integrate motion
+            // ------------------------------------------------
+            velocity_verlet(P, ax, ay, az, dt);
+
+            // ------------------------------------------------
+            // 5. Update thermodynamics
+            // ------------------------------------------------
+            update_thermodynamics(P, dt);
+
+            // ----------------------------------------------------
+            // 6. Update thermodynamic physics
+            //    (temperature, pressure eqn of state, etc.)
+            // ----------------------------------------------------
+            update_physics(P, dt);
+
+            // ----------------------------------------------------
+            // 7. Check star formation
+            // ----------------------------------------------------
+            auto candidates = SF.detect_star_candidates(P);
+            SF.form_stars(P, candidates, t * dt);
+
+            // ----------------------------------------------------
+            // 8. Output snapshot
+            // ----------------------------------------------------
+            std::string fname = "frames/frame_" + std::to_string(t) + ".csv";
+            P.write_csv(fname);
+        }
+
     }
 
     auto end = std::chrono::high_resolution_clock::now();
-    // star_log.close();
 
-    std::cout << " runtime: "
+    std::cout << (use_bh ? "Using Barnes-Hut Octree Gravitational Solver" : "Using Standard Gravitational Acceleration")
+              << " runtime: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
               << " ms\n";
 

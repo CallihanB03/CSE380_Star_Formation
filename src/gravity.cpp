@@ -39,3 +39,59 @@ void compute_gravity(const Particles& P,
         }
     }
 }
+
+
+// Optimized O(N²) gravity computation
+void compute_gravity_cached_optimized(Particles& P,
+                                      float G,
+                                      float softening)
+{
+    const size_t N = P.N;
+    const float soft2 = softening * softening;
+
+    // zero accelerations
+    float* ax = P.ax.data();
+    float* ay = P.ay.data();
+    float* az = P.az.data();
+    for (size_t i = 0; i < N; ++i) {
+        ax[i] = 0.0f;
+        ay[i] = 0.0f;
+        az[i] = 0.0f;
+    }
+
+    // main O(N²) loop
+    for (size_t i = 0; i < N; ++i) {
+        if (!P.alive[i]) continue;
+        const float xi = P.x[i];
+        const float yi = P.y[i];
+        const float zi = P.z[i];
+        const float mi = P.mass[i];
+
+        for (size_t j = i + 1; j < N; ++j) {
+            if (!P.alive[j]) continue;
+            const float dx = P.x[j] - xi;
+            const float dy = P.y[j] - yi;
+            const float dz = P.z[j] - zi;
+
+            const float r2 = dx*dx + dy*dy + dz*dz + soft2;
+            const float inv_r = 1.0f / std::sqrt(r2);
+            const float inv_r3 = inv_r * inv_r * inv_r;
+
+            const float mj = P.mass[j];
+            const float f = G * inv_r3;
+
+            // apply accelerations
+            const float aix = f * mj * dx;
+            const float aiy = f * mj * dy;
+            const float aiz = f * mj * dz;
+
+            ax[i] += aix;
+            ay[i] += aiy;
+            az[i] += aiz;
+
+            ax[j] -= f * mi * dx;
+            ay[j] -= f * mi * dy;
+            az[j] -= f * mi * dz;
+        }
+    }
+}

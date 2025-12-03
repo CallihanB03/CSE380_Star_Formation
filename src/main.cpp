@@ -31,26 +31,18 @@ int main(int argc, char** argv) {
     float density_threshold =  100.0; 
     int version_type = 2;  
 
-    int k = 50; // for density KNN    
+    // int k = 50; // for density KNN    
 
-    bool use_bh = (argc > 1 &&
-        (std::string(argv[1]) == "--use_bh") || (std::string(argv[2]) == "--use_bh" || (std::string(argv[3]) == "--use_bh"))
-    );
+    bool use_cached = (argc > 1 && ((std::string(argv[1]) == "--use_cached")));
+    // bool debugging = false;
 
-    bool debugging = (argc > 1 && 
-    (std::string(argv[1]) == "--debugging") || (std::string(argv[2]) == "--debugging") || (std::string(argv[3]) == "--debugging")
-    );
+    // std::cout << "use_bh: " << use_bh << std::endl;
 
-    // bool use_density_knn = (argc > 1 && 
-    // (std::string(argv[1]) == "--use_density_knn") || (std::string(argv[2]) == "--use_density_knn") || (std::string(argv[3]) == "--duse_density_knn")
-    // ); 
-
-    std::cout << "debugging: " << debugging << std::endl;
-
-    if (debugging){
-        N = 3;
-        version_type = 4;
-    }
+    // if (debugging){
+    //     N = 3;
+    //     version_type = 4;
+    //     std::cout << "Debugging initialization" << std::endl;
+    // }
 
 
     Particles P(N);
@@ -64,9 +56,9 @@ int main(int argc, char** argv) {
 
     float h = 0.03f; // smoothing length for Density
 
-    if (use_bh){
-        BarnesHutSolver bh(P, 0.6, 1e-3);
-        bh.build_with_particles(P);
+    if (use_cached){
+        // BarnesHutSolver bh(P, 0., 1e-3);
+        // bh.build_with_particles(P);
         start = std::chrono::high_resolution_clock::now();
 
         // ----------------------------------------------------
@@ -76,7 +68,9 @@ int main(int argc, char** argv) {
             // ------------------------------------------------
             // 1. Compute gravitational acceleration
             // ------------------------------------------------
-            bh.compute_accelerations(P, 1.0); // writes accelerations into P.ax,P.ay,P.az
+            // bh.compute_accelerations(P, 1.0); // writes accelerations into P.ax,P.ay,P.az
+            compute_gravity_cached_optimized(P);
+
 
             // ------------------------------------------------
             // 2. Compute densities (SPH or KNN)
@@ -185,7 +179,7 @@ int main(int argc, char** argv) {
 
     auto end = std::chrono::high_resolution_clock::now();
 
-    std::cout << (use_bh ? "Using Barnes-Hut Octree Gravitational Solver" : "Using Standard Gravitational Acceleration")
+    std::cout << (use_cached ? "cached" : "normal")
               << " runtime: "
               << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
               << " ms\n";
@@ -194,7 +188,6 @@ int main(int argc, char** argv) {
     // P.write_csv(use_cached ? "particles_cached.csv" : "particles_normal.csv");
     int particless_to_star_count = P.count_particles_in_stars();
     std::cout << "Particles that became stars: " <<  particless_to_star_count << std::endl;
-
 
     return 0;
 }

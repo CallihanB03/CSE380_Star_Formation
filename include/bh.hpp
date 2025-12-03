@@ -50,7 +50,12 @@ public:
             }
         }
         // compute multipoles (mass and center-of-mass)
-        compute_multipoles(root_);
+        // P_ptr_ = &P;
+        // compute_multipoles(root_);
+        // P_ptr_ = nullptr; // clear after multipoles computed
+
+        // after inserting particles
+        compute_multipoles(root_, P);   // call the overload that accepts Particles directly
     }
 
     // Compute accelerations and write into P.ax,ay,az (overwrites).
@@ -204,22 +209,6 @@ private:
             c.z + ((oct & 4) ? q : -q)
         );
     }
-
-    // compute multipoles (mass and com) bottom-up
-    // void compute_multipoles(Node* n) {
-    //     if (!n) return;
-    //     if (n->particle_idx >= 0) {
-    //         // leaf with single particle
-    //         // particle mass and com must be set by the external caller's P during initial pass,
-    //         // but we have not stored a reference to P here - so, to compute multipoles, we need
-    //         // to traverse again or store masses during insert. Simpler approach: we pass P pointer
-    //         // by making this function accept P. To keep signature simpler, modify to accept P.
-    //         // We'll implement the version that takes P explicitly.
-    //         return;
-    //     }
-        // This stub should never be reached in this variant.
-    // }
-
     // Overloaded compute_multipoles that accepts Particles
     void compute_multipoles(Node* n, const Particles& P) {
         if (!n) return;

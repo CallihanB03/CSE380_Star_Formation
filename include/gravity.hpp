@@ -10,3 +10,6 @@ void compute_gravity(const Particles& P,
                      float G = 1.0f,
                      float softening = 0.01f);
 
+void compute_gravity_cached_optimized(Particles& P,
+                     float G = 1.0f,
+                     float softening = 0.01f);

@@ -7,6 +7,8 @@
 #include "../include/init.hpp"
 #include "../include/thermo.hpp"
 #include "../include/starform.hpp"
+#include "../include/distance.hpp"
+
 
 
 #include <iostream>
@@ -15,6 +17,8 @@
 #include <filesystem>
 #include <algorithm>
 #include <fstream>
+#include <array>
+
 
 int main(int argc, char** argv) {
     size_t N = 1000;                // number of particles
@@ -35,9 +39,13 @@ int main(int argc, char** argv) {
     init_particles(P, version_type);
 
 
+    // ----------------------------------------------------
+    // Cache particle distances
+    // ----------------------------------------------------
+    std::vector<float> particle_dist_L2_sqr = compute_particle_distances(P);
+
     StarFormation SF(neighbor_radius, min_neighbors, density_threshold);
-
-
+    
     auto start = std::chrono::high_resolution_clock::now();
 
     // ----------------------------------------------------
@@ -58,8 +66,10 @@ int main(int argc, char** argv) {
         // 2. Compute densities (SPH or KNN)
         // ------------------------------------------------
         
-        compute_density_sph(P, h);
+        // compute_density_sph(P, h);
         // compute_density_kNN(P,20);
+        compute_density_sph(P, h);
+
 
         // ------------------------------------------------
         // 3. Compute pressure forces
@@ -105,6 +115,7 @@ int main(int argc, char** argv) {
     // P.write_csv(use_cached ? "particles_cached.csv" : "particles_normal.csv");
     int particless_to_star_count = P.count_particles_in_stars();
     std::cout << "Particles that became stars: " <<  particless_to_star_count << std::endl;
+
 
     return 0;
 }

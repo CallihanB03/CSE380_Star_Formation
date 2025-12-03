@@ -29,10 +29,21 @@ int main(int argc, char** argv) {
     float neighbor_radius = 0.05f;  
     int min_neighbors = 5;          
     float density_threshold =  100.0; 
-    int version_type = 2;      
+    int version_type = 2;  
 
-    bool use_bh = (argc > 1 && (std::string(argv[1]) == "--use_bh") || (std::string(argv[2]) == "--use_bh"));
-    bool debugging = (argc > 1 && (std::string(argv[1]) == "--debugging") || (std::string(argv[2]) == "--debugging"));
+    int k = 50; // for density KNN    
+
+    bool use_bh = (argc > 1 &&
+        (std::string(argv[1]) == "--use_bh") || (std::string(argv[2]) == "--use_bh" || (std::string(argv[3]) == "--use_bh"))
+    );
+
+    bool debugging = (argc > 1 && 
+    (std::string(argv[1]) == "--debugging") || (std::string(argv[2]) == "--debugging") || (std::string(argv[3]) == "--debugging")
+    );
+
+    // bool use_density_knn = (argc > 1 && 
+    // (std::string(argv[1]) == "--use_density_knn") || (std::string(argv[2]) == "--use_density_knn") || (std::string(argv[3]) == "--duse_density_knn")
+    // ); 
 
     std::cout << "debugging: " << debugging << std::endl;
 
@@ -70,11 +81,13 @@ int main(int argc, char** argv) {
             // ------------------------------------------------
             // 2. Compute densities (SPH or KNN)
             // ------------------------------------------------
+            // compute_density_kNN(P, k);
             compute_density_sph(P, h);
 
 
             // ------------------------------------------------
             // 3. Compute pressure forces
+            // (This is where the thermodynamics and kinetics kiss)
             // ------------------------------------------------
             compute_pressure_forces_cached(P, h);
 
@@ -129,11 +142,13 @@ int main(int argc, char** argv) {
             // ------------------------------------------------
             // 2. Compute densities (SPH or KNN)
             // ------------------------------------------------
+            // compute_density_kNN(P, k);
             compute_density_sph(P, h);
 
 
             // ------------------------------------------------
             // 3. Compute pressure forces
+            // (This is where the thermodynamics and kinetics kiss)
             // ------------------------------------------------
             compute_pressure_forces(P, h, ax, ay, az);
 

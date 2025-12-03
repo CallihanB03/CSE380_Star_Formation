@@ -122,6 +122,7 @@ void compute_pressure_forces(
     }
 }
 
+// This is where the thermodynamics and kinetics kiss
 void compute_pressure_forces_cached(
     Particles& P,
     float h
@@ -180,4 +181,3 @@ void compute_pressure_forces_cached(
         }
     }
 }
-

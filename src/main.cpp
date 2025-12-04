@@ -34,16 +34,6 @@ int main(int argc, char** argv) {
     // int k = 50; // for density KNN    
 
     bool use_cached = (argc > 1 && ((std::string(argv[1]) == "--use_cached")));
-    // bool debugging = false;
-
-    // std::cout << "use_bh: " << use_bh << std::endl;
-
-    // if (debugging){
-    //     N = 3;
-    //     version_type = 4;
-    //     std::cout << "Debugging initialization" << std::endl;
-    // }
-
 
     Particles P(N);
     // ----------------------------------------------------
@@ -184,8 +174,7 @@ int main(int argc, char** argv) {
               << std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count()
               << " ms\n";
 
-    // Final snapshot
-    // P.write_csv(use_cached ? "particles_cached.csv" : "particles_normal.csv");
+
     int particless_to_star_count = P.count_particles_in_stars();
     std::cout << "Particles that became stars: " <<  particless_to_star_count << std::endl;
 

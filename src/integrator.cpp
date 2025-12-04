@@ -25,22 +25,6 @@ void velocity_verlet(Particles& P,
     }
 }
 
-// void velocity_verlet_cached(Particles& P, float dt)
-// {
-
-//     for (size_t i = 0; i < P.N; i++) {
-//         if (!P.alive[i]) continue;
-
-//         P.vx[i] += 0.5f * P.ax[i] * dt;
-//         P.vy[i] += 0.5f * P.ay[i] * dt;
-//         P.vz[i] += 0.5f * P.az[i] * dt;
-
-//         P.x[i] += P.vx[i] * dt;
-//         P.y[i] += P.vy[i] * dt;
-//         P.z[i] += P.vz[i] * dt;
-//     }
-// }
-
 
 void velocity_verlet_cached(Particles& P, float dt)
 {

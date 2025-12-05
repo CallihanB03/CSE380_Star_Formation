@@ -1,7 +1,7 @@
 # === Star Formation Simulation Makefile ===
 
 CXX = g++
-CXXFLAGS += -std=c++17 -O3 -Iinclude
+CXXFLAGS += -std=c++17 -O2 -Iinclude
 
 # CXXFLAGS += -std=c++17 -O0 -g -pg -Iinclude
 # LDFLAGS  += -pg
@@ -90,6 +90,7 @@ tests: run_test_two_body run_test_freefall run_test_momentum
 clean:
 	rm -f $(OBJ) $(TARGET) $(TEST_EXEC) $(TEST_FREEFALL) $(TEST_MOMENTUM_EXEC)
 
+# Coverage
 coverage:
 	rm -f src/*.gcda
 	$(MAKE) clean

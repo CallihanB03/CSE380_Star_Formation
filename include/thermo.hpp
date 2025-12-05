@@ -24,3 +24,26 @@ void update_thermodynamics(Particles& P, float dt) {
         P.pressure[i] = P.density[i] * P.temperature[i];
     }
 }
+
+void update_thermodynamics_cached(Particles& P, float dt) {
+    size_t N = P.N;
+    const float gamma = 5.0f / 3.0f;
+    const float coef = (gamma - 1.0f) * dt;
+
+    for (size_t i = 0; i < N; ++i) {
+        // Cache velocity in a Vec3 (assuming you have P.velocity(i))
+        float divv = P.vx[i] + P.vy[i] + P.vz[i];
+
+        // Cache temperature and density
+        float T = P.temperature[i];
+        float rho = P.density[i];
+
+        // Update temperature
+        float T_new = T - coef * T * divv;
+        if (T_new < 0.0f) T_new = 0.0f;
+        P.temperature[i] = T_new;
+
+        // Update pressure
+        P.pressure[i] = rho * T_new;
+    }
+}

@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
             // ------------------------------------------------
             // 5. Update thermodynamics
             // ------------------------------------------------
-            update_thermodynamics(P, dt);
+            update_thermodynamics_cached(P, dt);
 
             // ----------------------------------------------------
             // 6. Update thermodynamic physics
@@ -175,8 +175,13 @@ int main(int argc, char** argv) {
               << " ms\n";
 
 
-    int particless_to_star_count = P.count_particles_in_stars();
-    std::cout << "Particles that became stars: " <<  particless_to_star_count << std::endl;
+    int particles_to_star_count = P.count_particles_in_stars();
+
+    float float_N = (float)P.N;
+    float float_particles = (float)particles_to_star_count;
+    float percent_stars = 100.0 * float_particles / float_N;
+
+    std::cout << percent_stars << "\% of particles became a part of the star" << std::endl;
 
     return 0;
 }

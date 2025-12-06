@@ -13,9 +13,9 @@ The simulator evolves a system of particles through repeated **time steps**. Eac
 ### 1. Density Computation
 Each particle's density is estimated by summing contributions from nearby particles using the SPH smoothing kernel:
 
-\[
+$$
 \rho_i = \sum_j m_j W(r_{ij}, h)
-\]
+$$
 
 - Uses a **cubic spline kernel**
 - Optionally uses a **cached neighbor list** for performance
@@ -23,20 +23,20 @@ Each particle's density is estimated by summing contributions from nearby partic
 ### 2. Pressure Computation
 Pressure is computed using an **equation of state**, typically:
 
-\[
+$$
 P = k \rho^\gamma
-\]
+$$
 
 This determines the magnitude of sound-speed–driven internal forces.
 
 ### 3. Pressure Force Calculation
 The pressure gradient force on each particle is evaluated using SPH gradients:
 
-\[
+$$
 \mathbf{a}_i^{\text{pressure}} = -\sum_j m_j
 \left(\frac{P_i}{\rho_i^2} + \frac{P_j}{\rho_j^2}\right)
 \nabla W(r_{ij}, h)
-\]
+$$
 
 You may use:
 
@@ -46,9 +46,9 @@ You may use:
 ### 4. Gravitational Acceleration
 Each particle experiences Newtonian gravitational attraction:
 
-\[
+$$
 \mathbf{a}_i^{\text{grav}} = G \sum_j m_j \frac{\mathbf{r}_{ij}}{(|\mathbf{r}_{ij}|^2 + \epsilon^2)^{3/2}}
-\]
+$$
 
 The softening parameter `ε` prevents numerical blow-ups.
 

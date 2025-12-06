@@ -107,4 +107,11 @@ coverage:
 	mv *.gcov coverage_reports/cached/
 
 
+verify: 
+	g++ -O2 reference_data/generate_reference_profile.cpp -o reference_data/gen_ref
+	reference_data/gen_ref
+	$(MAKE)
+	bin/simulation --use_cached --verify
+
+
 .PHONY: all run clean tests test_two_body test_freefall

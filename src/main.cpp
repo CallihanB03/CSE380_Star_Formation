@@ -9,6 +9,7 @@
 #include "../include/starform.hpp"
 #include "../include/distance.hpp"
 #include "../include/bh.hpp"
+#include "../include/verify.hpp"
 
 
 
@@ -23,17 +24,36 @@
 
 
 int main(int argc, char** argv) {
-    size_t N = 1000;                // number of particles
-    size_t num_steps = 100;         // simulation steps
-    float dt = 0.001f;               // timestep
-    float neighbor_radius = 0.05f;  
-    int min_neighbors = 5;          
+    // Physics Hyperparameters
+    float neighbor_radius = 0.05f;        
     float density_threshold =  100.0; 
-    int version_type = 2;  
+
+	// Performance Hyperparameters
+    size_t N = 1000;  
+    size_t num_steps = 100;
+    float dt = 0.001f;
+    int version_type = 2;
+
+    const int min_neighbors = 5;
+    // bool verify = true;
 
     // int k = 50; // for density KNN    
 
-    bool use_cached = (argc > 1 && ((std::string(argv[1]) == "--use_cached")));
+    bool use_cached = false;
+    bool verify = false;
+
+    if (argc > 1) {
+        std::string arg1 = argv[1];
+        if (arg1 == "--use_cached") use_cached = true;
+        if (arg1 == "--verify")     verify = true;
+    }
+
+    if (argc > 2) {
+        std::string arg2 = argv[2];
+        if (arg2 == "--use_cached") use_cached = true;
+        if (arg2 == "--verify")     verify = true;
+    }
+
 
     Particles P(N);
     // ----------------------------------------------------
@@ -182,6 +202,10 @@ int main(int argc, char** argv) {
     float percent_stars = 100.0 * float_particles / float_N;
 
     std::cout << percent_stars << "\% of particles became a part of the star" << std::endl;
+
+    if (verify){
+        verify_against_reference(P, "reference_data/reference_profile.csv");
+    }
 
     return 0;
 }
